@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Typoraを使って記事を書く方法 | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Typoraを使って記事を書く方法</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2019-02-23 21:04
+      </span>
+      <span class="post-count">≈ 2k字</span>
+      <span class="post-count">≈ 8分</span>
+    </div>
+    <div class="markdown-body"><h2 id="ウェッジ"><a href="#ウェッジ" class="headerlink" title="ウェッジ"></a>ウェッジ</h2><p>仕事をうまくやりたいなら、まず自分のツールを磨く必要があります。コーディングをしたいプログラマーとして、IDEA や Sublime などの IDE を使用しないでください。また、長年使用してきた Evernote を捨てることもできます。 <strong>Markdown</strong> のサポートの欠如は、実際に多くのユーザーの喪失をもたらしたと推定されています。</p>
+<blockquote>
+<p>マークダウンは、通常のテキスト エディターを使用して作成できるマークアップ言語で、通常のテキスト コンテンツを特定の形式にすることができます。構文形式は非常に簡単です。 10分程度で始められます。</p>
+</blockquote>
+<p>コーディングに Markdown を使用する必要がある理由については、コード作成で最も面倒なことは、実際には書式設定であると言わなければなりません。これは、コードを書いたりコピーしたりするときに気が散らなければなりませんが、効率は非常に低くなります。</p>
+<p>強迫性障害を持つ人は、この乱雑なレイアウトを見ると間違いなく気が散るでしょう。この段落の間隔は、調整するまでに減らす必要があります。満足しました、あなたのインスピレーションは消えました。</p>
+<p>コンテンツの作成とフォーマットの調整を同時に行っています。コンテンツの作成に集中したいのですが。このとき、選択肢は 2 つあります。 1. 形式に関係なく、たくさん書いて、書いた後にまとめて調整します。 2. 文章に影響を与えずに、いくつか追加して書く記事のレイアウトを明確にします。そして将来的には、編集に必要なさまざまな形式を生成できるようになり、2 番目の方法により Markdwon 構文が誕生しました。</p>
+<h4 id="上記の段落は次のように書くことができます"><a href="#上記の段落は次のように書くことができます" class="headerlink" title="上記の段落は次のように書くことができます"></a>上記の段落は次のように書くことができます</h4><blockquote>
+<p>コンテンツの作成とフォーマットの調整を同時に行っています。コンテンツの作成に集中したいのですが。</p>
+</blockquote>
+<p> <strong>現時点では 2 つのオプションがあります:</strong></p>
+<ul>
+<li>形式に関係なく、たくさん書いて、書いた後にまとめて調整します。</li>
+<li>文章に影響を与えることなく、簡単なマークをいくつか追加するだけで、自分が書いた記事のレイアウトがより明確になり、将来的に編集に必要なさまざまなフォーマットを生成できるようにする 2 つ目の方法が <strong>Markdwon</strong> 文法として誕生しました。 。</li>
+</ul>
+<p>以前の記事の形式はそのように生まれたわけではなく、紙の印刷に必要なものでした。たとえば、段落の先頭に空白語が 2 つあり、段落間に空白行がなく、1 つの段落内に直接引用が混在しています。これらは読みやすさのためではなく、紙の節約のためです。</p>
+<p>電子読書の時代では、スクロールすると画面のスペースが無限に広がりますが、紙に比べて画面が疲れやすくなるため、より鮮明な写植が求められます、これがMarkdownの存在意義です</p>
+<p><img src="https://s2.loli.net/2022/12/30/8aXTjpzPOxLI4Nt.png"></p>
+<h2 id="タイポラ"><a href="#タイポラ" class="headerlink" title="タイポラ"></a>タイポラ</h2><p>Mac OS には多くの Markdown ツールがありますが、その中で最も使いやすいのは <a target="_blank" rel="noopener" href="http://25.io/mou/">Mou</a> によって開発されたツールです。しかし、中国人は非常に人気があるため、開発者は事前に新しいバージョンをプレビューし、大規模な予約注文を開始しましたが、現在はそれ以上のものはありません。最新バージョンの Mac OS をサポートします。</p>
+<p>その後、オープンソース業界の誰かがこれに耐えられず、Mou の機能と UI をベースにした新しいオープンソース アプリを開発しました。それが <a target="_blank" rel="noopener" href="https://macdown.uranusjr.com/">MacDown</a> ですが、その技術はそうではない可能性があります。その理由は、MacDown が一定期間フリーズすることが多く、これはプログラマーにとって致命的であるためです。 、あたかも誰かがすべての生き物を救うために暗闇の中で色とりどりの縁起の良い雲を運転しているかのように。</p>
+<p><strong>Typora</strong> は非常に美しく、従来の Markdown エディターとは異なり、作成中にプレビューは表示されませんが、表示されたものがそのまま得られます。公式ウェブサイトにアクセスすると、すぐに魅了されるでしょう。</p>
+<blockquote>
+<p>ちなみに、Typora の公式 Web サイトも非常に…Apple さん、このページだけでも一見の価値があります。</p>
+</blockquote>
+<p>Mou の基本機能に加えて、Typora はディレクトリの生成、構文ショートカット キーなど、他の多くの機能もサポートしています。有料の機能が満載ですが、現在は無料です。</p>
+<p>コード表示を見てみましょう。以下は JavaScript です。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过云函数绕过腾讯https的机制，请求http的APi</span></span><br><span class="line">wx.<span class="property">cloud</span>.<span class="title function_">callFunction</span>(&#123;</span><br><span class="line">   <span class="attr">name</span>: <span class="string">&#x27;get_Parking_SpotCount&#x27;</span>,</span><br><span class="line">   <span class="attr">data</span>: &#123;&#125;,</span><br><span class="line">   <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123;        </span><br><span class="line">      <span class="keyword">var</span> xx = res.<span class="property">result</span>.<span class="property">getParkingSpotCount</span></span><br><span class="line">      <span class="keyword">var</span> yy = xx.<span class="title function_">split</span>(<span class="string">&quot;:&quot;</span>)[<span class="number">2</span>]</span><br><span class="line">      <span class="comment">//console.log(yy.split(&quot;&#125;&quot;)[0])</span></span><br><span class="line">      that.<span class="title function_">setData</span>(&#123;</span><br><span class="line">        <span class="attr">carnumber</span>: yy.<span class="title function_">split</span>(<span class="string">&quot;&#125;&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">      &#125;)</span><br><span class="line">   wx.<span class="title function_">hideLoading</span>()</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">fail</span>: <span class="variable language_">console</span>.<span class="property">error</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>次に重要な点に移りましょう。記事を書くとき、特にブログ、WeChat 公開アカウント、短い書籍などに記事を公開する必要がある場合、写真の挿入という問題が発生します。</p>
+<h4 id="画像を挿入"><a href="#画像を挿入" class="headerlink" title="画像を挿入"></a>画像を挿入</h4><p>通常、記事を挿入する必要がある場合はどうすればよいでしょうか?</p>
+<ol>
+<li>画像のリンクアドレスをインターネットから直接取得し、自分の画像リンクとして取得します（リンクが変更されると画像は表示されません）</li>
+<li>ローカル ファイルへの直接相対パス (ブログを共有する必要がある場合、当然他の人は画像を見ることができません)</li>
+<li>まず他のプラットフォーム経由で画像をアップロードし、次にリンクアドレスをコピーします（操作はさらに面倒です）</li>
+<li>もちろん、ショートブック上のファイルを編集画面に直接ドラッグ＆ドロップすることもできます（ただし、執筆途中で保存する必要があり、クラウドでは常に不安を感じます）</li>
+</ol>
+<p><strong>最適化されたソリューションは次のとおりです:</strong></p>
+<ol>
+<li><strong>Typora</strong> を使用してテキストをコーディングする</li>
+<li><strong>Picture Bed</strong> を使用して写真を保存します</li>
+<li>画像ベッド上の <strong>画像アドレス</strong> を Typora に書き込みます</li>
+<li>記事が完成したら、ブログ、WeChat 公式アカウント、ショートブックなどに直接<strong>コピー＆ペースト</strong>してください。</li>
+</ol>
+<p>これは面倒な手順のように聞こえるかもしれませんが、心配しないでください。これはすでに誰かが考えているので、ドラッグ アンド ドロップやショートカット キーなどを通じて写真をアップロードできるピクチャー ベッド アーティファクトを開発しました。また、Weibo、Qiniu、 Youpai、Alibaba Cloud、Imgur、Flickr、Amazon S3 およびその他の画像プラットフォームでは、リンクが Markdown 形式で自動的に保存され、これまでにないイラスト体験が提供されます。</p>
+<h4 id="再び最適化されたソリューション"><a href="#再び最適化されたソリューション" class="headerlink" title="再び最適化されたソリューション"></a>再び最適化されたソリューション</h4><ol>
+<li><strong>Typora</strong> を使用してテキストをコーディングする</li>
+<li>画像をコンテンツにコピーします</li>
+<li>記事が完成したら、ブログ、WeChat 公式アカウント、ショートブックなどに直接コピーして貼り付けます。</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/12/30/M2reuAfkGpOgICW.png"></p>
+<p>**たとえば、セットアップ後、上の画像を挿入するのにかかる時間はわずか 3 秒です。 **</p>
+<ol>
+<li><p><code>command + control shift + 4</code>のスクリーンショット</p>
+</li>
+<li><p><code>command + u</code> スクリーンショットを Qiniuyun の画像ベッドにアップロードします</p>
+</li>
+<li><p><code>command + v</code> Markdown 構文コマンドを記事に貼り付けて完了です。</p>
+</li>
+</ol>
+<h2 id="キニウユン"><a href="#キニウユン" class="headerlink" title="キニウユン"></a>キニウユン</h2><p>Qiniu Cloud について言えば、業界の良心のモデルと言えます。初期の頃、私たちが深センにいたとき、彼らのストリーミング メディア サービスとほぼ協力していました。</p>
+<p>現在、Qiniu Cloud のオブジェクト ストレージと統合 CDN は、個人の実名認証が完了している限り無料で、アップロード トラフィックは 10 GB まで無料です。CDN には、月あたり 10 GB の無料トラフィックがあります。トライアルは期間限定で無料です。これもまた業界の良心です。</p>
+<p>PS: エンタープライズ認定を取得すると、20G の空き容量が得られ、資金が限られている企業でも使用できます。</p>
+<blockquote>
+<p>クラウドサービス業界でトップ10に入るためには、優れた技術に加えて、企業のビジョンや志がさらに重要となり、損失を利用できず、自己流に陥っている企業は生き残るしかありません。政策の保護のもとに。</p>
+</blockquote>
+<p>さて、本題に戻ります。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.qiniu.com/">Qiniu Cloud</a>アカウントを登録する</li>
+<li>個人の実名認証を行い、個人認証に Alipay を使用して迅速に提出する（アリババ - 社会的責任感の強いテクノロジー大手）</li>
+<li>新しいストレージスペースを作成する</li>
+<li>CDN と統合されたドメイン名を割り当てます (ドメイン名がない場合は、30 日ごとに更新される一時的なドメイン名を使用できます。そのため、自分でドメイン名を申請することをお勧めします。) Alibaba Cloud に登録されているものも使用でき、必要なのは CNAME 解決だけです)。</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/12/30/k3IOaGeJqjtngWH.png"></p>
+<h2 id="画像ベッドツール"><a href="#画像ベッドツール" class="headerlink" title="画像ベッドツール"></a>画像ベッドツール</h2><p>クラウド ストレージの空き容量があれば、そこに写真を保存できます。しかし、Web ページで毎回アップロードをクリックして記事へのリンクをコピーするのは非常に面倒なので、現時点では、画像を Qiniu クラウド ストレージに自動的にアップロードし、画像アドレスを保存できるツールが必要です。操作を簡素化するためにクリップボードに保存します。</p>
+<p>国産マスター商品画像ツール<a target="_blank" rel="noopener" href="https://toolinbox.net/iPic/">IPic</a>でも、スクリーンショットやコピー画像を問わず、リンクをMarkdown形式で自動アップロード・保存し、直接貼り付け・挿入することができます。下のアニメーションのように、<strong>画像をドラッグして記事に貼り付けます</strong>。もちろん、上の 2 つの画像と同様に、クリップボードへの画像のアップロードもサポートしています。アップロードするにはショートカット キーを使用します。</p>
+<p><img src="https://s2.loli.net/2022/12/30/4EA6sBcYKIXqOuH.png"></p>
+<p>しかし！はい、でもここで、このような便利なツールは無料ですか?</p>
+<p>もちろん、画像ベッド機能だけが必要な場合、IPic はデフォルトで Weibo 画像ベッドを使用します。上記の Qiniu などの独自のプライベート クラウド ストレージを使用したい場合は実際に使用できます。 Cloud Storage を使用する場合は、年間 60 元の有料版にアップグレードする必要があります。</p>
+<p>それは高価ではありません、そして、オープンソース開発者のサポーターとして本当にお金をかける価値があります。問題は、それが 60 元の 1 回限りの購入である場合、年会費は少し法外であると思います。 2 台の Mac 、自宅に 1 台、職場に 1 台ある場合…Steam で人気のインディーズ ゲーム Taiwu Scroll は永続的に使用するのにわずか 68 元であることはご存知でしょう。もちろん、独立系ゲームの開発コストは同じではありません。これは俗語ですが、いずれにせよ、IPic は現時点で Mac OS 上で最高のイメージ ベッド ツールです。</p>
+<p>オープンソースの世界は確かに激動の世界です。あなたの請求が理不尽であると考える人がいるから、それに値するかどうかについては、世界の人々が責任を負っています。 ](<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn">https://github.com/Molunerfinn</a> &#x2F;PicGo&#x2F;releases) はこうして誕生しました。Swift に詳しくないフロントエンド技術者によって開発されたため、PicGo は Electron-vue を使用して実装されました。これは、IPic のほとんどの機能を完全に再現したスキャフォールディングですが、商業化の理由により、最も便利な機能の 1 つである <strong>PicGo</strong> を実装できません。つまり、画像を直接 Typora にドラッグすると <strong>IPic</strong> がトリガーされます。これは、IPic 作者と Typora 開発チームの間のコミュニケーションの結果だと思います。</p>
+<p>PicGo の作者がブログで次のように書いているように、欠点は利点を隠しません。</p>
+<blockquote>
+<p>現時点では、PicGo はまだ非常に若いプロジェクトであり、間違いなく多くのバグがあり、機能的にもいくつかの欠点があります。したがって、継続的に改善する必要があります。使用中にコメントや提案がある場合は、プロジェクト ウェアハウスの <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/issues">問題</a> に提出していただければ幸いです~</p>
+</blockquote>
+<h2 id="記事を-WeChat-公開アカウントにアップロードします"><a href="#記事を-WeChat-公開アカウントにアップロードします" class="headerlink" title="記事を WeChat 公開アカウントにアップロードします"></a>記事を WeChat 公開アカウントにアップロードします</h2><p>現在、Typora で編集した記事は直接 MD 形式にコピーして、Jianshu などのマークダウン構文をサポートする場所にアップロードできますが、! WeChat 公式アカウントはまだ markdwon 構文をサポートしていません。幸いなことに、オープン ソース コミュニティの誰かが、より使いやすいこの変換ツールを完成させました。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/barretlee/online-markdown">Online-markdown</a> これは、<a target="_blank" rel="noopener" href="https://www.barretlee.com/entry/">Brother Mustache</a> によって書かれたオンライン変換ツールのソース コードです。 <code>npm install</code> 後に直接クローンを作成して使用することもできます。また、[オンライン アドレス] (<a target="_blank" rel="noopener" href="http://md.barretlee.com/">http://md.barretlee.com</a>) にアクセスして、クローンを作成してこのマシンで使用することをお勧めします。時々、この Web ページが非常に固まってしまうことがあります。私は、ダブルクリックすることで直接使用できる Mac OS アプリをカプセル化しました。これは [Baidu Netdisk] (https:&#x2F;&#x2F;) に共有されています。 pan.baidu.com&#x2F;s&#x2F;1XiknlCOIHzo-ok1GOUfeow)、パスワードはい: kjyh、ダウンロードして使用することを歓迎します。</p>
+<p><img src="https://s2.loli.net/2022/12/30/dIWfjDBwQP1nATr.png"></p>
+<h2 id="要約する"><a href="#要約する" class="headerlink" title="要約する"></a>要約する</h2><p>2014年からずっと何か書きたいと思っていたのですが、以前の記事を見るたびにまた後退してしまい、最近はつまらないことが多すぎて、 を載せてしまいました。コードはさておき、開発プロセスを落ち着いて理解することができたので、初めてジンヨンの英雄伝説と剣と妖精の伝説をプレイしたような気分でした。他の人はゲームに集中しているかもしれませんが、私は Heluo Studio に注目しています。</p>
+<p>一体どんな達人がそんなゲームを作れるのでしょうか? コンピュータープログラミングとは何ですか?</p>
+<p>時代は進んでいます。私たちが開発していたときは、Java Web 開発環境を構築し、データベースと jar パッケージをインポートするだけで 2 時間かかりました。</p>
+<p>フロントエンドにはVue、バックエンドにはSpringboot、そしてモバイルエンドにはさまざまな基盤があり、小規模なプログラム開発用のSDKやIDEも開発が容易になり、業務実装に集中できるようになりました。コード テキストと同様に、Markdown 構文とこの一連のツールを使用すると、生活はますます良くなります。</p>
+<p>私は他の人よりも幸せです。大好きなテクノロジーで食事をすることができます。それは良いことです。</p>
+<p><strong>OK、最後に私が使用するツールをまとめます:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.typora.io/">Typora|現時点で Mac OS 用の最高の Markdown エディタ</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.qiniu.com/">七牛云|無料クラウドストレージの業界ユニコーン</a></li>
+<li><a target="_blank" rel="noopener" href="https://toolinbox.net/iPic/">IPic|現在業界で最高の描画ツール</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">PicGo|IPic の最高の無料代替品</a></li>
+</ul>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/%E5%B1%B1%E3%81%A8%E6%B5%B7%E3%81%AE%E5%8F%A4%E5%85%B8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>山と海の古典について話しましょう</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%A6%E3%82%A7%E3%83%83%E3%82%B8"><span class="toc-text">ウェッジ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E8%A8%98%E3%81%AE%E6%AE%B5%E8%90%BD%E3%81%AF%E6%AC%A1%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E6%9B%B8%E3%81%8F%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99"><span class="toc-text">上記の段落は次のように書くことができます</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%BF%E3%82%A4%E3%83%9D%E3%83%A9"><span class="toc-text">タイポラ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E5%83%8F%E3%82%92%E6%8C%BF%E5%85%A5"><span class="toc-text">画像を挿入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%8D%E3%81%B3%E6%9C%80%E9%81%A9%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9F%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"><span class="toc-text">再び最適化されたソリューション</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%AD%E3%83%8B%E3%82%A6%E3%83%A6%E3%83%B3"><span class="toc-text">キニウユン</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%83%8F%E3%83%99%E3%83%83%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB"><span class="toc-text">画像ベッドツール</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%98%E4%BA%8B%E3%82%92-WeChat-%E5%85%AC%E9%96%8B%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%97%E3%81%BE%E3%81%99"><span class="toc-text">記事を WeChat 公開アカウントにアップロードします</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%81%E7%B4%84%E3%81%99%E3%82%8B"><span class="toc-text">要約する</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

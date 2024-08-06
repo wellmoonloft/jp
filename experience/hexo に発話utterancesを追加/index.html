@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>hexo に発話utterancesを追加 | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">hexo に発話utterancesを追加</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2022-12-05 20:29
+      </span>
+      <span class="post-count">≈ 498字</span>
+      <span class="post-count">≈ 2分</span>
+    </div>
+    <div class="markdown-body"><p>記事を hexo に移行してから 1 年以上が経過しましたが、非常にスムーズに使用できていますが、コメント システムにはあまり満足していません。もともと私の文章は「知ってるよ」が多いので数年後には誰も読んでくれないだろうと思っていたので、SEOをするモチベーションもないし、放っておこうと思っていました。</p>
+<p>ただし、経験の共有には、たとえ役に立たなかったとしても、一部の人にとって役立つ可能性のあるものがいくつかあります。いつかやり直す必要がある場合は、戻って確認することができます。結局のところ、時間が経つと多くの設定を忘れてしまい、検索する必要があるのは非常に面倒です。</p>
+<p>私が到着したとき、1 人か 2 人の人が私の指示に従ってセットアップしているのが見えました。それはかなり良かったです。しかし、少し前にウェブサイトの構造を変更し、ホームページのコードを変更したため、経験を共有する記事のパスが変更され、以前のコメントが消えてしまったのが少し残念でした。さらに、私は自分が使用している Gitalk、Valine、Qisqus のどれにもあまり満足していません。 Github が無料で使えるようになったので、コメント機能を実現するためのウェアハウスを作れないかな、と思って検索してみたら、いいものを見つけました。<a target="_blank" rel="noopener" href="https://utteranc.es/">utteranc</a></p>
+<p>これは Github ウェアハウスの Issue に基づいたコメント機能で、原理は非常にシンプルです。各記事を質問としてぶら下げると、後ろにいる人がこの Issue にコメントできるようになります。非常に完成度が高い。</p>
+<p>github アカウントを持っていない人もいるでしょうか?そういう人はコメントする必要ないかもしれないけど、ははは</p>
+<h4 id="1-Github-リポジトリを作成する"><a href="#1-Github-リポジトリを作成する" class="headerlink" title="1. Github リポジトリを作成する"></a>1. Github リポジトリを作成する</h4><h4 id="2-Github-アプリを追加する"><a href="#2-Github-アプリを追加する" class="headerlink" title="2. Github アプリを追加する"></a>2. Github アプリを追加する</h4><p>これは主に、他の人がコメントしたときに自動的に Issue を作成し、ルールに従って記事のアドレスに関連付けるために使用されます。もちろん、心配な場合は、自動追加プログラムを自分で構築することもできます。少し面倒なだけですので、必要ありません。</p>
+<p>Web：<a target="_blank" rel="noopener" href="https://github.com/apps/utterances">https://github.com/apps/utterances</a></p>
+<p>Web にアクセスしてインストール ページに入り、<code>インストール</code>ボタンをクリックします。</p>
+<p><img src="https://s2.loli.net/2022/12/30/Tm9tgsrRMLnu5FC.png" alt="安装"></p>
+<p>次に、構築したばかりのウェアハウスを選択し、<code>install</code>をクリックします。</p>
+<h4 id="3-Web-ページのコードを取得します。"><a href="#3-Web-ページのコードを取得します。" class="headerlink" title="3. Web ページのコードを取得します。"></a>3. Web ページのコードを取得します。</h4><p>ここに <a target="_blank" rel="noopener" href="https://utteranc.es/">utteranc</a> を入力し、指示に従って <strong>リポジトリ</strong> を入力し、記事と発行の <strong>対応する方法</strong> を選択します (デフォルトを使用することをお勧めします) , <strong>ラベルを発行</strong> の場合、新しい倉庫では空白のままにします。元の倉庫を使用する場合は、ラベルを追加できます (その倉庫には問題がないはずなので、追加しなくても問題ありません)。 、<strong>テーマ</strong>を選択し、最後に<strong>発話を有効にする</strong>に挿入されたコードが表示されるので、それをコピーします。</p>
+<p><img src="https://s2.loli.net/2022/12/30/FMfSVsnTocI83kb.jpg" alt="1671016771605"></p>
+<h4 id="4-テーマ対応エリアを挿入"><a href="#4-テーマ対応エリアを挿入" class="headerlink" title="4. テーマ対応エリアを挿入"></a>4. テーマ対応エリアを挿入</h4><p>現時点では、多くのテーマが発話をサポートし始めているはずですが、オリジナルの記事のコメント領域を探すだけで問題ありません。多くのテーマがそこに統合されているので、その設定に [開く] ボタンを追加し、そこにパラメータを渡すことを忘れてください。魔法で改造されたオレンジの本来の姿を見ることができる…。</p>
+<h4 id="5-使用原則"><a href="#5-使用原則" class="headerlink" title="5. 使用原則"></a>5. 使用原則</h4><p>デプロイ後、各記事の下に発言のコメント領域が表示されます。現時点では、コメント ライブラリにはこの記事に関連付けられた問題はなく、最初のコメントが開始されたときの発言のみが含まれることに注意してください。アプリは、この記事に関連する新しい問題を作成するのに役立ちます。これはバックグラウンド ロジックであり、実際のユーザー エクスペリエンスでは、このステップは表示されません，enjoy.</p>
+<p><img src="https://s2.loli.net/2022/12/30/F3L8AHW9gKhT5Gf.jpg" alt="1671017518617"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/hexo%20%E3%81%8C%20v6.3.0%20%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>hexo が v6.3.0 にアップグレードされました</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/%E5%AE%8C%E7%92%A7%E3%81%AA%20Hexo%20%E5%A4%9A%E8%A8%80%E8%AA%9E%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/" target="_self">
+                <span>完璧な Hexo 多言語ソリューション</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Github-%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B"><span class="toc-text">1. Github リポジトリを作成する</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Github-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B"><span class="toc-text">2. Github アプリを追加する</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Web-%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"><span class="toc-text">3. Web ページのコードを取得します。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E3%83%86%E3%83%BC%E3%83%9E%E5%AF%BE%E5%BF%9C%E3%82%A8%E3%83%AA%E3%82%A2%E3%82%92%E6%8C%BF%E5%85%A5"><span class="toc-text">4. テーマ対応エリアを挿入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%89%87"><span class="toc-text">5. 使用原則</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

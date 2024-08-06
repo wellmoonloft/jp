@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Flutter で Nas 音楽プレーヤーを作成する (2) | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Flutter で Nas 音楽プレーヤーを作成する (2)</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2023-01-11 02:36
+      </span>
+      <span class="post-count">≈ 2k字</span>
+      <span class="post-count">≈ 9分</span>
+    </div>
+    <div class="markdown-body"><p><strong>叫んでください！ <strong>ルーティングを通じて部分的なリフレッシュを行いたい場合は、クラッシュを感じる可能性があるため、Flutter の組み込みルーティングを使用しないでください。今日、右側の部分のローカル更新をグローバルルーティングに切り替えたところ、左側と下部の</strong>ウィジェット</strong>を保持したまま動的に更新することができないことがわかり、腹が立って書き直しました。しかし、それは長い時間がかかりました。仕方がないので、モバイル版の調整時に左側を横スライド形式として独立させるために、<strong>ValueNotifier</strong>を使用してルートをハードライトし、現在のハイライトを削除することにしました。主な理由は、<strong>詳細</strong>ページで、上司に追跡することはできますが、それを望むかどうかは関係ないように感じます。 40ポイントのフォントで巨大なタイトルを書いてそこに置いたので、絶対に見逃すことはできません。</p>
+<p>これで、歌手、アルバム、再生に関するすべてのロジックが完成しました。これは、再生されている内容などの便利なクエリ ポイントにすぎません。さらに重要な点が 2 つあります。それは、検索と歌詞です。直接トランスコーディングで従来の検索と簡素化された検索の両方を実現できるかどうかはわかりません。そうでない場合は、API を使用する必要があり、クエリ時間の無駄です。</p>
+<p><img src="https://s2.loli.net/2023/01/10/BCPjVHlazr2mK1R.jpg"></p>
+<h3 id="1-アルバムの滝の流れ"><a href="#1-アルバムの滝の流れ" class="headerlink" title="1. アルバムの滝の流れ"></a>1. アルバムの滝の流れ</h3><p>これは私がずっと望んでいたものです。Jellyfin を使用して以来、すべての映画を無駄に見てきたような気がします。この種のテレビのカーテンウォールはさらにハンサムで、滝の流れ用の既製のホイールもあります [flutter_staggered_grid_view](https: &#x2F;&#x2F;pub.dev &#x2F;packages&#x2F;flutter_staggered_grid_view) の実装は非常に簡単で、<code>pubspec.yaml</code>に追加してから<code>flutter pub get</code>を実行するだけです。</p>
+<p>複数の表示方法をサポートしています。詳しくはホームページを参照してください。ただし、私は、ListView を構築するのと同じように、<code>MasonryGridView</code> を選択しました。ここで定義されています。</p>
+<p><strong>crossAxisCount:</strong> 列の数</p>
+<p><strong>mainAxisSpacing:</strong> 行間隔</p>
+<p><strong>crossAxisSpacing:</strong> 列間隔</p>
+<p><strong>Count</strong> を修正すると、フォームをドラッグすると画像が非常に大きくなり、非常に奇妙になるため、計算することをお勧めします。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//フォームサイズを取得する</span></span><br><span class="line">Size _size = MediaQuery.of(context).size;</span><br><span class="line"><span class="comment">//右側が表示したい部分です。まず幅を計算し、それを表示したい画像の幅で割ります。</span></span><br><span class="line"><span class="built_in">double</span> _rightWidth = (_size.width - <span class="number">160</span>) / <span class="number">180</span>;</span><br><span class="line"><span class="comment">//次に切り捨て</span></span><br><span class="line"><span class="built_in">int</span> _count = _rightWidth.truncate();</span><br></pre></td></tr></table></figure>
+
+<p>このように、フォームをドラッグしても絵の横幅は狭い範囲で変化するだけで、特に誇張することもなく、構成も非常にシンプルです。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MasonryGridView.count(</span><br><span class="line">              crossAxisCount: _count,</span><br><span class="line">              mainAxisSpacing: <span class="number">10</span>,</span><br><span class="line">              crossAxisSpacing: <span class="number">10</span>,</span><br><span class="line">              itemCount: _albums!.length,</span><br><span class="line">              itemBuilder: (context, index) &#123;</span><br><span class="line">                <span class="keyword">return</span> ...</span><br><span class="line">              &#125;</span><br></pre></td></tr></table></figure>
+
+<p>写真と 2 行のテキストなど、<strong>ウィジェット</strong> の組み合わせを内部に封印すると、効果が現れます。</p>
+<p>もちろん画像キャッシュもできるのですが、もともとやりたかったのですが、フォルダに保存するかbase64に変換してデータベースに保存するか迷っていました。</p>
+<p>実際には、<strong>frameBuilder</strong> を使用して、キャッシュを使用しなくても、段階的な表示効果を実現できます。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ClipRRect(</span><br><span class="line">  borderRadius: BorderRadius.circular(<span class="number">15</span>),</span><br><span class="line">  child: Image.network(</span><br><span class="line">    _temURL,</span><br><span class="line">    fit: BoxFit.cover,</span><br><span class="line">    frameBuilder: (context, child, frame,wasSynchronouslyLoaded) &#123;</span><br><span class="line">      <span class="keyword">if</span> (wasSynchronouslyLoaded) &#123;</span><br><span class="line">        <span class="keyword">return</span> child;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> AnimatedSwitcher(</span><br><span class="line">        child: frame != <span class="keyword">null</span></span><br><span class="line">          ? child</span><br><span class="line">          : Image.asset(<span class="string">&quot;assets/images/logo.jpg&quot;</span>),</span><br><span class="line">        duration: <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: <span class="number">2000</span>),</span><br><span class="line">      );</span><br><span class="line">    &#125;,</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-音楽の再生"><a href="#2-音楽の再生" class="headerlink" title="2. 音楽の再生"></a>2. 音楽の再生</h3><p>曲の再生は非常に簡単で、<code>setAudioSource</code> を設定するだけです。問題はプレイリストと、プレイリストを制御するためのボタン操作です。たとえば、前の曲が消えてもボタンがグレーアウトされていない場合、すべての制御は <code>ValueNotifier</code> を使用して実行されます。</p>
+<h4 id="2-1-モニタリング変数を設定する"><a href="#2-1-モニタリング変数を設定する" class="headerlink" title="2.1. モニタリング変数を設定する"></a>2.1. モニタリング変数を設定する</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//現在のリソース ID を監視します。これは音楽の再生だけでなく、歌手の写真などの取得にも使用されます。</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">String</span>&gt; activeSongValue = ValueNotifier&lt;<span class="built_in">String</span>&gt;(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//現在のプレイリストを監視する</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">List</span>&gt; activeList = ValueNotifier&lt;<span class="built_in">List</span>&gt;([]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//現在のソングシーケンスをモニタリングする</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">int</span>&gt; activeIndex = ValueNotifier&lt;<span class="built_in">int</span>&gt;(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//上記と同様に、現在の曲を監視します。これは、曲名、アーティスト名、アルバム名を入力する必要があるため、データベース クエリを保存するためだけに渡されます。それ以外の場合は、これを渡す必要はありません。</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">Map</span>&gt; activeSong = ValueNotifier&lt;<span class="built_in">Map</span>&gt;(<span class="built_in">Map</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">//順序が狂っているかどうかを監視します。これは、トリガーの順序が狂っていることを監視するために使用されます。</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">bool</span>&gt; isShuffleModeEnabledNotifier = ValueNotifier&lt;<span class="built_in">bool</span>&gt;(<span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//最初の曲かどうかを監視する</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">bool</span>&gt; isFirstSongNotifier = ValueNotifier&lt;<span class="built_in">bool</span>&gt;(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//最後の曲かどうかを監視します。これは、エラーの報告を避けるために、前の曲と次の曲のボタンをブロックするためです。</span></span><br><span class="line">ValueNotifier&lt;<span class="built_in">bool</span>&gt; isLastSongNotifier = ValueNotifier&lt;<span class="built_in">bool</span>&gt;(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-トリガー"><a href="#2-2-トリガー" class="headerlink" title="2.2. トリガー"></a>2.2. トリガー</h4><p>曲リスト内の曲をクリックした後、ID、曲リスト、リスト内の現在の曲のインデックスを渡して、マップを閉じます。</p>
+<p>主な目的は、曲の画像 URL を取得することです。これは、元のマップにはありません。サーバー アドレスと ID 情報を含む URL を入力する必要があります。それ以外の場合は、直接使用する方が便利です。ソングインスタンス。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">onTap: () <span class="keyword">async</span> &#123;</span><br><span class="line">  activeSongValue.value = _tem.id;</span><br><span class="line">  <span class="comment">//曲が収録されているアルバム 曲リスト</span></span><br><span class="line">  activeList.value = _songs!;</span><br><span class="line">  <span class="comment">//現在の曲のキュー</span></span><br><span class="line">  activeIndex.value = index;</span><br><span class="line">  <span class="comment">//現在のソングを組み立てる</span></span><br><span class="line">  <span class="built_in">Map</span> _activeSong = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">  <span class="built_in">String</span> _url = <span class="keyword">await</span> getCoverArt(_tem.id);</span><br><span class="line">  _activeSong[<span class="string">&quot;artist&quot;</span>] = _tem.artist;</span><br><span class="line">  _activeSong[<span class="string">&quot;url&quot;</span>] = _url;</span><br><span class="line">  _activeSong[<span class="string">&quot;title&quot;</span>] = _tem.title;</span><br><span class="line">  _activeSong[<span class="string">&quot;album&quot;</span>] = _tem.album;</span><br><span class="line">  activeSong.value = _activeSong;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-プレイリストの受信と生成"><a href="#2-3-プレイリストの受信と生成" class="headerlink" title="2.3. プレイリストの受信と生成"></a>2.3. プレイリストの受信と生成</h4><p>ここで受け取られるのは <code>activeSongValue</code> です。<code>activeList</code> を直接使用しないのはなぜでしょうか。<code>activeList</code> を受け取って現在のリスト内の他の曲をクリックしても、そのデフォルト値は変更されないからです。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ValueListenableBuilder&lt;<span class="built_in">String</span>&gt;(</span><br><span class="line">   valueListenable: activeSongValue,</span><br><span class="line">   builder: ((context, value, child) &#123;</span><br><span class="line">   <span class="keyword">if</span> (value != <span class="string">&quot;1&quot;</span>) &#123;</span><br><span class="line">      setAudioSource();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ...</span><br></pre></td></tr></table></figure>
+
+<p>デフォルト値 <strong>1</strong> の場合は、まだ音楽が選択されていないことを意味します。</p>
+<p>値が変更されたら、プレイリストの生成を開始します</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="keyword">void</span>&gt; setAudioSource() <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="comment">//1. 声明</span></span><br><span class="line">    <span class="keyword">final</span> playlist = ConcatenatingAudioSource(</span><br><span class="line">      useLazyPreparation: <span class="keyword">true</span>,</span><br><span class="line">      shuffleOrder: DefaultShuffleOrder(),</span><br><span class="line">      children: <span class="keyword">await</span> _getPlayList(),</span><br><span class="line">    );</span><br><span class="line">    <span class="comment">//3. プレイリストを追加し、現在再生中の曲を設定します</span></span><br><span class="line">    <span class="keyword">await</span> _player.setAudioSource(playlist,</span><br><span class="line">        initialIndex: activeIndex.value, initialPosition: <span class="built_in">Duration</span>.zero);</span><br><span class="line">    <span class="comment">//4. プレイを開始する</span></span><br><span class="line">    _player.play();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  _getPlayList() <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="built_in">List</span>&lt;AudioSource&gt; children = [];</span><br><span class="line">    <span class="built_in">List</span> _songs = activeList.value;</span><br><span class="line">    把触发的时候传的值拿出来</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> element <span class="keyword">in</span> _songs) &#123;</span><br><span class="line">      Songs _song = element;</span><br><span class="line">      <span class="comment">//2. データベースにアクセスして音楽ファイルのアドレスを入力します。</span></span><br><span class="line">      <span class="built_in">String</span> _url = <span class="keyword">await</span> getSongStreamUrl(_song.id);</span><br><span class="line">      children.add(AudioSource.uri(<span class="built_in">Uri</span>.parse(_url), tag: _song.id)); <span class="comment">//ここでの tag の設定に注意してください。これは、後の監視に使用されます。</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> children;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-再生の変化を監視する"><a href="#2-4-再生の変化を監視する" class="headerlink" title="2.4. 再生の変化を監視する"></a>2.4. 再生の変化を監視する</h4><p>次の曲を再生するときは、曲名やカバーなどの情報を置き換える必要があります。このとき、操作のためにモニタリングを挿入する必要があります。</p>
+<p>Just Audio には、聴くことができるさまざまなイベント ストリームがあります。</p>
+<ul>
+<li><strong>sequenceStream</strong>: これは追加されたシーケンスのプレイリストです。プレイリストが変更されるたびに、新しいリストがここに生成されます。</li>
+<li><strong>shuffleModeEnabledStream</strong>: シャッフル再生のモニタリング、このモードのオンとオフの切り替えはブール値です。</li>
+<li><strong>shuffleIndicesStream</strong>: これは、プレイリスト <code>sequenceStream</code> 内の項目を指す整数のシャッフルされたリストです (それ自体はシャッフルされません)。 <code>shuffle</code>オーディオ プレーヤーでこのメソッドが呼び出されると、ここで新しいリストが生成されます。</li>
+<li><strong>currentIndexStream</strong>: このストリームは、曲が最初に開始されたときに現在の曲のインデックスを通知します。この整数は、プレイリスト内のオーディオ ソース「sequenceStream」を指します。</li>
+<li><strong>loopModeStream</strong>: デフォルトでは、リスト内のすべての曲を一度に再生します。ただし、単一の曲やプレイリストを繰り返すこともできます。これがループ モードです。このストリームは、ループ モードが変更されるたびに新しい値を生成します。</li>
+</ul>
+<p>さて、上記を見てください。監視するには、<strong>sequenceStateStream</strong> を使用します。ここでは、上記の 5 つのストリームのいずれかが新しい値を生成する限り、<code>sequenceStateStream</code> が生成します。結合値型<code>SequenceState</code>、1つは5の価値があるので、とても嬉しいです</p>
+<p>まずこのメソッド呼び出しを <strong>initState</strong> に追加してから…</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> _listenForChangesInSequenceState() &#123;</span><br><span class="line">  <span class="comment">//当</span></span><br><span class="line">  <span class="comment">//播到下一首的时候触发</span></span><br><span class="line">  _player.sequenceStateStream.listen((sequenceState) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="comment">//没东西的时候滚粗</span></span><br><span class="line">    <span class="keyword">if</span> (sequenceState == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 更新当前播放歌曲的信息</span></span><br><span class="line">    <span class="keyword">final</span> currentItem = sequenceState.currentSource;</span><br><span class="line">    <span class="comment">//拿到生成播放列表的时候放到tag里面的id</span></span><br><span class="line">    <span class="keyword">final</span> _title = currentItem?.tag <span class="keyword">as</span> <span class="built_in">String?</span>;</span><br><span class="line">    <span class="comment">//去数据库查资料拿到歌曲信息</span></span><br><span class="line">    <span class="keyword">final</span> _tem = <span class="keyword">await</span> getSong(_title.toString());</span><br><span class="line">    <span class="comment">//更新当前歌曲id</span></span><br><span class="line">    activeSongValue.value = _title.toString();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//拼装当前歌曲</span></span><br><span class="line">    <span class="built_in">Map</span> _activeSong = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="built_in">String</span> _url = <span class="keyword">await</span> getCoverArt(_tem[<span class="string">&quot;id&quot;</span>]);</span><br><span class="line">    _activeSong[<span class="string">&quot;artist&quot;</span>] = _tem[<span class="string">&quot;artist&quot;</span>];</span><br><span class="line">    _activeSong[<span class="string">&quot;url&quot;</span>] = _url;</span><br><span class="line">    _activeSong[<span class="string">&quot;title&quot;</span>] = _tem[<span class="string">&quot;title&quot;</span>];</span><br><span class="line">    _activeSong[<span class="string">&quot;album&quot;</span>] = _tem[<span class="string">&quot;album&quot;</span>];</span><br><span class="line">    activeSong.value = _activeSong;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里监控乱序的，我没用，自己写了一个（主要是先写了乱序的逻辑，后做的播放列表，懒得改了）</span></span><br><span class="line">    <span class="comment">// isShuffleModeEnabledNotifier.value = sequenceState.shuffleModeEnabled;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//拿到播放列表</span></span><br><span class="line">    <span class="keyword">final</span> playlist = sequenceState.effectiveSequence;</span><br><span class="line">    <span class="comment">//判断上一首下一首，然后把值传进去给按钮做状态判断</span></span><br><span class="line">    <span class="keyword">if</span> (playlist.isEmpty || currentItem == <span class="keyword">null</span>) &#123;</span><br><span class="line">      isFirstSongNotifier.value = <span class="keyword">true</span>;</span><br><span class="line">      isLastSongNotifier.value = <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      isFirstSongNotifier.value = playlist.first == currentItem;</span><br><span class="line">      isLastSongNotifier.value = playlist.last == currentItem;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-5-早送りと巻き戻し"><a href="#2-5-早送りと巻き戻し" class="headerlink" title="2.5. 早送りと巻き戻し"></a>2.5. 早送りと巻き戻し</h4><p>実際、プログレスバーがあるので今では多くの人がこの 2 つのボタンをキャンセルしていますが、ボタンは以前に書かれたものなので、そのまま削除するのはもったいないです。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">IconButton(</span><br><span class="line">  icon: <span class="keyword">const</span> Icon(</span><br><span class="line">    Icons.fast_rewind,</span><br><span class="line">    color: kTextColor,</span><br><span class="line">  ),</span><br><span class="line">  onPressed: () &#123;</span><br><span class="line">    <span class="keyword">if</span> (widget.player.position.inSeconds - <span class="number">15</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      widget.player.seek(</span><br><span class="line">          <span class="built_in">Duration</span>(seconds: widget.player.position.inSeconds - <span class="number">15</span>));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+<p>現在のポジションから撤退したいポジションを引いた値が 0 未満の場合は、ここで判断する必要があります。追加しすぎても問題ありません。次の曲。</p>
+<h4 id="2-6-上と下"><a href="#2-6-上と下" class="headerlink" title="2.6. 上と下"></a>2.6. 上と下</h4><p>ここでは、以前に設定した値 <strong>isFirstSongNotifier</strong> と <strong>isLastSongNotifier</strong> を監視する必要があります。フィルタリングがない場合は、最初の曲が再生されたときに次の曲をクリックし、最後の曲が再生されたときにクリックします。次の曲をクリックしてください。問題が発生します。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ValueListenableBuilder&lt;<span class="built_in">bool</span>&gt;(</span><br><span class="line">            valueListenable: isLastSongNotifier,</span><br><span class="line">            builder: (_, isLast, __) &#123;</span><br><span class="line">              <span class="keyword">return</span> IconButton(</span><br><span class="line">                icon: Icon(</span><br><span class="line">                  Icons.skip_next,</span><br><span class="line">                  color: isLast ? badgeDark : kTextColor,</span><br><span class="line">                ),</span><br><span class="line">                onPressed: () &#123;</span><br><span class="line">                  (isLast) ? <span class="keyword">null</span> : widget.player.seekToNext();</span><br><span class="line">                &#125;,</span><br><span class="line">              );</span><br><span class="line">            &#125;),</span><br></pre></td></tr></table></figure>
+
+<p>問題がある場合はボタンをグレーアウトしてonPressedにnullを渡して判断してください。</p>
+<h4 id="2-7-シングルループ、全ループ、シャッフル再生、停止、一時停止"><a href="#2-7-シングルループ、全ループ、シャッフル再生、停止、一時停止" class="headerlink" title="2.7. シングルループ、全ループ、シャッフル再生、停止、一時停止"></a>2.7. シングルループ、全ループ、シャッフル再生、停止、一時停止</h4><p>難しいのは上にあります。すべてを記述した後、ボタン部分は比較的単純です。</p>
+<p><strong>単一サイクル：</strong><code>player.setLoopMode(LoopMode.one);</code></p>
+<p><strong>すべてをループする：</strong><code>player.setLoopMode(LoopMode.all);</code></p>
+<p><strong>順序を外して再生する：</strong> <code>player.setShuffleModeEnabled(true);</code></p>
+<h3 id="3-等幅フォント"><a href="#3-等幅フォント" class="headerlink" title="3. 等幅フォント"></a>3. 等幅フォント</h3><p>曲の進行状況バーの前後に数字が追加されるため、一般的な問題が発生します。つまり、数字が 1 から 0 に変化すると、後続の進行状況バーが移動するため、ここでの数字は固定幅を使用する必要があります。フォント。</p>
+<p>アプリ全体で 2 つのフォントを使用しました。1 つは中国語、日本語、韓国語、英語のフォントをサポートする <strong>NotoSansSC</strong> で、当時設定した Jellyfin のバックアップ フォントからドラッグして使用しました。当時は中国語、日本語、韓国語、英語の字幕を表示するためにも使用されていましたが、ここでも同様に使用できます。</p>
+<p>ただし、このフォントには2つのバージョンがあり、通常版では数字と英語が問題なく表示されるのですが、Mono版では英語と数字が半角で表示されてしまいます。そのため、ヘッドが非常に大きく見えるため、特にプログレスバーの前の数字に使用する Google Fonts の小さな固定幅フォントを見つけました。</p>
+<ol>
+<li>資産の宣言</li>
+</ol>
+<p> または、pubspec.yaml で宣言します。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To add assets to your application, add an assets section, like this:</span></span><br><span class="line"><span class="attr">assets:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">assets/images/</span></span><br><span class="line"><span class="attr">fonts:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">family:</span> <span class="string">NotoSansSC</span></span><br><span class="line">    <span class="attr">fonts:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">asset:</span> <span class="string">assets/fonts/NotoSansSC-Regular.otf</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">family:</span> <span class="string">ChivoMono</span></span><br><span class="line">    <span class="attr">fonts:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">asset:</span> <span class="string">assets/fonts/ChivoMono-Regular.ttf</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>局所使用</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Text(</span><br><span class="line">        formatSongDuration(widget.position),</span><br><span class="line">        style: TextStyle(</span><br><span class="line">            color: borderColor, fontFamily: <span class="string">&#x27;ChivoMono&#x27;</span>, fontSize: <span class="number">12</span>),</span><br><span class="line">      )</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>世界的な使用</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> MaterialApp(</span><br><span class="line">      debugShowCheckedModeBanner: <span class="keyword">false</span>,</span><br><span class="line">      title: <span class="string">&#x27;XiuMusic&#x27;</span>,</span><br><span class="line">      theme: ThemeData(fontFamily: <span class="string">&#x27;NotoSansSC&#x27;</span>),</span><br><span class="line">      home: MainScreen(),</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-やることリスト"><a href="#4-やることリスト" class="headerlink" title="4. やることリスト"></a>4. やることリスト</h3><p>ストレスを感じたときは、コードを書くことで自分自身の緊張を解きほぐすので、急いで終わらせることはありません。ゆっくり時間をかけてください。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/wellmoonloft/xiumusic#todo-list">Todo リスト</a> は Github で直接更新されます</p>
+<p>実際、すでに入手可能になっていますので、興味のある方はぜひプレイしてみてください。<a target="_blank" rel="noopener" href="https://github.com/wellmoonloft/xiumusic">XiuMusic</a></p>
+<p><img src="https://s2.loli.net/2023/01/10/3Wj8w7QfbZJ9N4y.jpg"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(3)/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Flutter で Nas 音楽プレーヤーを作成する (3)</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(1)/" target="_self">
+                <span>Flutter で Nas 音楽プレーヤーを作成する (1)</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0%E3%81%AE%E6%BB%9D%E3%81%AE%E6%B5%81%E3%82%8C"><span class="toc-text">1. アルバムの滝の流れ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9F%B3%E6%A5%BD%E3%81%AE%E5%86%8D%E7%94%9F"><span class="toc-text">2. 音楽の再生</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B"><span class="toc-text">2.1. モニタリング変数を設定する</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC"><span class="toc-text">2.2. トリガー</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E5%8F%97%E4%BF%A1%E3%81%A8%E7%94%9F%E6%88%90"><span class="toc-text">2.3. プレイリストの受信と生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%86%8D%E7%94%9F%E3%81%AE%E5%A4%89%E5%8C%96%E3%82%92%E7%9B%A3%E8%A6%96%E3%81%99%E3%82%8B"><span class="toc-text">2.4. 再生の変化を監視する</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E6%97%A9%E9%80%81%E3%82%8A%E3%81%A8%E5%B7%BB%E3%81%8D%E6%88%BB%E3%81%97"><span class="toc-text">2.5. 早送りと巻き戻し</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E4%B8%8A%E3%81%A8%E4%B8%8B"><span class="toc-text">2.6. 上と下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%AB%E3%83%BC%E3%83%97%E3%80%81%E5%85%A8%E3%83%AB%E3%83%BC%E3%83%97%E3%80%81%E3%82%B7%E3%83%A3%E3%83%83%E3%83%95%E3%83%AB%E5%86%8D%E7%94%9F%E3%80%81%E5%81%9C%E6%AD%A2%E3%80%81%E4%B8%80%E6%99%82%E5%81%9C%E6%AD%A2"><span class="toc-text">2.7. シングルループ、全ループ、シャッフル再生、停止、一時停止</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%AD%89%E5%B9%85%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88"><span class="toc-text">3. 等幅フォント</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8%E3%83%AA%E3%82%B9%E3%83%88"><span class="toc-text">4. やることリスト</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
