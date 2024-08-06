@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Wrong address when using Hexo full text search | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Wrong address when using Hexo full text search</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2021-04-05 20:05
+      </span>
+      <span class="post-count">≈ 459Words</span>
+      <span class="post-count">≈ 2Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<p>Hexo has been set up for 6 days, and it feels very good for normal use. Today, I found a problem. When using full-text search, if your current page is not the homepage, then the searched address is wrong.</p>
+<p>I tracked down the wrong address and found that it was caused by the addition of the current address.</p>
+<p>Take my website as an example, for example, the current address is: <code>https://www.igerm.ee/categories/gossip/</code>, and then I just search for a content</p>
+<p><img src="https://s2.loli.net/2022/12/30/YOvpbAy4B9wah2n.png" alt="image-20210405200959515"></p>
+<p>The actual address of the first article should be: <code>https://www.igerm.ee/2021/04/04/tech/Hexo beautification optimization extreme tracking/</code></p>
+<p>But the address added in the <code>a</code> tag is: <code>https://www.igerm.ee/categories/gossip/2021/04/04/tech/Hexo beautification and optimization to chase points/</code> This makes it impossible to enter the article by clicking the title Page, and entered the 404 page</p>
+<p>Preliminary guess may be caused by the automatic splicing of addresses. Looking at the source code, I believe that if there is no special requirement in the <code>search</code> part, everyone’s source code is copied from the official plug-in <code>demo</code>, then ours should be the same, from the <code>isMatch&#39; </code>Part start:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isMatch) &#123;</span><br><span class="line">   str += <span class="string">&quot;&lt;li&gt;&lt;a href=&#x27;&quot;</span> + <span class="string">&quot;&lt;%- theme.avatar.path %&gt;&quot;</span> + data_url + <span class="string">&quot;&#x27;class=&#x27;search-result-title&#x27;&gt;&quot;</span> + orig_data_title + <span class="string">&quot;&lt;/a&gt; &quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> content = orig_data_content;</span><br><span class="line">   <span class="keyword">if</span> (first_occur &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">   <span class="comment">// cut out 100 characters</span></span><br><span class="line">   <span class="keyword">var</span> start = first_occur-<span class="number">20</span>;</span><br><span class="line">   <span class="keyword">var</span> end = first_occur + <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (start &lt;<span class="number">0</span>) &#123;</span><br><span class="line">      start = <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (start == <span class="number">0</span>) &#123;</span><br><span class="line">      end = <span class="number">100</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (end&gt; content.<span class="property">length</span>) &#123;</span><br><span class="line">      end = content.<span class="property">length</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> match_content = content.<span class="title function_">substr</span>(start, end);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// highlight all keywords</span></span><br><span class="line">   keywords.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">keyword</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> regS = <span class="keyword">new</span> <span class="title class_">RegExp</span>(keyword, <span class="string">&quot;gi&quot;</span>);</span><br><span class="line">      match_content = match_content.<span class="title function_">replace</span>(regS, <span class="string">&quot;&lt;span class=\&quot;search-keyword\&quot;&gt;&quot;</span> + keyword + <span class="string">&quot;&lt;/span&gt;&quot;</span>);</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   str += <span class="string">&quot;&lt;p class=\&quot;search-result-abstract\&quot;&gt;&quot;</span> + match_content + <span class="string">&quot;...&lt;/p&gt;&quot;</span></span><br><span class="line">   &#125;</span><br><span class="line">   str += <span class="string">&quot;&lt;/li&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The <code>str</code> in the second line is where the <code>a</code> tag is output. You can see that I have added <code>&quot;&lt;%- theme.avatar.path %&gt;&quot;</code> in front, because the address in <code>data_url</code> is the address of the article Remove the part of the website address. If you don’t complete the URL in front, then the page will automatically be spliced ​​with the address of the current page, which also caused the error mentioned above. Here I spliced ​​the main address of my own website completely. Then the searched address will be no problem.</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/How-to-use-GitHub-Action-for-automatic-Hexo/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>How to use GitHub Action for automatic Hexo</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Hexo's-beautification-optimization-and-Lighthouse's-ultimate-tracking/" target="_self">
+                <span>Hexo&#39;s beautification, optimization and Lighthouse&#39;s ultimate tracking</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Add utterances comments to hexo | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Add utterances comments to hexo</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2022-12-05 20:29
+      </span>
+      <span class="post-count">≈ 662Words</span>
+      <span class="post-count">≈ 4Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<p>It has been more than a year since I transferred the article to hexo, and it is very smooth to use, but the comment system has not been very satisfactory. I was thinking about it, I am afraid that no one will read this stuff for a few years, because there are a lot of “you know” things written in the essay, so I have no motivation to do SEO, just let it go</p>
+<p>However, there are still some things in the experience sharing, which may be helpful to some people, even if not. In case I want to make some new things one day, I can come back and look through it. After all, I have forgotten a lot of configurations after a long time, and it is very troublesome to search.</p>
+<p>When I came up, I saw one or two people set up according to my operation, which is very good. But some time ago, I changed the structure of the website and changed the code of the home page, which led to a change in the path of experience sharing articles, and the previous comments disappeared. I am a little sorry for others. Moreover, I am not very satisfied with what gitalk, valine, and qisqus are used. Now that github has been prostituted to the end, maybe a warehouse can also realize the comment function. Thinking of this, I searched and found a good thing <a target="_blank" rel="noopener" href="https://utteranc.es/">utteranc</a></p>
+<p>This is a comment function based on the issues of the github warehouse. The principle is very simple, that is, to hang each article in the issues as a question, and then the people behind can comment on this question, and it also supports emoticons. The function is very complete.</p>
+<p>As for some people who don’t have a github account? Those people may not have the need to comment, hahaha</p>
+<h4 id="1-Create-a-Github-warehouse"><a href="#1-Create-a-Github-warehouse" class="headerlink" title="1. Create a Github warehouse"></a>1. Create a Github warehouse</h4><h4 id="2-Add-Github-App"><a href="#2-Add-Github-App" class="headerlink" title="2. Add Github App"></a>2. Add Github App</h4><p>This is mainly used to automatically create an Issue and associate it with the article address according to the rules when others comment. Of course, if you are not at ease, you can build a set of automatic adding programs yourself, it’s just a little troublesome, and it’s not necessary</p>
+<p>Address: <a target="_blank" rel="noopener" href="https://github.com/apps/utterances">https://github.com/apps/utterances</a></p>
+<p>Visit the address, enter the installation page, and click the <code>Install</code> button</p>
+<p><img src="https://s2.loli.net/2022/12/30/Tm9tgsrRMLnu5FC.png" alt="Installation"></p>
+<p>Then select the newly built warehouse and click <code>Install</code></p>
+<h4 id="3-Get-the-web-page-code"><a href="#3-Get-the-web-page-code" class="headerlink" title="3. Get the web page code"></a>3. Get the web page code</h4><p>Enter here<a target="_blank" rel="noopener" href="https://utteranc.es/">utteranc</a>, fill in <strong>Repository</strong> according to the instructions, select the <strong>corresponding method</strong> of the article and Issue (recommended to use the default), <strong>Issue Label</strong> if It is enough to create a new warehouse and leave it blank. If you want to use the original warehouse, you can add a label (no problem if you don’t add it, because there should be less Issues in that warehouse), <strong>Theme</strong> select it, and finally You will see the insertion code in the place of <strong>Enable Utterances</strong>, copy it out</p>
+<p><img src="https://s2.loli.net/2022/12/30/FMfSVsnTocI83kb.jpg" alt="1671016771605"></p>
+<h4 id="4-Insert-the-corresponding-area-of-the-theme"><a href="#4-Insert-the-corresponding-area-of-the-theme" class="headerlink" title="4. Insert the corresponding area of the theme"></a>4. Insert the corresponding area of the theme</h4><p>At present, many themes should have started to support utterances. It doesn’t matter if they don’t support it. Just find the comment area of the original article. There is a separate <code>comments.ejs</code> to manage the place where the Oranges theme inserts comments. Add an open button, and then copy the above code into it, just pass the parameters or something, mainly because of my theme, you may not see the original Oranges after reading the code, it was changed by a pass.. .</p>
+<h4 id="5-Principle-of-use"><a href="#5-Principle-of-use" class="headerlink" title="5. Principle of use"></a>5. Principle of use</h4><p>After deployment, you will see a utterances comment area under each article. It should be noted that there is no Issue associated with this article in the comment library at this time, only the utterances when the first comment is initiated. The github app will help you create a new Issue associated with this article. This is the background logic. For the actual user experience, this step is invisible, enjoy.</p>
+<p><img src="https://s2.loli.net/2022/12/30/F3L8AHW9gKhT5Gf.jpg" alt="1671017518617"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Use-ipv6-and-ddns-to-do-external-access-for-Synology/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Use ipv6 and ddns to do external access for Synology</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/The-perfect-Hexo-multilingual-solution/" target="_self">
+                <span>The perfect Hexo multilingual solution</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Create-a-Github-warehouse"><span class="toc-text">1. Create a Github warehouse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Add-Github-App"><span class="toc-text">2. Add Github App</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Get-the-web-page-code"><span class="toc-text">3. Get the web page code</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Insert-the-corresponding-area-of-the-theme"><span class="toc-text">4. Insert the corresponding area of the theme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Principle-of-use"><span class="toc-text">5. Principle of use</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
