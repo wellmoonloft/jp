@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>nasが使用するSSL証明書をmacで申請する | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">nasが使用するSSL証明書をmacで申請する</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2024-04-13 09:49
+      </span>
+      <span class="post-count">≈ 422字</span>
+      <span class="post-count">≈ 2分</span>
+    </div>
+    <div class="markdown-body"><p>Synology 独自の letsencrypt 証明書アプリケーションは http メソッドを使用するため、diskstation にポート 80 を使用するように要求する必要があります。ただし、ホーム ネットワークはデフォルトでポート 80 を閉じるため、どのように試しても失敗し、使用できるのはポート 80 のみです。ご自身のパソコンに来て応募してください。</p>
+<p>一番面倒なのは3ヶ月ごとに更新する必要があり、毎回これをしなければならないこと…記録しておけば、世界中の注文を探す手間が省けます。</p>
+<p>1.homebrewをインストールする</p>
+<p>2.certbotをインストールする</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install certbot</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>コマンドを実行します。たとえば、ドメイン名は *.example.com です。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --manual --preferred-challenges=dns -d &quot;*.yourdomain.com&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>残りは基本的にデフォルトで y を選択します。次の内容が表示されるまで、ドメイン名解決コンソールで TXT パーサーを追加する必要があります。追加後、約 10 分間待って Enter キーを押して次のステップに進みます。</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Please deploy a DNS TXT record under the name:</span><br><span class="line"></span><br><span class="line">_acme-challenge.example.com.</span><br><span class="line"></span><br><span class="line">with the following value:</span><br><span class="line"></span><br><span class="line">D1kOMANSfZG0HVM6-swGIqHrD87p7LGrnDLmoOclSuw</span><br><span class="line"></span><br><span class="line">Before continuing, verify the TXT record has been deployed. Depending on the DNS</span><br><span class="line">provider, this may take some time, from a few seconds to multiple minutes. You can</span><br><span class="line">check if it has finished deploying with aid of online tools, such as the Google</span><br><span class="line">Admin Toolbox: https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.wangboweb.site.</span><br><span class="line">Look for one or more bolded line(s) below the line &#x27;;ANSWER&#x27;. It should show the</span><br><span class="line">value(s) you&#x27;ve just added.</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>成功すると、次のプロンプトが表示されます。</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Successfully received certificate.</span><br><span class="line">Certificate is saved at: /etc/letsencrypt/live/example.com/fullchain.pem</span><br><span class="line">Key is saved at:         /etc/letsencrypt/live/example.com/privkey.pem</span><br><span class="line">This certificate expires on 2022-12-23.</span><br><span class="line">These files will be updated when the certificate renews.</span><br><span class="line"></span><br><span class="line">NEXT STEPS:</span><br><span class="line">- This certificate will not be renewed automatically. Autorenewal of --manual certificates requires the use of an authentication hook script (--manual-auth-hook) but one was not provided. To renew this certificate, repeat this same certbot command before the certificate&#x27;s expiry date.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">If you like Certbot, please consider supporting our work by:</span><br><span class="line"> * Donating to ISRG / Let&#x27;s Encrypt:   https://letsencrypt.org/donate</span><br><span class="line"> * Donating to EFF:                    https://eff.org/donate-le</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>デフォルトで生成された証明書は <code>/etc/letsencrypt/achive/example.com/</code> ディレクトリにありますが、このディレクトリにはデフォルトでアクセス許可がありません。コピーする必要がある場合は、右クリックするだけで済みます。フォルダーをクリックして、概要を表示し、アクセス許可を設定して、fullchain.pem と privkey.pem の 2 つのファイルをコピーします。</p>
+</li>
+<li><p>Synology-コントロール パネル-セキュリティ-証明書に対応する証明書ファイルをアップロードします。</p>
+</li>
+</ol>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/Esketit%E3%81%AF%E3%82%A2%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%89%E7%99%BA%E3%81%AE%E6%8A%95%E8%B3%87%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Esketitはアイルランド発の投資プラットフォームです</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(4)/" target="_self">
+                <span>Flutter で Nas 音楽プレーヤーを作成する (4)</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

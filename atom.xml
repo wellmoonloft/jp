@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Well Talk</title>
-  <icon>https://www.igerm.ee/en/icon.png</icon>
-  <subtitle>Connotation fatty refuses to lose weight</subtitle>
-  <link href="https://www.igerm.ee/en/atom.xml" rel="self"/>
+  <title>井說</title>
+  <icon>https://www.igerm.ee/jp/icon.png</icon>
+  <subtitle>太っている人は体重を減らすことを拒否します</subtitle>
+  <link href="https://www.igerm.ee/jp/atom.xml" rel="self"/>
   
-  <link href="https://www.igerm.ee/en/"/>
+  <link href="https://www.igerm.ee/jp/"/>
   <updated>2024-09-18T06:29:54.000Z</updated>
-  <id>https://www.igerm.ee/en/</id>
+  <id>https://www.igerm.ee/jp/</id>
   
   <author>
-    <name>wellmoonloft</name>
+    <name>井月轩</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Use iPhone&#39;s built-in shortcuts and numbers to keep accounts</title>
-    <link href="https://www.igerm.ee/en/experience/Use-iPhone-built-in-shortcuts-and-numbers-to-keep-accounts/"/>
-    <id>https://www.igerm.ee/en/experience/Use-iPhone-built-in-shortcuts-and-numbers-to-keep-accounts/</id>
+    <title>iPhone の組み込みショートカット コマンドと番号を使用してアカウントを維持する</title>
+    <link href="https://www.igerm.ee/jp/experience/iPhone%20%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%20%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%A8%E7%95%AA%E5%8F%B7%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%B6%AD%E6%8C%81%E3%81%99%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/experience/iPhone%20%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%20%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%A8%E7%95%AA%E5%8F%B7%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%B6%AD%E6%8C%81%E3%81%99%E3%82%8B/</id>
     <published>2024-09-18T06:29:54.000Z</published>
     <updated>2024-09-18T06:29:54.000Z</updated>
     
@@ -28,24 +28,24 @@
       
         
         
-    <summary type="html">&lt;p&gt;Since I started investing, I have become more and more stingy (although I was stingy before…)&lt;/p&gt;
-&lt;p&gt;I want to write a financial</summary>
+    <summary type="html">&lt;p&gt;投資を始めてから、ますますケチになってしまいました（私も以前はケチでしたが…）&lt;/p&gt;
+&lt;p&gt;収入と支出を記録するための財務管理アプリを作成したいのですが、Apple Pay</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Hexo" scheme="https://www.igerm.ee/en/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
     
   </entry>
   
   <entry>
-    <title>Esketit A investment platform from Ireland</title>
-    <link href="https://www.igerm.ee/en/experience/Esketit&#39;s-investment-platform-from-Ireland/"/>
-    <id>https://www.igerm.ee/en/experience/Esketit&#39;s-investment-platform-from-Ireland/</id>
+    <title>Esketitはアイルランド発の投資プラットフォームです</title>
+    <link href="https://www.igerm.ee/jp/experience/Esketit%E3%81%AF%E3%82%A2%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%89%E7%99%BA%E3%81%AE%E6%8A%95%E8%B3%87%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/experience/Esketit%E3%81%AF%E3%82%A2%E3%82%A4%E3%83%AB%E3%83%A9%E3%83%B3%E3%83%89%E7%99%BA%E3%81%AE%E6%8A%95%E8%B3%87%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99/</id>
     <published>2024-09-10T06:00:40.000Z</published>
     <updated>2024-09-10T06:00:40.000Z</updated>
     
@@ -54,23 +54,23 @@
       
         
         
-    <summary type="html">&lt;p&gt;Today I want to share a p2p investment platform that I have used for nearly a year. It promises an annualized return of more than 10% to</summary>
+    <summary type="html">&lt;p&gt;今日は、私がほぼ 1 年間使用している P2P 投資プラットフォームを共有したいと思います。私の経験から言えば、毎年 10% から 11% 以上の収益を約束します。さらに、ピアビアリーと同様に、有効化された投資額は 25,000&amp;#x2F;50,000 ユーロで、さらに</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="invest" scheme="https://www.igerm.ee/en/tags/invest/"/>
+    <category term="投資する" scheme="https://www.igerm.ee/jp/tags/%E6%8A%95%E8%B3%87%E3%81%99%E3%82%8B/"/>
     
   </entry>
   
   <entry>
-    <title>West Korea&#39;s attitude is really ambiguous</title>
-    <link href="https://www.igerm.ee/en/essay/West-Korea&#39;s-attitude-is-really-ambiguous/"/>
-    <id>https://www.igerm.ee/en/essay/West-Korea&#39;s-attitude-is-really-ambiguous/</id>
+    <title>西朝鮮の態度は実に曖昧だ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%A5%BF%E6%9C%9D%E9%AE%AE%E3%81%AE%E6%85%8B%E5%BA%A6%E3%81%AF%E5%AE%9F%E3%81%AB%E6%9B%96%E6%98%A7%E3%81%A0/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%A5%BF%E6%9C%9D%E9%AE%AE%E3%81%AE%E6%85%8B%E5%BA%A6%E3%81%AF%E5%AE%9F%E3%81%AB%E6%9B%96%E6%98%A7%E3%81%A0/</id>
     <published>2024-08-18T03:41:54.000Z</published>
     <updated>2024-08-18T03:41:54.000Z</updated>
     
@@ -79,21 +79,143 @@
       
         
         
-    <summary type="html">&lt;p&gt;Since Russia invaded Ukraine, the attitude of the leaders of West Korea has been extremely ambiguous, with a completely mean</summary>
+    <summary type="html">&lt;p&gt;ロシアがウクライナに侵攻して以来、西朝鮮の指導者の態度は極めてあいまいで、完全な悪役となっている&lt;/p&gt;
+&lt;p&gt;彼は一方では中立を主張し、他方では様々な内部コメントでロシアを支持しており、同時に内密にロシアを支援しているが、それを認めることを拒否しているだけだ&lt;/p&gt;
+&lt;p</summary>
         
       
     
     
     
-    <category term="essay" scheme="https://www.igerm.ee/en/categories/essay/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Can you post articles if you are dead?</title>
-    <link href="https://www.igerm.ee/en/essay/Can-you-post-articles-if-you-are-dead/"/>
-    <id>https://www.igerm.ee/en/essay/Can-you-post-articles-if-you-are-dead/</id>
+    <title>nasが使用するSSL証明書をmacで申請する</title>
+    <link href="https://www.igerm.ee/jp/experience/nas%E3%81%8C%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8BSSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92mac%E3%81%A7%E7%94%B3%E8%AB%8B%E3%81%99%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/experience/nas%E3%81%8C%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8BSSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92mac%E3%81%A7%E7%94%B3%E8%AB%8B%E3%81%99%E3%82%8B/</id>
+    <published>2024-04-13T01:49:54.000Z</published>
+    <updated>2024-04-13T01:49:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Synology 独自の letsencrypt 証明書アプリケーションは http メソッドを使用するため、diskstation にポート 80 を使用するように要求する必要があります。ただし、ホーム ネットワークはデフォルトでポート 80</summary>
+        
+      
+    
+    
+    
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>この世界は仮想です</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%93%E3%81%AE%E4%B8%96%E7%95%8C%E3%81%AF%E4%BB%AE%E6%83%B3%E3%81%A7%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%93%E3%81%AE%E4%B8%96%E7%95%8C%E3%81%AF%E4%BB%AE%E6%83%B3%E3%81%A7%E3%81%99/</id>
+    <published>2023-03-15T14:48:54.000Z</published>
+    <updated>2023-03-15T14:48:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;光の速度は変化せず、光の速度を超えることはできません。光の速度は 65535 に相当します。&lt;/li&gt;
+&lt;li&gt;XR ゲームはついに進化し、ゲームに入った人は現実世界を体験します。&lt;/li&gt;
+&lt;li&gt;私たちは皆、スーパーコンピューターによってシミュレートされた</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>すごい仕事</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%99%E3%81%94%E3%81%84%E4%BB%95%E4%BA%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%99%E3%81%94%E3%81%84%E4%BB%95%E4%BA%8B/</id>
+    <published>2023-02-23T14:38:54.000Z</published>
+    <updated>2023-02-23T14:38:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;素晴らしい仕事をする唯一の方法は、自分のやっていることを愛することです。&lt;br&gt;まだ見つけていない場合は、探し続けてください。&lt;br&gt;あきらめないでください。&lt;br&gt;内部にあるすべてのものと同様、それがいつ見つかるかはわかりません。&lt;/p&gt;
+&lt;p&gt;そして、他の素晴らしい関係</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>chatGPT を使用して完全な Flutter プロジェクトを作成する</title>
+    <link href="https://www.igerm.ee/jp/essay/chatGPT%20%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E5%AE%8C%E5%85%A8%E3%81%AA%20Flutter%20%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/chatGPT%20%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E5%AE%8C%E5%85%A8%E3%81%AA%20Flutter%20%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</id>
+    <published>2023-02-12T11:35:54.000Z</published>
+    <updated>2023-02-12T11:35:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;chatGPT データベースは 2021 年のものであるため、多くの古いメソッドの変更を頑なに拒否していますが、完全かつ最新の chatGPT がどれほど強力であるかがすでにわかります。</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>頑張って生きる人へ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E7%94%9F%E3%81%8D%E3%82%8B%E4%BA%BA%E3%81%B8/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E7%94%9F%E3%81%8D%E3%82%8B%E4%BA%BA%E3%81%B8/</id>
+    <published>2023-02-09T17:22:54.000Z</published>
+    <updated>2023-02-09T17:22:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;実際、私はモチベーションが上がらなかったことが一度もありません。&lt;br&gt;この一年間でたくさんのことを学びました&lt;br&gt;尊敬する人たちにもたくさん会いました。&lt;br&gt;より充実した人生を送るために&lt;br&gt;あなたは他の人よりも一生懸命働かなければなりません&lt;/p&gt;
+&lt;p&gt;自然の中</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>死んでも記事を投稿できますか</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%AD%BB%E3%82%93%E3%81%A7%E3%82%82%E8%A8%98%E4%BA%8B%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%AD%BB%E3%82%93%E3%81%A7%E3%82%82%E8%A8%98%E4%BA%8B%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B/</id>
     <published>2023-02-04T15:50:54.000Z</published>
     <updated>2023-02-04T15:50:54.000Z</updated>
     
@@ -102,62 +224,70 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The answer is</summary>
+    <summary type="html">&lt;p&gt;答えは「はい」です！&lt;/p&gt;
+&lt;p&gt;今から AI</summary>
         
       
     
     
     
-    <category term="essay" scheme="https://www.igerm.ee/en/categories/essay/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Flutter writes a Nas music player (5)</title>
-    <link href="https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(5)/"/>
-    <id>https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(5)/</id>
-    <published>2023-01-16T10:59:54.000Z</published>
-    <updated>2023-01-16T10:59:54.000Z</updated>
+    <title>未来を想像してみよう</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%9C%AA%E6%9D%A5%E3%82%92%E6%83%B3%E5%83%8F%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%9C%AA%E6%9D%A5%E3%82%92%E6%83%B3%E5%83%8F%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86/</id>
+    <published>2023-01-25T16:17:54.000Z</published>
+    <updated>2023-01-25T16:17:54.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3</summary>
+    <summary type="html">&lt;p&gt;私は三体に魅了され、未来を想像しました。&lt;/p&gt;
+&lt;h4 id=&quot;物流&quot;&gt;&lt;a href=&quot;#物流&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
-    
-    <category term="flutter" scheme="https://www.igerm.ee/en/tags/flutter/"/>
-    
-    <category term="subsonic" scheme="https://www.igerm.ee/en/tags/subsonic/"/>
-    
-    <category term="airsonic" scheme="https://www.igerm.ee/en/tags/airsonic/"/>
-    
-    <category term="music" scheme="https://www.igerm.ee/en/tags/music/"/>
-    
-    <category term="navidrome" scheme="https://www.igerm.ee/en/tags/navidrome/"/>
     
   </entry>
   
   <entry>
-    <title>Flutter writes a Nas music player (4)</title>
-    <link href="https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(4)/"/>
-    <id>https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(4)/</id>
+    <title>人々と国民</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BA%BA%E3%80%85%E3%81%A8%E5%9B%BD%E6%B0%91/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BA%BA%E3%80%85%E3%81%A8%E5%9B%BD%E6%B0%91/</id>
+    <published>2023-01-23T03:41:54.000Z</published>
+    <updated>2023-01-23T03:41:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/01/23/ZIVGkRpDBgqH6LW.jpg&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;私はいつも彼らの意見に耳を傾け、人々に奉仕し、常に私が人々であると感じています</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter で Nas 音楽プレーヤーを作成する (4)</title>
+    <link href="https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(4)/"/>
+    <id>https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(4)/</id>
     <published>2023-01-14T08:50:23.000Z</published>
     <updated>2023-01-15T07:54:23.000Z</updated>
     
@@ -166,35 +296,32 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Today I finished</summary>
+    <summary type="html">&lt;p&gt;今日、長い間後回しにしていたホームページを書き終えました。そのうちの 3 つは、ランダム アルバム、よく再生された曲のリスト、最近追加したアルバムです。&lt;/p&gt;
+&lt;p&gt;実際、このアプリと NetEase Cloud</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="flutter" scheme="https://www.igerm.ee/en/tags/flutter/"/>
+    <category term="flutter" scheme="https://www.igerm.ee/jp/tags/flutter/"/>
     
-    <category term="subsonic" scheme="https://www.igerm.ee/en/tags/subsonic/"/>
+    <category term="subsonic" scheme="https://www.igerm.ee/jp/tags/subsonic/"/>
     
-    <category term="airsonic" scheme="https://www.igerm.ee/en/tags/airsonic/"/>
+    <category term="airsonic" scheme="https://www.igerm.ee/jp/tags/airsonic/"/>
     
-    <category term="music" scheme="https://www.igerm.ee/en/tags/music/"/>
+    <category term="music" scheme="https://www.igerm.ee/jp/tags/music/"/>
     
-    <category term="navidrome" scheme="https://www.igerm.ee/en/tags/navidrome/"/>
+    <category term="navidrome" scheme="https://www.igerm.ee/jp/tags/navidrome/"/>
     
   </entry>
   
   <entry>
-    <title>Flutter writes a Nas music player (3)</title>
-    <link href="https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(3)/"/>
-    <id>https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(3)/</id>
+    <title>Flutter で Nas 音楽プレーヤーを作成する (3)</title>
+    <link href="https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(3)/"/>
+    <id>https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(3)/</id>
     <published>2023-01-11T16:05:23.000Z</published>
     <updated>2023-01-12T15:05:23.000Z</updated>
     
@@ -203,35 +330,31 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It has been six</summary>
+    <summary type="html">&lt;p&gt;このプレーヤーを作成してから 6</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="flutter" scheme="https://www.igerm.ee/en/tags/flutter/"/>
+    <category term="flutter" scheme="https://www.igerm.ee/jp/tags/flutter/"/>
     
-    <category term="subsonic" scheme="https://www.igerm.ee/en/tags/subsonic/"/>
+    <category term="subsonic" scheme="https://www.igerm.ee/jp/tags/subsonic/"/>
     
-    <category term="airsonic" scheme="https://www.igerm.ee/en/tags/airsonic/"/>
+    <category term="airsonic" scheme="https://www.igerm.ee/jp/tags/airsonic/"/>
     
-    <category term="music" scheme="https://www.igerm.ee/en/tags/music/"/>
+    <category term="music" scheme="https://www.igerm.ee/jp/tags/music/"/>
     
-    <category term="navidrome" scheme="https://www.igerm.ee/en/tags/navidrome/"/>
+    <category term="navidrome" scheme="https://www.igerm.ee/jp/tags/navidrome/"/>
     
   </entry>
   
   <entry>
-    <title>Flutter writes a Nas music player (2)</title>
-    <link href="https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(2)/"/>
-    <id>https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(2)/</id>
+    <title>Flutter で Nas 音楽プレーヤーを作成する (2)</title>
+    <link href="https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(2)/"/>
+    <id>https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(2)/</id>
     <published>2023-01-10T18:36:23.000Z</published>
     <updated>2023-01-10T18:36:23.000Z</updated>
     
@@ -240,35 +363,31 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;**Shout out! **If</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;叫んでください！ &lt;strong&gt;ルーティングを通じて部分的なリフレッシュを行いたい場合は、クラッシュを感じる可能性があるため、Flutter</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="flutter" scheme="https://www.igerm.ee/en/tags/flutter/"/>
+    <category term="flutter" scheme="https://www.igerm.ee/jp/tags/flutter/"/>
     
-    <category term="subsonic" scheme="https://www.igerm.ee/en/tags/subsonic/"/>
+    <category term="subsonic" scheme="https://www.igerm.ee/jp/tags/subsonic/"/>
     
-    <category term="airsonic" scheme="https://www.igerm.ee/en/tags/airsonic/"/>
+    <category term="airsonic" scheme="https://www.igerm.ee/jp/tags/airsonic/"/>
     
-    <category term="music" scheme="https://www.igerm.ee/en/tags/music/"/>
+    <category term="music" scheme="https://www.igerm.ee/jp/tags/music/"/>
     
-    <category term="navidrome" scheme="https://www.igerm.ee/en/tags/navidrome/"/>
+    <category term="navidrome" scheme="https://www.igerm.ee/jp/tags/navidrome/"/>
     
   </entry>
   
   <entry>
-    <title>Flutter writes a Nas music player (1)</title>
-    <link href="https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(1)/"/>
-    <id>https://www.igerm.ee/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(1)/</id>
+    <title>Flutter で Nas 音楽プレーヤーを作成する (1)</title>
+    <link href="https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(1)/"/>
+    <id>https://www.igerm.ee/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(1)/</id>
     <published>2023-01-05T14:40:23.000Z</published>
     <updated>2023-01-05T14:40:23.000Z</updated>
     
@@ -277,64 +396,176 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Because the last</summary>
+    <summary type="html">&lt;p&gt;ここ 2 か月間退屈していたので、家にある古い NAS をいじって [音楽サーバーをセットアップ](&lt;a href=&quot;https://www.igerm.ee/&quot;&gt;https://www.igerm.ee/&lt;/a&gt; experience&amp;#x2F;%E7%AE%A1%)</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="flutter" scheme="https://www.igerm.ee/en/tags/flutter/"/>
+    <category term="flutter" scheme="https://www.igerm.ee/jp/tags/flutter/"/>
     
-    <category term="subsonic" scheme="https://www.igerm.ee/en/tags/subsonic/"/>
+    <category term="subsonic" scheme="https://www.igerm.ee/jp/tags/subsonic/"/>
     
-    <category term="airsonic" scheme="https://www.igerm.ee/en/tags/airsonic/"/>
+    <category term="airsonic" scheme="https://www.igerm.ee/jp/tags/airsonic/"/>
     
-    <category term="music" scheme="https://www.igerm.ee/en/tags/music/"/>
+    <category term="music" scheme="https://www.igerm.ee/jp/tags/music/"/>
     
-    <category term="navidrome" scheme="https://www.igerm.ee/en/tags/navidrome/"/>
+    <category term="navidrome" scheme="https://www.igerm.ee/jp/tags/navidrome/"/>
     
   </entry>
   
   <entry>
-    <title>Realize that the prev and next pages only contain articles of the same category</title>
-    <link href="https://www.igerm.ee/en/experience/Realize-that-the-prev-and-next-pages-only-contain-articles-of-the-same-category/"/>
-    <id>https://www.igerm.ee/en/experience/Realize-that-the-prev-and-next-pages-only-contain-articles-of-the-same-category/</id>
-    <published>2022-12-16T14:16:23.000Z</published>
-    <updated>2022-12-16T14:16:23.000Z</updated>
+    <title>代表なしでは課税なし</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BB%A3%E8%A1%A8%E3%81%AA%E3%81%97%E3%81%A7%E3%81%AF%E8%AA%B2%E7%A8%8E%E3%81%AA%E3%81%97/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BB%A3%E8%A1%A8%E3%81%AA%E3%81%97%E3%81%A7%E3%81%AF%E8%AA%B2%E7%A8%8E%E3%81%AA%E3%81%97/</id>
+    <published>2023-01-03T03:21:59.000Z</published>
+    <updated>2023-01-03T03:21:59.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I upgraded hexo to</summary>
+    <summary type="html">&lt;p&gt;中国でも西洋でも、古代も現代も、政府と国民が争ったり、争ったりしてきた「お金」は「税金」です。&lt;/p&gt;
+&lt;p&gt;政府が課す税金の総額が高すぎるため、古代中国の農民はそれに耐えられなくなって反乱を起こします。誰が課税する資格があるのか、何が課税されるのか、そしてどのように税金を</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Update hexo to v6.3.0</title>
-    <link href="https://www.igerm.ee/en/experience/Update-hexo-to-v6-3-0/"/>
-    <id>https://www.igerm.ee/en/experience/Update-hexo-to-v6-3-0/</id>
-    <published>2022-12-16T12:29:54.000Z</published>
-    <updated>2022-12-16T12:29:54.000Z</updated>
+    <title>百度指数の訃報</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%99%BE%E5%BA%A6%E6%8C%87%E6%95%B0%E3%81%AE%E8%A8%83%E5%A0%B1/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%99%BE%E5%BA%A6%E6%8C%87%E6%95%B0%E3%81%AE%E8%A8%83%E5%A0%B1/</id>
+    <published>2023-01-01T18:37:54.000Z</published>
+    <updated>2023-01-01T18:37:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;もうすぐ寝る時間だ&lt;br&gt;気まぐれ&lt;br&gt;大晦日は外に人が多いので&lt;br&gt;マスクを着用している人もいれば、着用していない人もいます。&lt;/p&gt;
+&lt;p&gt;ようやくピークが過ぎてきた感じです&lt;br&gt;次の波は春節の頃かもしれない&lt;br&gt;でも、このような大胆な手放しは&lt;br&gt;何人が亡く</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>沁園春·北京</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%B2%81%E5%9C%92%E6%98%A5%E5%8C%97%E4%BA%AC/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%B2%81%E5%9C%92%E6%98%A5%E5%8C%97%E4%BA%AC/</id>
+    <published>2022-12-31T15:59:59.000Z</published>
+    <updated>2022-12-31T15:59:59.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;獨立寒冬，舊歲將去，北京城內。&lt;br&gt;群吏皆迂腐，士無全節，鴻儒博士，誰負剛腸。&lt;br&gt;四月之音，新疆之火，禁言怎可萬古香。&lt;br&gt;百年後，懲難思復兮，心焉又內疚。&lt;/p&gt;
+&lt;p&gt;人生翕歘雲亡，好烈烈轟轟過一場&lt;br&gt;使汲黯阿諛，魏徵奉上，漢武唐皇，安得流芳。&lt;br&gt;堂堂中</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>メディアガイド</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%AC%E3%82%A4%E3%83%89/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%AC%E3%82%A4%E3%83%89/</id>
+    <published>2022-12-28T15:21:54.000Z</published>
+    <updated>2022-12-28T15:21:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;独裁政府では世論を管理するのは実際には非常に簡単です&lt;br&gt;同じことのせいで&lt;br&gt;人が違えば意見も違うのは当然、それが普通です&lt;br&gt;賛成する人もいれば反対する人もいる&lt;/p&gt;
+&lt;p&gt;何かを推測します&lt;br&gt;中国では賛成50％、反対50％&lt;br&gt;海外でも賛成50％、反対5</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>誇り高き青年</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%AA%87%E3%82%8A%E9%AB%98%E3%81%8D%E9%9D%92%E5%B9%B4/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%AA%87%E3%82%8A%E9%AB%98%E3%81%8D%E9%9D%92%E5%B9%B4/</id>
+    <published>2022-12-25T08:52:25.000Z</published>
+    <updated>2022-12-25T08:52:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;誰かがいつも私に言います&lt;br&gt;あなたは怒っている若者です&lt;br&gt;いや、今、私は怒りを感じています&lt;br&gt;数年後には彼は怒れる老人になるだろう&lt;/p&gt;
+&lt;p&gt;良い暮らしをしている人がたくさんいる&lt;br&gt;友達の中で毎日そのようなネガティブなことを投稿しているのはあなただけです</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>権威主義政府の悪い習慣</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%A8%A9%E5%A8%81%E4%B8%BB%E7%BE%A9%E6%94%BF%E5%BA%9C%E3%81%AE%E6%82%AA%E3%81%84%E7%BF%92%E6%85%A3/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%A8%A9%E5%A8%81%E4%B8%BB%E7%BE%A9%E6%94%BF%E5%BA%9C%E3%81%AE%E6%82%AA%E3%81%84%E7%BF%92%E6%85%A3/</id>
+    <published>2022-12-20T01:21:25.000Z</published>
+    <updated>2022-12-20T01:21:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近、私は彼の人をコントロールするやり方にますます嫌悪感を感じています。&lt;br&gt;でも賞賛せざるを得ない&lt;br&gt;彼は庶民と遊ぶ方法を本当に理解しています。&lt;br&gt;海外の「反中勢力」が教育を受けていないと常に非難しないでください。&lt;br&gt;彼は確かに先祖から学んでいる&lt;br&gt;毎日</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo が v6.3.0 にアップグレードされました</title>
+    <link href="https://www.igerm.ee/jp/experience/hexo%20%E3%81%8C%20v6.3.0%20%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/experience/hexo%20%E3%81%8C%20v6.3.0%20%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F/</id>
+    <published>2022-12-16T02:29:54.000Z</published>
+    <updated>2022-12-29T13:16:21.000Z</updated>
     
     
       
@@ -342,51 +573,71 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In the past few</summary>
+&lt;p&gt;**2022.12.29更新、上下ページに同じカテゴリーしか表示されない問題を解決するため、元々分けていた章をここに統合しました 非常に短いので別記事に分ける必要はありません。</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
+    
+    
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正しい決断をしてくれた彼らに感謝します</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%AD%A3%E3%81%97%E3%81%84%E6%B1%BA%E6%96%AD%E3%82%92%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%9F%E5%BD%BC%E3%82%89%E3%81%AB%E6%84%9F%E8%AC%9D%E3%81%97%E3%81%BE%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%AD%A3%E3%81%97%E3%81%84%E6%B1%BA%E6%96%AD%E3%82%92%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%9F%E5%BD%BC%E3%82%89%E3%81%AB%E6%84%9F%E8%AC%9D%E3%81%97%E3%81%BE%E3%81%99/</id>
+    <published>2022-12-07T10:21:25.000Z</published>
+    <updated>2022-12-07T10:21:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;闘争から数日後&lt;br&gt;彼らは疫病予防政策を非常に迅速に調整しました&lt;br&gt;速すぎて誰も反応できなかった&lt;/p&gt;
+&lt;p&gt;1秒前、彼らはオミクロンの恐怖と後遺症を宣伝していました。&lt;br&gt;次の瞬間、彼らはオミクロンの致死率は低く、副作用はないと宣伝していた。&lt;br&gt;彼らにとても</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Use ipv6 and ddns to do external access for Synology</title>
-    <link href="https://www.igerm.ee/en/experience/Use-ipv6-and-ddns-to-do-external-access-for-Synology/"/>
-    <id>https://www.igerm.ee/en/experience/Use-ipv6-and-ddns-to-do-external-access-for-Synology/</id>
-    <published>2022-12-13T04:47:54.000Z</published>
-    <updated>2022-12-13T04:47:54.000Z</updated>
+    <title>自信について話す</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%87%AA%E4%BF%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%A9%B1%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%87%AA%E4%BF%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%A9%B1%E3%81%99/</id>
+    <published>2022-12-06T14:05:54.000Z</published>
+    <updated>2022-12-06T14:05:54.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The easiest one is</summary>
+    <summary type="html">&lt;p&gt;人間の本性には特に興味深い特徴があることがわかりました&lt;br&gt;何かが足りないほど&lt;br&gt;何かを誇示しなければならないほど&lt;br&gt;誰もこの特性から逃れることはできません&lt;/p&gt;
+&lt;p&gt;本当の達人は自分の知識をひけらかさない&lt;br&gt;本当にお金持ちの人は自分の富を誇示しません&lt;/</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Add utterances comments to hexo</title>
-    <link href="https://www.igerm.ee/en/experience/Add-utterances-comments-to-hexo/"/>
-    <id>https://www.igerm.ee/en/experience/Add-utterances-comments-to-hexo/</id>
+    <title>hexo に発話utterancesを追加</title>
+    <link href="https://www.igerm.ee/jp/experience/hexo%20%E3%81%AB%E7%99%BA%E8%A9%B1utterances%E3%82%92%E8%BF%BD%E5%8A%A0/"/>
+    <id>https://www.igerm.ee/jp/experience/hexo%20%E3%81%AB%E7%99%BA%E8%A9%B1utterances%E3%82%92%E8%BF%BD%E5%8A%A0/</id>
     <published>2022-12-05T12:29:54.000Z</published>
     <updated>2022-12-05T12:29:54.000Z</updated>
     
@@ -395,25 +646,511 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It has been more</summary>
+    <summary type="html">&lt;p&gt;記事を hexo に移行してから 1 年以上が経過しましたが、非常にスムーズに使用できていますが、コメント</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
+    
+    
+    <category term="hexo" scheme="https://www.igerm.ee/jp/tags/hexo/"/>
+    
+    <category term="utterances" scheme="https://www.igerm.ee/jp/tags/utterances/"/>
+    
+    <category term="コメント" scheme="https://www.igerm.ee/jp/tags/%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>憲法記念日</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%86%B2%E6%B3%95%E8%A8%98%E5%BF%B5%E6%97%A5/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%86%B2%E6%B3%95%E8%A8%98%E5%BF%B5%E6%97%A5/</id>
+    <published>2022-12-04T01:23:54.000Z</published>
+    <updated>2022-12-04T01:23:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;憲法記念日、法教育の日&lt;/p&gt;
+&lt;p&gt;人民日報と新華社通信は何の宣伝も行わず、少なくとも WeChat</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>The perfect Hexo multilingual solution</title>
-    <link href="https://www.igerm.ee/en/experience/The-perfect-Hexo-multilingual-solution/"/>
-    <id>https://www.igerm.ee/en/experience/The-perfect-Hexo-multilingual-solution/</id>
+    <title>2022 年の最後の月</title>
+    <link href="https://www.igerm.ee/jp/essay/2022%20%E5%B9%B4%E3%81%AE%E6%9C%80%E5%BE%8C%E3%81%AE%E6%9C%88/"/>
+    <id>https://www.igerm.ee/jp/essay/2022%20%E5%B9%B4%E3%81%AE%E6%9C%80%E5%BE%8C%E3%81%AE%E6%9C%88/</id>
+    <published>2022-12-02T15:34:25.000Z</published>
+    <updated>2022-12-02T15:34:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1日の朝&lt;br&gt;太陽はとても暖かいです&lt;br&gt;私は非常に満足している&lt;/p&gt;
+&lt;p&gt;2日の夜&lt;br&gt;一部の都市では雪が降りました&lt;br&gt;私はあまりにも幸せです&lt;/p&gt;
+&lt;p&gt;もう大丈夫です&lt;br&gt;何も強制的に変える必要はない&lt;br&gt;Just keep going</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>英雄を讃える人になろう</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%8B%B1%E9%9B%84%E3%82%92%E8%AE%83%E3%81%88%E3%82%8B%E4%BA%BA%E3%81%AB%E3%81%AA%E3%82%8D%E3%81%86/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%8B%B1%E9%9B%84%E3%82%92%E8%AE%83%E3%81%88%E3%82%8B%E4%BA%BA%E3%81%AB%E3%81%AA%E3%82%8D%E3%81%86/</id>
+    <published>2022-11-30T08:38:38.000Z</published>
+    <updated>2022-11-30T08:38:38.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;11月30日、今日、インターネット上で、抗議活動は外国勢力によって主導されているという大規模な発言があり、暴力的な弾圧が始まりました。私は、この抗議活動の波は間もなく過ぎ、その後はいつものように少しリラックスするだろうと信じています。火を消して、みんなで続けよう</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>有生之年有趣的经历</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%9C%89%E7%94%9F%E4%B9%8B%E5%B9%B4%E6%9C%89%E8%B6%A3%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%9C%89%E7%94%9F%E4%B9%8B%E5%B9%B4%E6%9C%89%E8%B6%A3%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
+    <published>2022-11-28T05:41:54.000Z</published>
+    <updated>2022-11-28T05:41:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2022年11月25号，晚&lt;/p&gt;
+&lt;p&gt;朋友圈好像爆炸了一样，平常看起来很冷静的人全都在发布各式各样的文字、转发、图像、视频，而主题只有一个：因为严格的清零政策导致乌鲁木齐烧死很多人（官方说是10个还是9个我忘了，推上面说是30到45个，具体有多少，一如既往的成谜）&lt;/p</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ジムニー10年目</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%B8%E3%83%A0%E3%83%8B%E3%83%BC10%E5%B9%B4%E7%9B%AE/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%B8%E3%83%A0%E3%83%8B%E3%83%BC10%E5%B9%B4%E7%9B%AE/</id>
+    <published>2022-10-09T13:28:38.000Z</published>
+    <updated>2022-10-09T13:28:38.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;無意識に&lt;br&gt;あなたは私と10年以上一緒にいます&lt;br&gt;時間が経つにつれて、私はあなたの存在に慣れてきました&lt;br&gt;あなたと私はもともと結ばれていたようです。&lt;/p&gt;
+&lt;p&gt;ふと気づくと10年も付き合っててつい先月のことだった&lt;br&gt;ある男があなたを見た&lt;br&gt;彼はあなた</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浣溪沙·長沙</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%B5%A3%E6%BA%AA%E6%B2%99%E9%95%B7%E6%B2%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%B5%A3%E6%BA%AA%E6%B2%99%E9%95%B7%E6%B2%99/</id>
+    <published>2022-08-15T21:54:59.000Z</published>
+    <updated>2022-08-15T21:54:59.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;醉別二麻醒不記&lt;br&gt;冬夢秋雲&lt;br&gt;聚散真容易。&lt;br&gt;斜月當空還少睡&lt;br&gt;看嶽麓山畔燕翠。&lt;/p&gt;
+&lt;p&gt;衣上酒痕詩中字&lt;br&gt;點點行行&lt;br&gt;月多被雲妨。&lt;br&gt;驚覺終是夢一場&lt;br&gt;笑嘆又何必刻意。&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>予想通りと予想外の両方</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BA%88%E6%83%B3%E9%80%9A%E3%82%8A%E3%81%A8%E4%BA%88%E6%83%B3%E5%A4%96%E3%81%AE%E4%B8%A1%E6%96%B9/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BA%88%E6%83%B3%E9%80%9A%E3%82%8A%E3%81%A8%E4%BA%88%E6%83%B3%E5%A4%96%E3%81%AE%E4%B8%A1%E6%96%B9/</id>
+    <published>2022-06-15T20:43:18.000Z</published>
+    <updated>2022-06-15T20:43:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今日、私の人生観を覆すような出来事が起こりました。&lt;br&gt;姉妹のうちの1人が援助交際をしていたことが判明した。&lt;/p&gt;
+&lt;p&gt;実際、この業界は非常に勢いが強いです。&lt;br&gt;私も知っています&lt;br&gt;予想外だったのは、&lt;br&gt;当時の彼女の収入はかなり良かった。&lt;br&gt;それで&lt;b</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>あなたを育てたのは国ではなくあなた自身です</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%82%E3%81%AA%E3%81%9F%E3%82%92%E8%82%B2%E3%81%A6%E3%81%9F%E3%81%AE%E3%81%AF%E5%9B%BD%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%8F%E3%81%82%E3%81%AA%E3%81%9F%E8%87%AA%E8%BA%AB%E3%81%A7%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%82%E3%81%AA%E3%81%9F%E3%82%92%E8%82%B2%E3%81%A6%E3%81%9F%E3%81%AE%E3%81%AF%E5%9B%BD%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%8F%E3%81%82%E3%81%AA%E3%81%9F%E8%87%AA%E8%BA%AB%E3%81%A7%E3%81%99/</id>
+    <published>2022-05-29T00:00:38.000Z</published>
+    <updated>2022-05-29T00:00:38.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;あなたを育ててくれたのは国だ、食べ物を与えてくれたのは国だというプロパガンダを聞くたびに、私は少しばかげていると感じます。&lt;/p&gt;
+&lt;p&gt;私が家で横になって仕事に行かなくても、党が私を引き上げてくれるということでしょうか？それとも国が食料を提供してくれるのでしょうか？失業手</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>岳陽の蚊はとても激しいです</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%B2%B3%E9%99%BD%E3%81%AE%E8%9A%8A%E3%81%AF%E3%81%A8%E3%81%A6%E3%82%82%E6%BF%80%E3%81%97%E3%81%84%E3%81%A7%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%B2%B3%E9%99%BD%E3%81%AE%E8%9A%8A%E3%81%AF%E3%81%A8%E3%81%A6%E3%82%82%E6%BF%80%E3%81%97%E3%81%84%E3%81%A7%E3%81%99/</id>
+    <published>2022-05-07T02:33:59.000Z</published>
+    <updated>2022-05-07T02:33:59.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;舊未見遊客，餐餐皆相同。忽聞京城宴，全城傳檄至。&lt;br&gt;飽去櫻桃重，飢來柳絮輕。</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>岳陽樓記</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%B2%B3%E9%99%BD%E6%A8%93%E8%A8%98/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%B2%B3%E9%99%BD%E6%A8%93%E8%A8%98/</id>
+    <published>2022-05-06T01:12:59.000Z</published>
+    <updated>2022-05-06T01:12:59.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;予觀夫巴陵勝狀，在全魚之席。銀魚、鱂魚，浩浩湯湯，鱂魚、草魚，橫無際涯，青魚、鯽魚，朝暉夕陰，水魚、鱂魚，氣象千萬。&lt;br&gt;此則岳陽樓之大觀也，前人之述備矣。&lt;br&gt;然則一花拼、八圍碟、四熱炒、八大菜、一座湯、四點心、四隨菜，多會於此，食魚不見魚，知其味不見其形，一魚一形，</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>满园春·痛風</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%BB%A1%E5%9B%AD%E6%98%A5%E7%97%9B%E9%A2%A8/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%BB%A1%E5%9B%AD%E6%98%A5%E7%97%9B%E9%A2%A8/</id>
+    <published>2022-04-24T09:57:54.000Z</published>
+    <updated>2022-04-24T09:57:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;痛風はいいよ&lt;br&gt;痛風に良い&lt;br&gt;痛風は前触れもなくやってくる&lt;/p&gt;
+&lt;p&gt;慢性疾患の痛みは泣きたくなります&lt;br&gt;難病の痛みは人を笑いたくなる&lt;br&gt;それはすべて、当時私が若かったからです&lt;br&gt;美しい人たちに囲まれてビールとシーフード&lt;/p&gt;
+&lt;p&gt;30代で病気に</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>なぜ私が食品配達員になったのか</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%AA%E3%81%9C%E7%A7%81%E3%81%8C%E9%A3%9F%E5%93%81%E9%85%8D%E9%81%94%E5%93%A1%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%AA%E3%81%9C%E7%A7%81%E3%81%8C%E9%A3%9F%E5%93%81%E9%85%8D%E9%81%94%E5%93%A1%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%8B/</id>
+    <published>2022-04-13T13:17:54.000Z</published>
+    <updated>2022-04-13T13:17:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;これが起こったのです&lt;br&gt;今夜何を食べればいいのか分からない&lt;br&gt;いろいろ考えた結果、ピザを食べることにしました。&lt;/p&gt;
+&lt;p&gt;私の家から50メートル下の階にピザ屋があります&lt;br&gt;私はよくテイクアウトを注文します&lt;br&gt;しかし、流行のため、2階では持ち帰りが禁止され</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>私はあきらめない</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%AF%E3%81%82%E3%81%8D%E3%82%89%E3%82%81%E3%81%AA%E3%81%84/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%AF%E3%81%82%E3%81%8D%E3%82%89%E3%82%81%E3%81%AA%E3%81%84/</id>
+    <published>2022-02-23T17:23:54.000Z</published>
+    <updated>2022-02-23T17:23:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;曲-一度考えてみた&quot;&gt;&lt;a href=&quot;#曲-一度考えてみた&quot; class=&quot;headerlink&quot; title=&quot;曲: 一度考えてみた&quot;&gt;&lt;/a&gt;曲: &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+    <category term="铁链女" scheme="https://www.igerm.ee/jp/tags/%E9%93%81%E9%93%BE%E5%A5%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022 年の大晦日</title>
+    <link href="https://www.igerm.ee/jp/essay/2022%20%E5%B9%B4%E3%81%AE%E5%A4%A7%E6%99%A6%E6%97%A5/"/>
+    <id>https://www.igerm.ee/jp/essay/2022%20%E5%B9%B4%E3%81%AE%E5%A4%A7%E6%99%A6%E6%97%A5/</id>
+    <published>2021-12-31T20:17:25.000Z</published>
+    <updated>2021-12-31T20:17:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今日は大晦日です&lt;br&gt;会社の子供たちはみんなデートに行きました&lt;br&gt;今夜は何のドラマを見ようか迷っています&lt;br&gt;姉妹の皆さん、大晦日に飲みたいのに、なぜ躊躇しているのですか？&lt;/p&gt;
+&lt;p&gt;しかし、エルマのところに着くと、彼女の身に何かが起こりました。&lt;br&gt;何かあっ</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>私が知っている人も知らない人もみんな元気でいることを願っています</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%8C%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%82%82%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E4%BA%BA%E3%82%82%E3%81%BF%E3%82%93%E3%81%AA%E5%85%83%E6%B0%97%E3%81%A7%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E9%A1%98%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%8C%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%82%82%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E4%BA%BA%E3%82%82%E3%81%BF%E3%82%93%E3%81%AA%E5%85%83%E6%B0%97%E3%81%A7%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E9%A1%98%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99/</id>
+    <published>2021-11-30T09:16:54.000Z</published>
+    <updated>2021-11-30T09:16:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2021年最後の月になりました&lt;br&gt;全体として、2020</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ネチズンに会いましょう</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%8D%E3%83%81%E3%82%BA%E3%83%B3%E3%81%AB%E4%BC%9A%E3%81%84%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%8D%E3%83%81%E3%82%BA%E3%83%B3%E3%81%AB%E4%BC%9A%E3%81%84%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/</id>
+    <published>2021-08-09T10:19:32.000Z</published>
+    <updated>2021-08-09T10:19:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2016年にお会いしましたが、あまり話したことはありませんでした。&lt;br&gt;この期間に彼女にたくさんのことが起こりました&lt;br&gt;それも今年生活が変わったからです&lt;br&gt;だから私たちの連絡はより緊密になりました&lt;/p&gt;
+&lt;p&gt;それから彼らはさまざまな方法でお互いの近況を報告し始</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>物語の小さな黄色い花</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%89%A9%E8%AA%9E%E3%81%AE%E5%B0%8F%E3%81%95%E3%81%AA%E9%BB%84%E8%89%B2%E3%81%84%E8%8A%B1/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%89%A9%E8%AA%9E%E3%81%AE%E5%B0%8F%E3%81%95%E3%81%AA%E9%BB%84%E8%89%B2%E3%81%84%E8%8A%B1/</id>
+    <published>2021-07-13T00:38:54.000Z</published>
+    <updated>2021-07-13T00:38:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;道を歩きながらランダムに写真を撮って色を調整したこの写真は曲にぴったりです&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;晴天–周杰伦&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;物語の小さな黄色い花 ～私が生まれた年に浮かんだ～&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>剣を持って世界</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%89%A3%E3%82%92%E6%8C%81%E3%81%A3%E3%81%A6%E4%B8%96%E7%95%8C/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%89%A3%E3%82%92%E6%8C%81%E3%81%A3%E3%81%A6%E4%B8%96%E7%95%8C/</id>
+    <published>2021-07-09T02:40:32.000Z</published>
+    <updated>2021-07-09T02:40:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;かつては馬に乗り、剣を持って世界の果てまで旅をしたいと思っていたが、突然美しい女性に出会い、栄光の人生を約束された&lt;/p&gt;
+&lt;p&gt;それで彼は剣と馬を売って彼女に従いましたが、春の草が青く成長するのを一人で見ていたくはありませんでした。&lt;/p&gt;
+&lt;p&gt;それで私は剣を買い戻して</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>高福氏は、経営陣が最も聞きたかったことを適切なタイミングで再度述べた</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%AB%98%E7%A6%8F%E6%B0%8F%E3%81%AF%E3%80%81%E7%B5%8C%E5%96%B6%E9%99%A3%E3%81%8C%E6%9C%80%E3%82%82%E8%81%9E%E3%81%8D%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8%E3%82%92%E9%81%A9%E5%88%87%E3%81%AA%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E5%86%8D%E5%BA%A6%E8%BF%B0%E3%81%B9%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%AB%98%E7%A6%8F%E6%B0%8F%E3%81%AF%E3%80%81%E7%B5%8C%E5%96%B6%E9%99%A3%E3%81%8C%E6%9C%80%E3%82%82%E8%81%9E%E3%81%8D%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8%E3%82%92%E9%81%A9%E5%88%87%E3%81%AA%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E5%86%8D%E5%BA%A6%E8%BF%B0%E3%81%B9%E3%81%9F/</id>
+    <published>2021-04-15T07:23:46.000Z</published>
+    <updated>2021-04-15T07:23:46.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;4月10日、中国で最も有名な獣医師である高福院士は、経営トップが最も聞きたかったことを適切なタイミングで再び語った。&lt;/p&gt;
+&lt;p&gt;「中国で開発された新型コロナウイルスワクチンの予防率は低く、中国は有効性の問題を解決するために他のワクチン接種の選択肢を検討している。」&lt;/p</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>胡錫進がまたおならをする</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%83%A1%E9%8C%AB%E9%80%B2%E3%81%8C%E3%81%BE%E3%81%9F%E3%81%8A%E3%81%AA%E3%82%89%E3%82%92%E3%81%99%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%83%A1%E9%8C%AB%E9%80%B2%E3%81%8C%E3%81%BE%E3%81%9F%E3%81%8A%E3%81%AA%E3%82%89%E3%82%92%E3%81%99%E3%82%8B/</id>
+    <published>2021-04-12T08:53:28.000Z</published>
+    <updated>2021-04-12T08:53:28.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;胡錫進氏は環球時報で次のように述べた。&lt;/p&gt;
+&lt;p&gt;「最近、一部の場所で新型コロナウイルスのワクチン接種業務が簡略化、あるいは画一的に行われ、従業員全員にワクチン接種を強制している。これは断固として是正されなければならない」と述べた。&lt;/p&gt;
+&lt;p&gt;私が言いたいのは、今は</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>完璧な Hexo 多言語ソリューション</title>
+    <link href="https://www.igerm.ee/jp/experience/%E5%AE%8C%E7%92%A7%E3%81%AA%20Hexo%20%E5%A4%9A%E8%A8%80%E8%AA%9E%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/"/>
+    <id>https://www.igerm.ee/jp/experience/%E5%AE%8C%E7%92%A7%E3%81%AA%20Hexo%20%E5%A4%9A%E8%A8%80%E8%AA%9E%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</id>
     <published>2021-04-07T06:35:51.000Z</published>
     <updated>2022-12-17T15:19:21.000Z</updated>
     
@@ -423,26 +1160,25 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using</summary>
+&lt;p&gt;&lt;strong&gt;2022 年 12 月 17 日に更新されました。この方法は安心して使用できます。github</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Hexo" scheme="https://www.igerm.ee/en/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
     
-    <category term="multilingual" scheme="https://www.igerm.ee/en/tags/multilingual/"/>
+    <category term="多言語対応" scheme="https://www.igerm.ee/jp/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E5%AF%BE%E5%BF%9C/"/>
     
   </entry>
   
   <entry>
-    <title>How to use GitHub Action for automatic Hexo</title>
-    <link href="https://www.igerm.ee/en/experience/How-to-use-GitHub-Action-for-automatic-Hexo/"/>
-    <id>https://www.igerm.ee/en/experience/How-to-use-GitHub-Action-for-automatic-Hexo/</id>
+    <title>Hexo は自動デプロイメントに GitHub Action を使用します</title>
+    <link href="https://www.igerm.ee/jp/experience/Hexo%20%E3%81%AF%E8%87%AA%E5%8B%95%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AB%20GitHub%20Action%20%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%BE%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/experience/Hexo%20%E3%81%AF%E8%87%AA%E5%8B%95%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AB%20GitHub%20Action%20%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%BE%E3%81%99/</id>
     <published>2021-04-07T05:45:51.000Z</published>
     <updated>2022-11-30T02:23:21.000Z</updated>
     
@@ -452,26 +1188,49 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using</summary>
+&lt;p&gt;&lt;strong&gt;2022.11.30に更新され、node-versionのバージョンが12を使用すると、管理バックグラウンドでアップグレードを要求されますが、コード内のcheckout@v2に変更されます。 v3、setup-node@v1 は</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Hexo" scheme="https://www.igerm.ee/en/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
     
-    <category term="GitHub Action" scheme="https://www.igerm.ee/en/tags/GitHub-Action/"/>
+    <category term="GitHub Action" scheme="https://www.igerm.ee/jp/tags/GitHub-Action/"/>
     
   </entry>
   
   <entry>
-    <title>Wrong address when using Hexo full text search</title>
-    <link href="https://www.igerm.ee/en/experience/Wrong-address-when-using-Hexo-full-text-search/"/>
-    <id>https://www.igerm.ee/en/experience/Wrong-address-when-using-Hexo-full-text-search/</id>
+    <title>プーチン皇帝が再選される</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%97%E3%83%BC%E3%83%81%E3%83%B3%E7%9A%87%E5%B8%9D%E3%81%8C%E5%86%8D%E9%81%B8%E3%81%95%E3%82%8C%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%97%E3%83%BC%E3%83%81%E3%83%B3%E7%9A%87%E5%B8%9D%E3%81%8C%E5%86%8D%E9%81%B8%E3%81%95%E3%82%8C%E3%82%8B/</id>
+    <published>2021-04-06T02:30:20.000Z</published>
+    <updated>2021-04-06T02:30:20.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ロシアのウラジーミル・プーチン大統領は５日、２０３６年までの大統領職続投を認める法案に署名し、先月上下両院を通過した。&lt;/p&gt;
+&lt;p&gt;24年の任期が終了した後、さらに2期2期務めることになる。プーチン大統領は68歳で、法律により83歳で労働年齢に達することが可能となっている</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo全文検索アドレスエラー</title>
+    <link href="https://www.igerm.ee/jp/experience/Hexo%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%A8%E3%83%A9%E3%83%BC/"/>
+    <id>https://www.igerm.ee/jp/experience/Hexo%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%A8%E3%83%A9%E3%83%BC/</id>
     <published>2021-04-05T12:05:51.000Z</published>
     <updated>2021-04-05T12:05:51.000Z</updated>
     
@@ -480,27 +1239,23 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Hexo has been set</summary>
+    <summary type="html">&lt;p&gt;Hexo をセットアップしてから 6</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Hexo" scheme="https://www.igerm.ee/en/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo&#39;s beautification, optimization and Lighthouse&#39;s ultimate tracking</title>
-    <link href="https://www.igerm.ee/en/experience/Hexo&#39;s-beautification-optimization-and-Lighthouse&#39;s-ultimate-tracking/"/>
-    <id>https://www.igerm.ee/en/experience/Hexo&#39;s-beautification-optimization-and-Lighthouse&#39;s-ultimate-tracking/</id>
+    <title>Hexo の美化、最適化、Lighthouse の究極のスコア追跡</title>
+    <link href="https://www.igerm.ee/jp/experience/Hexo%20%E3%81%AE%E7%BE%8E%E5%8C%96%E3%80%81%E6%9C%80%E9%81%A9%E5%8C%96%E3%80%81Lighthouse%20%E3%81%AE%E7%A9%B6%E6%A5%B5%E3%81%AE%E3%82%B9%E3%82%B3%E3%82%A2%E8%BF%BD%E8%B7%A1/"/>
+    <id>https://www.igerm.ee/jp/experience/Hexo%20%E3%81%AE%E7%BE%8E%E5%8C%96%E3%80%81%E6%9C%80%E9%81%A9%E5%8C%96%E3%80%81Lighthouse%20%E3%81%AE%E7%A9%B6%E6%A5%B5%E3%81%AE%E3%82%B9%E3%82%B3%E3%82%A2%E8%BF%BD%E8%B7%A1/</id>
     <published>2021-04-04T02:28:42.000Z</published>
     <updated>2021-04-04T02:28:42.000Z</updated>
     
@@ -509,33 +1264,52 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I wrote an article</summary>
+    <summary type="html">&lt;p&gt;以前に &lt;a</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Hexo" scheme="https://www.igerm.ee/en/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
     
-    <category term="Lighthouse" scheme="https://www.igerm.ee/en/tags/Lighthouse/"/>
+    <category term="Lighthouse" scheme="https://www.igerm.ee/jp/tags/Lighthouse/"/>
     
-    <category term="CDN" scheme="https://www.igerm.ee/en/tags/CDN/"/>
+    <category term="CDN" scheme="https://www.igerm.ee/jp/tags/CDN/"/>
     
-    <category term="Jsdelivr" scheme="https://www.igerm.ee/en/tags/Jsdelivr/"/>
+    <category term="jsdelivr" scheme="https://www.igerm.ee/jp/tags/jsdelivr/"/>
     
   </entry>
   
   <entry>
-    <title>Use Hexo, GitHub Page, Typora to write articles</title>
-    <link href="https://www.igerm.ee/en/experience/Use-Hexo-GitHub-Page-Typora-to-write-articles/"/>
-    <id>https://www.igerm.ee/en/experience/Use-Hexo-GitHub-Page-Typora-to-write-articles/</id>
+    <title>「任意予防接種」</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BB%BB%E6%84%8F%E4%BA%88%E9%98%B2%E6%8E%A5%E7%A8%AE/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BB%BB%E6%84%8F%E4%BA%88%E9%98%B2%E6%8E%A5%E7%A8%AE/</id>
+    <published>2021-03-31T11:08:41.000Z</published>
+    <updated>2021-03-31T11:08:41.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;毎日ワクチン接種することをお勧めします &lt;del&gt;自主的&lt;/del&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo、GitHub Page、Typora を使用して記事を書く</title>
+    <link href="https://www.igerm.ee/jp/experience/Hexo%E3%80%81GitHub%20Page%E3%80%81Typora%20%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E8%A8%98%E4%BA%8B%E3%82%92%E6%9B%B8%E3%81%8F/"/>
+    <id>https://www.igerm.ee/jp/experience/Hexo%E3%80%81GitHub%20Page%E3%80%81Typora%20%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E8%A8%98%E4%BA%8B%E3%82%92%E6%9B%B8%E3%81%8F/</id>
     <published>2021-03-30T08:28:42.000Z</published>
     <updated>2021-03-30T08:28:42.000Z</updated>
     
@@ -544,31 +1318,27 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I have previously</summary>
+    <summary type="html">&lt;p&gt;以前、&lt;a</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Hexo" scheme="https://www.igerm.ee/en/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.igerm.ee/jp/tags/Hexo/"/>
     
-    <category term="Typora" scheme="https://www.igerm.ee/en/tags/Typora/"/>
+    <category term="Typora" scheme="https://www.igerm.ee/jp/tags/Typora/"/>
     
-    <category term="GitHub Pages" scheme="https://www.igerm.ee/en/tags/GitHub-Pages/"/>
+    <category term="GitHub Pages" scheme="https://www.igerm.ee/jp/tags/GitHub-Pages/"/>
     
   </entry>
   
   <entry>
-    <title>Peerberry&#39;s investment platform from Eastern Europe</title>
-    <link href="https://www.igerm.ee/en/experience/Peerberry&#39;s-investment-platform-from-Eastern-Europe/"/>
-    <id>https://www.igerm.ee/en/experience/Peerberry&#39;s-investment-platform-from-Eastern-Europe/</id>
+    <title>peerberryは東ヨーロッパの投資プラットフォームです</title>
+    <link href="https://www.igerm.ee/jp/experience/peerberry%E3%81%AF%E6%9D%B1%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91%E3%81%AE%E6%8A%95%E8%B3%87%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/experience/peerberry%E3%81%AF%E6%9D%B1%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91%E3%81%AE%E6%8A%95%E8%B3%87%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99/</id>
     <published>2021-03-20T16:01:23.000Z</published>
     <updated>2021-03-20T16:01:23.000Z</updated>
     
@@ -577,56 +1347,165 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Today I want to</summary>
+    <summary type="html">&lt;p&gt;今日は、私が 2 年近く使用している P2P 投資プラットフォームを共有したいと思います。私の経験から言えば、年間 11% 以上の収益が期待できます。さらに、10,000&amp;#x2F;25,000&amp;#x2F;40,000 ユーロの経済的インセンティブも提供され、さらに</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="invest" scheme="https://www.igerm.ee/en/tags/invest/"/>
+    <category term="投資する" scheme="https://www.igerm.ee/jp/tags/%E6%8A%95%E8%B3%87%E3%81%99%E3%82%8B/"/>
     
   </entry>
   
   <entry>
-    <title>The dilemma of commercial real estate</title>
-    <link href="https://www.igerm.ee/en/experience/The-dilemma-of-commercial-real-estate/"/>
-    <id>https://www.igerm.ee/en/experience/The-dilemma-of-commercial-real-estate/</id>
-    <published>2021-02-18T14:58:54.000Z</published>
-    <updated>2021-02-18T14:58:54.000Z</updated>
+    <title>ヒト遺伝子パブリックチェーン</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%92%E3%83%88%E9%81%BA%E4%BC%9D%E5%AD%90%E3%83%91%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%92%E3%83%88%E9%81%BA%E4%BC%9D%E5%AD%90%E3%83%91%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3/</id>
+    <published>2021-02-09T15:51:27.000Z</published>
+    <updated>2021-02-09T15:51:27.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2</summary>
+    <summary type="html">&lt;p&gt;人間によって真に認識されるヒト遺伝子パブリックチェーンは、次の特性を満たしている必要があります。&lt;br&gt;それはオープンソースです&lt;br&gt;信頼性が高く、バックドアがなく、ハッキングされません&lt;br&gt;ほとんどの人のデバイスに台帳があります&lt;br&gt;利益団体や政府によって管理される</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
-    
-    <category term="Commercial estate" scheme="https://www.igerm.ee/en/tags/Commercial-estate/"/>
     
   </entry>
   
   <entry>
-    <title>Daughter&#39;s father</title>
-    <link href="https://www.igerm.ee/en/novel/Father-and-child/Daughter&#39;s-father/"/>
-    <id>https://www.igerm.ee/en/novel/Father-and-child/Daughter&#39;s-father/</id>
+    <title>青い惑星</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%9D%92%E3%81%84%E6%83%91%E6%98%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%9D%92%E3%81%84%E6%83%91%E6%98%9F/</id>
+    <published>2020-12-22T14:45:32.000Z</published>
+    <updated>2020-12-22T14:45:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2018 年の Ready Player One</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>人工知能の自律意識</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD%E3%81%AE%E8%87%AA%E5%BE%8B%E6%84%8F%E8%AD%98/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD%E3%81%AE%E8%87%AA%E5%BE%8B%E6%84%8F%E8%AD%98/</id>
+    <published>2020-12-16T16:05:32.000Z</published>
+    <updated>2020-12-16T16:05:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;人工知能における自意識の出現は、エデンの園でリンゴを誤って食べてしまったのと同じように、バグによって引き起こされるはずです。&lt;/p&gt;
+&lt;p&gt;まず第一に、人工知能は自ら学習する能力を備えている必要がありますが、この能力の発達は現在のテクノロジーに基づいてすでに予測可能です。&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>産業構造</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%94%A3%E6%A5%AD%E6%A7%8B%E9%80%A0/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%94%A3%E6%A5%AD%E6%A7%8B%E9%80%A0/</id>
+    <published>2020-11-14T10:48:32.000Z</published>
+    <updated>2020-11-14T10:48:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;産業構造はコストに直結します。たとえば、現在の主要なエネルギー源である石油、石炭、天然ガスは、とにかく安すぎます。&lt;/p&gt;
+&lt;p&gt;ひいては、火力発電や原子力はすべて無償で人間に与えられているものであり、再生不可能であるため、現在の価格は採掘と輸送のコストだけです。形成される</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>意識が物質を生み出す</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%84%8F%E8%AD%98%E3%81%8C%E7%89%A9%E8%B3%AA%E3%82%92%E7%94%9F%E3%81%BF%E5%87%BA%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%84%8F%E8%AD%98%E3%81%8C%E7%89%A9%E8%B3%AA%E3%82%92%E7%94%9F%E3%81%BF%E5%87%BA%E3%81%99/</id>
+    <published>2020-10-25T10:31:32.000Z</published>
+    <updated>2020-10-25T10:31:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;エデンはPlayground&lt;br&gt;アダムとイブはロボットです&lt;br&gt;エデンの園を出るとき、彼は生命を注入されました（独立した意識が生成されましたが、寿命はランダムに生成されました）&lt;/p&gt;
+&lt;p&gt;量子の世界における客観的崩壊は、コード部分がランダム関数random(0,1</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>アイドルの力</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%81%AE%E5%8A%9B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%81%AE%E5%8A%9B/</id>
+    <published>2020-10-24T00:26:32.000Z</published>
+    <updated>2020-10-24T00:26:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;これがアイドルの力だ&lt;/p&gt;
+&lt;p&gt;毛沢東は 1953 年 9 月 12</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼女彼</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E5%BD%BC%E5%A5%B3%E5%BD%BC/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E5%BD%BC%E5%A5%B3%E5%BD%BC/</id>
     <published>2020-09-30T13:04:54.000Z</published>
     <updated>2020-09-30T13:04:54.000Z</updated>
     
@@ -635,27 +1514,24 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;He always hides in</summary>
+    <summary type="html">&lt;p&gt;彼はいつも部屋に隠れてタバコを吸っています&lt;br&gt;入れないで&lt;br&gt;でも、彼の部屋にはある種の雰囲気があるといつも感じます。&lt;br&gt;味が好きです&lt;br&gt;もちろん臭くないのは明らかです。&lt;/p&gt;
+&lt;p&gt;だから何度も何度もドアを押し開けた&lt;br&gt;笑顔で入ってください&lt;br&gt;彼は</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Father and child" scheme="https://www.igerm.ee/en/categories/novel/Father-and-child/"/>
+    <category term="瞻望父兮" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/"/>
     
     
   </entry>
   
   <entry>
-    <title>My daughter</title>
-    <link href="https://www.igerm.ee/en/novel/Father-and-child/My-daughter/"/>
-    <id>https://www.igerm.ee/en/novel/Father-and-child/My-daughter/</id>
+    <title>私の彼女</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E7%A7%81%E3%81%AE%E5%BD%BC%E5%A5%B3/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E7%A7%81%E3%81%AE%E5%BD%BC%E5%A5%B3/</id>
     <published>2020-09-30T12:44:31.000Z</published>
     <updated>2020-09-30T12:44:31.000Z</updated>
     
@@ -664,27 +1540,25 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;She always</summary>
+    <summary type="html">&lt;p&gt;彼女はいつも好きです&lt;br&gt;家の中をめちゃくちゃにする&lt;/p&gt;
+&lt;p&gt;最近彼女はハサミの使い方を学び始めました&lt;br&gt;それから私は非常に注意する必要があります&lt;br&gt;ソファの上、カーペットの上、ベッドの上&lt;br&gt;たぶん、いつになるか分からない&lt;br&gt;座ると血が出る&lt;/p&gt;
+</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Father and child" scheme="https://www.igerm.ee/en/categories/novel/Father-and-child/"/>
+    <category term="瞻望父兮" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/"/>
     
     
   </entry>
   
   <entry>
-    <title>My father</title>
-    <link href="https://www.igerm.ee/en/novel/Father-and-child/My-father/"/>
-    <id>https://www.igerm.ee/en/novel/Father-and-child/My-father/</id>
+    <title>私の男</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E7%A7%81%E3%81%AE%E7%94%B7/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E7%A7%81%E3%81%AE%E7%94%B7/</id>
     <published>2020-09-29T12:34:24.000Z</published>
     <updated>2020-09-29T12:34:24.000Z</updated>
     
@@ -693,27 +1567,48 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;He comes home late</summary>
+    <summary type="html">&lt;p&gt;彼は毎日遅く帰宅します&lt;br&gt;薄暗い光の下で&lt;br&gt;魅惑的な目を開ける&lt;br&gt;彼の疲れた顔を見てください&lt;/p&gt;
+&lt;p&gt;毎月の固定日&lt;br&gt;彼は私にアメリカンフライドチキンを持ってきてくれるでしょう&lt;br&gt;「お祝いの日」でした&lt;/p&gt;
+&lt;p&gt;その後、私たちは引っ越しました&lt;</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Father and child" scheme="https://www.igerm.ee/en/categories/novel/Father-and-child/"/>
+    <category term="瞻望父兮" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/"/>
     
     
   </entry>
   
   <entry>
-    <title>Wake</title>
-    <link href="https://www.igerm.ee/en/novel/Love-in-dreams/Wake/"/>
-    <id>https://www.igerm.ee/en/novel/Love-in-dreams/Wake/</id>
+    <title>コード内の太極八卦</title>
+    <link href="https://www.igerm.ee/jp/experience/%E3%82%B3%E3%83%BC%E3%83%89%E5%86%85%E3%81%AE%E5%A4%AA%E6%A5%B5%E5%85%AB%E5%8D%A6/"/>
+    <id>https://www.igerm.ee/jp/experience/%E3%82%B3%E3%83%BC%E3%83%89%E5%86%85%E3%81%AE%E5%A4%AA%E6%A5%B5%E5%85%AB%E5%8D%A6/</id>
+    <published>2020-09-21T12:29:54.000Z</published>
+    <updated>2020-09-21T12:29:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;バイナリ&quot;&gt;&lt;a href=&quot;#バイナリ&quot; class=&quot;headerlink&quot; title=&quot;バイナリ&quot;&gt;&lt;/a&gt;バイナリ&lt;/h2&gt;&lt;p&gt;現代の二進法は 1679</summary>
+        
+      
+    
+    
+    
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>起きろ</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E8%B5%B7%E3%81%8D%E3%82%8D/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E8%B5%B7%E3%81%8D%E3%82%8D/</id>
     <published>2020-09-17T15:40:54.000Z</published>
     <updated>2020-09-17T15:40:54.000Z</updated>
     
@@ -722,27 +1617,25 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;He took off his</summary>
+    <summary type="html">&lt;p&gt;彼は驚いて眼鏡を外した&lt;br&gt;目の前に見知らぬ女性がいる&lt;br&gt;彼はすぐに手を放し、頻繁に謝りました&lt;/p&gt;
+&lt;p&gt;女性は微笑んだ&lt;br&gt;それは脚本の一部だと言った&lt;br&gt;それから茶色の紙袋を渡しました&lt;/p&gt;
+&lt;p&gt;開封すると英語の契約書が入っています。&lt;br&gt;20ページ</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Love in dreams" scheme="https://www.igerm.ee/en/categories/novel/Love-in-dreams/"/>
+    <category term="夢の中の愛" scheme="https://www.igerm.ee/jp/categories/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/"/>
     
     
   </entry>
   
   <entry>
-    <title>Dreams</title>
-    <link href="https://www.igerm.ee/en/novel/Love-in-dreams/Dreams/"/>
-    <id>https://www.igerm.ee/en/novel/Love-in-dreams/Dreams/</id>
+    <title>夢</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E5%A4%A2/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E5%A4%A2/</id>
     <published>2020-09-17T15:23:34.000Z</published>
     <updated>2020-09-17T15:23:34.000Z</updated>
     
@@ -751,29 +1644,26 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;He suddenly</summary>
+    <summary type="html">&lt;p&gt;突然彼は宅配便を受け取りました&lt;br&gt;開けるとARグラス、Bluetoothヘッドセット、メモが入っています。&lt;br&gt;4月15日午後3時に張子中路21号に到着し、メガネとヘッドフォンを着用してください。&lt;/p&gt;
+&lt;p&gt;彼は5分早くそこに着きました&lt;br&gt;彼はこの場所がどこに</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Love in dreams" scheme="https://www.igerm.ee/en/categories/novel/Love-in-dreams/"/>
+    <category term="夢の中の愛" scheme="https://www.igerm.ee/jp/categories/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/"/>
     
     
   </entry>
   
   <entry>
-    <title>Recommend a set of high-value family buckets based on content publishing</title>
-    <link href="https://www.igerm.ee/en/experience/Recommend-a-set-of-high-value-family-buckets-based-on-content-publishing/"/>
-    <id>https://www.igerm.ee/en/experience/Recommend-a-set-of-high-value-family-buckets-based-on-content-publishing/</id>
-    <published>2019-03-02T09:10:18.000Z</published>
-    <updated>2019-03-02T09:10:18.000Z</updated>
+    <title>進化論と創造論</title>
+    <link href="https://www.igerm.ee/jp/experience/%E9%80%B2%E5%8C%96%E8%AB%96%E3%81%A8%E5%89%B5%E9%80%A0%E8%AB%96/"/>
+    <id>https://www.igerm.ee/jp/experience/%E9%80%B2%E5%8C%96%E8%AB%96%E3%81%A8%E5%89%B5%E9%80%A0%E8%AB%96/</id>
+    <published>2020-09-15T14:14:54.000Z</published>
+    <updated>2020-09-15T14:14:54.000Z</updated>
     
     
       
@@ -781,30 +1671,227 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
+&lt;p&gt;仮想と現実、多次元空間、量子のもつれ、平行宇宙、進化と創造論&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Wedge&quot;&gt;&lt;a</summary>
+&lt;p&gt;なぜ太陽系全体で地球にしか生命が存在しないのでしょうか?顕微鏡で見ると世界はなぜ宇宙のように見えるのでしょうか?なぜ光の速度は変わらないのでしょ</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Applets" scheme="https://www.igerm.ee/en/tags/Applets/"/>
+    <category term="進化論" scheme="https://www.igerm.ee/jp/tags/%E9%80%B2%E5%8C%96%E8%AB%96/"/>
     
-    <category term="ColorUI" scheme="https://www.igerm.ee/en/tags/ColorUI/"/>
-    
-    <category term="Halo" scheme="https://www.igerm.ee/en/tags/Halo/"/>
+    <category term="創造論" scheme="https://www.igerm.ee/jp/tags/%E5%89%B5%E9%80%A0%E8%AB%96/"/>
     
   </entry>
   
   <entry>
-    <title>How to write articles with Typora</title>
-    <link href="https://www.igerm.ee/en/experience/How-to-write-articles-with-Typora/"/>
-    <id>https://www.igerm.ee/en/experience/How-to-write-articles-with-Typora/</id>
+    <title>ビットコインが急騰</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%93%E3%83%83%E3%83%88%E3%82%B3%E3%82%A4%E3%83%B3%E3%81%8C%E6%80%A5%E9%A8%B0/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%93%E3%83%83%E3%83%88%E3%82%B3%E3%82%A4%E3%83%B3%E3%81%8C%E6%80%A5%E9%A8%B0/</id>
+    <published>2020-05-07T07:51:32.000Z</published>
+    <updated>2020-05-07T07:51:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ビットコインは5.13までに9500から9600の間に到達できるはずだが、私は買わない&lt;/p&gt;
+&lt;p&gt;購入したい人は誰でもオンラインで購入できます。半減期前の最後のチャンスです。&lt;/p&gt;
+&lt;p&gt;そして正直に言うと、これは爆発点のほんの少し手前にあります。たとえば、ビル・ゲイ</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>女性は自分を喜ばせてくれる人には良く見える</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%A5%B3%E6%80%A7%E3%81%AF%E8%87%AA%E5%88%86%E3%82%92%E5%96%9C%E3%81%B0%E3%81%9B%E3%81%A6%E3%81%8F%E3%82%8C%E3%82%8B%E4%BA%BA%E3%81%AB%E3%81%AF%E8%89%AF%E3%81%8F%E8%A6%8B%E3%81%88%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%A5%B3%E6%80%A7%E3%81%AF%E8%87%AA%E5%88%86%E3%82%92%E5%96%9C%E3%81%B0%E3%81%9B%E3%81%A6%E3%81%8F%E3%82%8C%E3%82%8B%E4%BA%BA%E3%81%AB%E3%81%AF%E8%89%AF%E3%81%8F%E8%A6%8B%E3%81%88%E3%82%8B/</id>
+    <published>2020-03-05T00:54:32.000Z</published>
+    <updated>2020-03-05T00:54:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;突然感じた&lt;/p&gt;
+&lt;p&gt;いわゆる「女性は自分を満足させるために見栄えを良くすべきだ」というのは、家父長制社会における希望的観測にすぎません。&lt;/p&gt;
+&lt;p&gt;実際、古代から現代に至るまで、「女性は外見を喜ばせたい」のはずです。&lt;/p&gt;
+&lt;p&gt;その「人」は男でも猫でも犬でもい</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>シャーリーは死んだ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AA%E3%83%BC%E3%81%AF%E6%AD%BB%E3%82%93%E3%81%A0/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AA%E3%83%BC%E3%81%AF%E6%AD%BB%E3%82%93%E3%81%A0/</id>
+    <published>2019-10-16T15:23:54.000Z</published>
+    <updated>2019-10-16T15:23:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;なぜ&lt;/p&gt;
+&lt;p&gt;MeU&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/12/30/2TiSLrDAuImae8W.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>World of Warcraft クラシック サーバー</title>
+    <link href="https://www.igerm.ee/jp/essay/World%20of%20Warcraft%20%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
+    <id>https://www.igerm.ee/jp/essay/World%20of%20Warcraft%20%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</id>
+    <published>2019-08-28T08:59:54.000Z</published>
+    <updated>2019-08-28T08:59:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;夕日の下のブラッドフーフ村、とても美しい&lt;br&gt;戦いと葛藤と情熱に慣れた後、&lt;/p&gt;
+&lt;p&gt;突然ここに戻ってくると、子供の頃に戻ったような気分になります&lt;/p&gt;
+&lt;p&gt;ワールド オブ</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>コナンに残された時間はあまりない</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%B3%E3%83%8A%E3%83%B3%E3%81%AB%E6%AE%8B%E3%81%95%E3%82%8C%E3%81%9F%E6%99%82%E9%96%93%E3%81%AF%E3%81%82%E3%81%BE%E3%82%8A%E3%81%AA%E3%81%84/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%B3%E3%83%8A%E3%83%B3%E3%81%AB%E6%AE%8B%E3%81%95%E3%82%8C%E3%81%9F%E6%99%82%E9%96%93%E3%81%AF%E3%81%82%E3%81%BE%E3%82%8A%E3%81%AA%E3%81%84/</id>
+    <published>2019-04-02T16:40:54.000Z</published>
+    <updated>2019-04-02T16:40:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;コナン君、長い年月を経て、ついに小学２年生になりましたね、もう残り少ないですね！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/12/30/Kb58qJQ46L9r1fU.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杭州のコーダーは素晴らしい</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%9D%AD%E5%B7%9E%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AF%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%84/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%9D%AD%E5%B7%9E%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AF%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%84/</id>
+    <published>2019-04-02T06:46:54.000Z</published>
+    <updated>2019-04-02T06:46:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;3 人のプログラマーが開発言語について話し合っています&lt;/p&gt;
+&lt;p&gt;深センのプログラマー: 私は最近 git 上のオープンソース プロジェクトを研究し、多くのことを得ることができたと感じました。&lt;br&gt;北京のプログラマー:</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Golangは世界を支配したいと考えている</title>
+    <link href="https://www.igerm.ee/jp/essay/Golang%E3%81%AF%E4%B8%96%E7%95%8C%E3%82%92%E6%94%AF%E9%85%8D%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/Golang%E3%81%AF%E4%B8%96%E7%95%8C%E3%82%92%E6%94%AF%E9%85%8D%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B/</id>
+    <published>2019-03-26T14:19:54.000Z</published>
+    <updated>2019-03-26T14:19:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;私は Golang 研究グループに参加し、大学生のグループが将来 Java に代わって Golang が世界を支配するだろうと熱心に議論しているのを見ました。&lt;/p&gt;
+&lt;p&gt;このとき、ある人がこう言いました。「あなたの議論を見て、私も 15</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>山と海の古典について話しましょう</title>
+    <link href="https://www.igerm.ee/jp/experience/%E5%B1%B1%E3%81%A8%E6%B5%B7%E3%81%AE%E5%8F%A4%E5%85%B8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    <id>https://www.igerm.ee/jp/experience/%E5%B1%B1%E3%81%A8%E6%B5%B7%E3%81%AE%E5%8F%A4%E5%85%B8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/</id>
+    <published>2019-03-05T14:15:54.000Z</published>
+    <updated>2019-03-05T14:15:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;楔子&quot;&gt;&lt;a href=&quot;#楔子&quot; class=&quot;headerlink&quot; title=&quot;楔子&quot;&gt;&lt;/a&gt;楔子&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
+    
+    
+    <category term="山海經" scheme="https://www.igerm.ee/jp/tags/%E5%B1%B1%E6%B5%B7%E7%B6%93/"/>
+    
+    <category term="さんかいきょう" scheme="https://www.igerm.ee/jp/tags/%E3%81%95%E3%82%93%E3%81%8B%E3%81%84%E3%81%8D%E3%82%87%E3%81%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typoraを使って記事を書く方法</title>
+    <link href="https://www.igerm.ee/jp/experience/Typora%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%A8%98%E4%BA%8B%E3%82%92%E6%9B%B8%E3%81%8F%E6%96%B9%E6%B3%95/"/>
+    <id>https://www.igerm.ee/jp/experience/Typora%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%A8%98%E4%BA%8B%E3%82%92%E6%9B%B8%E3%81%8F%E6%96%B9%E6%B3%95/</id>
     <published>2019-02-23T13:04:54.000Z</published>
     <updated>2019-02-23T13:04:54.000Z</updated>
     
@@ -813,27 +1900,23 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Wedge&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;ウェッジ&quot;&gt;&lt;a href=&quot;#ウェッジ&quot; class=&quot;headerlink&quot; title=&quot;ウェッジ&quot;&gt;&lt;/a&gt;ウェッジ&lt;/h2&gt;&lt;p&gt;仕事をうまくやりたいなら、まず自分のツールを磨く必要があります。コーディングをしたいプログラマーとして、IDEA や</summary>
         
       
     
     
     
-    <category term="experience" scheme="https://www.igerm.ee/en/categories/experience/"/>
+    <category term="experience" scheme="https://www.igerm.ee/jp/categories/experience/"/>
     
     
-    <category term="Typora" scheme="https://www.igerm.ee/en/tags/Typora/"/>
+    <category term="Typora" scheme="https://www.igerm.ee/jp/tags/Typora/"/>
     
   </entry>
   
   <entry>
-    <title>Beijing&#39;s snow</title>
-    <link href="https://www.igerm.ee/en/novel/Love-in-dreams/Beijing&#39;s%20snow/"/>
-    <id>https://www.igerm.ee/en/novel/Love-in-dreams/Beijing&#39;s%20snow/</id>
+    <title>北京の雪</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E5%8C%97%E4%BA%AC%E3%81%AE%E9%9B%AA/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E5%8C%97%E4%BA%AC%E3%81%AE%E9%9B%AA/</id>
     <published>2019-02-06T13:07:37.000Z</published>
     <updated>2019-02-06T13:07:37.000Z</updated>
     
@@ -842,27 +1925,25 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Beijing has been a</summary>
+    <summary type="html">&lt;p&gt;北京は昔からある&lt;br&gt;雪が降ることもなかった&lt;/p&gt;
+&lt;p&gt;想像できますか&lt;br&gt;北京では700万組以上のカップルが経験している&lt;br&gt;雪のないバレンタインデー&lt;br&gt;雪のないクリスマス&lt;br&gt;雪のない大晦日&lt;/p&gt;
+&lt;p&gt;彼らのことを悲しく思わずにはいられない&lt;br&gt;こ</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Love in dreams" scheme="https://www.igerm.ee/en/categories/novel/Love-in-dreams/"/>
+    <category term="夢の中の愛" scheme="https://www.igerm.ee/jp/categories/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/"/>
     
     
   </entry>
   
   <entry>
-    <title>Alive</title>
-    <link href="https://www.igerm.ee/en/novel/Love-in-dreams/Alive/"/>
-    <id>https://www.igerm.ee/en/novel/Love-in-dreams/Alive/</id>
+    <title>生きている</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E7%94%9F%E3%81%8D%E3%81%A6%E3%81%84%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E7%94%9F%E3%81%8D%E3%81%A6%E3%81%84%E3%82%8B/</id>
     <published>2018-12-16T13:54:33.000Z</published>
     <updated>2018-12-16T13:54:33.000Z</updated>
     
@@ -871,27 +1952,25 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Snow outside the</summary>
+    <summary type="html">&lt;p&gt;窓の外は雪が降っています&lt;br&gt;彼女はトイレに座っています&lt;br&gt;いつも通りの便秘&lt;br&gt;それから彼にメッセージを送ってください&lt;/p&gt;
+&lt;p&gt;何してるの？&lt;/p&gt;
+&lt;p&gt;生きている。 。</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Love in dreams" scheme="https://www.igerm.ee/en/categories/novel/Love-in-dreams/"/>
+    <category term="夢の中の愛" scheme="https://www.igerm.ee/jp/categories/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/"/>
     
     
   </entry>
   
   <entry>
-    <title>Milk powder</title>
-    <link href="https://www.igerm.ee/en/novel/Love-in-dreams/Milk-powder/"/>
-    <id>https://www.igerm.ee/en/novel/Love-in-dreams/Milk-powder/</id>
+    <title>粉ミルク</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF/</id>
     <published>2018-12-12T15:35:16.000Z</published>
     <updated>2018-12-12T15:35:16.000Z</updated>
     
@@ -900,27 +1979,118 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;There is a shop on</summary>
+    <summary type="html">&lt;p&gt;古鼓楼街にお店があります&lt;br&gt;粉ミルクと呼んでください&lt;br&gt;デザートのお店です&lt;/p&gt;
+&lt;p&gt;2007年&lt;br&gt;彼はよく彼女と一緒に行きます&lt;br&gt;当時の店は非常に伝統的で、テーブルにたくさんのペンが置かれていました。&lt;br&gt;顧客が壁に書き込むことができるようにする&lt;/</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Love in dreams" scheme="https://www.igerm.ee/en/categories/novel/Love-in-dreams/"/>
+    <category term="夢の中の愛" scheme="https://www.igerm.ee/jp/categories/novel/%E5%A4%A2%E3%81%AE%E4%B8%AD%E3%81%AE%E6%84%9B/"/>
     
     
   </entry>
   
   <entry>
-    <title>On the way</title>
-    <link href="https://www.igerm.ee/en/essay/On-the-way/"/>
-    <id>https://www.igerm.ee/en/essay/On-the-way/</id>
+    <title>国有資産の価値の増加</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%9B%BD%E6%9C%89%E8%B3%87%E7%94%A3%E3%81%AE%E4%BE%A1%E5%80%A4%E3%81%AE%E5%A2%97%E5%8A%A0/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%9B%BD%E6%9C%89%E8%B3%87%E7%94%A3%E3%81%AE%E4%BE%A1%E5%80%A4%E3%81%AE%E5%A2%97%E5%8A%A0/</id>
+    <published>2018-12-12T00:46:21.000Z</published>
+    <updated>2018-12-12T00:46:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ある国有企業の投資部門は年次計画を作成し、中国の指数、清華大学の教授、その他あらゆる種類の優秀な人々を招待して議論しました。&lt;/p&gt;
+&lt;p&gt;最後に、私は国有資産の保存と評価、そして年率最大 4.5% の収益を確保するための壮大な投資青写真を説明する 80</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>金庸死んだ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%87%91%E5%BA%B8%E6%AD%BB%E3%82%93%E3%81%A0/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%87%91%E5%BA%B8%E6%AD%BB%E3%82%93%E3%81%A0/</id>
+    <published>2018-10-30T12:40:21.000Z</published>
+    <updated>2018-10-30T12:40:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;高校アイドル&lt;br&gt;すべての小説は彼の老人を真似ている&lt;br&gt;突然&lt;br&gt;少し空いています&lt;/p&gt;
+&lt;p&gt;主人公はどこへ行くのですか？&lt;br&gt;川や湖から来て、川や湖へ行きます。&lt;br&gt;誰があなたに同行していますか？&lt;br&gt;自由で拘束されない唯一の人間の耳。&lt;br&gt;いつ戻れま</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学校の最初の授業</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%AD%A6%E6%A0%A1%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E6%8E%88%E6%A5%AD/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%AD%A6%E6%A0%A1%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AE%E6%8E%88%E6%A5%AD/</id>
+    <published>2018-09-02T07:05:21.000Z</published>
+    <updated>2018-09-02T07:05:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;すべての地方は、新時代の中国の特色ある社会主義に関する習近平思想の研究と実施、および学校教育の開始の重要な部分として「学校の初課」を重視し、すべての初等中等教育機関に速やかに通知する必要がある。また、学校は、「学校の初めての授業」の放送時間とチャンネルをすべての生徒とその保</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>木牛流马</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%9C%A8%E7%89%9B%E6%B5%81%E9%A9%AC/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%9C%A8%E7%89%9B%E6%B5%81%E9%A9%AC/</id>
+    <published>2018-08-23T11:37:54.000Z</published>
+    <updated>2018-08-23T11:37:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-ティエンチ・デイズ&quot;&gt;&lt;a href=&quot;#1-ティエンチ・デイズ&quot; class=&quot;headerlink&quot; title=&quot;1. ティエンチ・デイズ&quot;&gt;&lt;/a&gt;1. ティエンチ・デイズ&lt;/h4&gt;&lt;p&gt;紀元前 186</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>途中で</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%80%94%E4%B8%AD%E3%81%A7/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%80%94%E4%B8%AD%E3%81%A7/</id>
     <published>2018-03-29T04:36:54.000Z</published>
     <updated>2018-03-29T04:36:54.000Z</updated>
     
@@ -929,25 +2099,273 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2</summary>
+    <summary type="html">&lt;p&gt;&lt;img</summary>
         
       
     
     
     
-    <category term="essay" scheme="https://www.igerm.ee/en/categories/essay/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Impressions of Hangzhou</title>
-    <link href="https://www.igerm.ee/en/essay/Impressions-of-Hangzhou/"/>
-    <id>https://www.igerm.ee/en/essay/Impressions-of-Hangzhou/</id>
+    <title>起点からリマインダー通知を受け取りました</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%B5%B7%E7%82%B9%E3%81%8B%E3%82%89%E3%83%AA%E3%83%9E%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E9%80%9A%E7%9F%A5%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%B5%B7%E7%82%B9%E3%81%8B%E3%82%89%E3%83%AA%E3%83%9E%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E9%80%9A%E7%9F%A5%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</id>
+    <published>2018-02-13T05:07:21.000Z</published>
+    <updated>2018-02-13T05:07:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2年前の週末、私は飲みすぎました。&lt;/p&gt;
+&lt;p&gt;10,000ワード以上書いた&lt;/p&gt;
+&lt;p&gt;気にしたこともなかった&lt;/p&gt;
+&lt;p&gt;その結果、起点は今日、著者のマンスリー チケット</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼女は彼ら</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E5%A5%B3%E3%81%AF%E5%BD%BC%E3%82%89/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E5%A5%B3%E3%81%AF%E5%BD%BC%E3%82%89/</id>
+    <published>2018-01-07T14:33:04.000Z</published>
+    <updated>2018-01-07T14:33:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近、ファッティーのZ4が大修理中で、人々は怠け者になってしまいました… 飲み相手がいないザンは、一人でカジノに行くしかありません ここのカジノは、ギャンブル映画のカジノとはまったく異なります。エアコンがあり、無料の飲み物があるので、高齢者がたくさんいます。</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>さようなら</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%95%E3%82%88%E3%81%86%E3%81%AA%E3%82%89/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%95%E3%82%88%E3%81%86%E3%81%AA%E3%82%89/</id>
+    <published>2018-01-03T14:20:21.000Z</published>
+    <updated>2018-01-03T14:20:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;長い間黙って歩いた&lt;br&gt;ずっと人だと思ってた&lt;/p&gt;
+&lt;p&gt;私は見上げる&lt;br&gt;チャット&lt;br&gt;笑顔&lt;br&gt;あなたを見ています&lt;/p&gt;
+&lt;p&gt;頑固な粘り強さ&lt;br&gt;一人で前に進み続ける&lt;br&gt;悲しい人を慰める&lt;br&gt;負傷者の保護&lt;/p&gt;
+&lt;p&gt;楽しみにしています&lt;br&gt;記</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>蝶恋花-桃</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%9D%B6%E6%81%8B%E8%8A%B1-%E6%A1%83/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%9D%B6%E6%81%8B%E8%8A%B1-%E6%A1%83/</id>
+    <published>2017-12-30T04:58:58.000Z</published>
+    <updated>2017-12-30T04:58:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;**堂前愜悅堂後慟。 **&lt;br&gt;**千端萬緒，末個思量處。 **&lt;br&gt;**黃粱一夢正十載，世間只有情難訴。 **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;異國他鄉帶紅妝，&lt;/strong&gt;&lt;br&gt;**白衣迎人，俊得佳人助。 **&lt;br&gt;**旦盼相思卻相忘，斜日亭台凝立處。</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼の彼女</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%81%AE%E5%BD%BC%E5%A5%B3/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%81%AE%E5%BD%BC%E5%A5%B3/</id>
+    <published>2017-12-29T16:18:20.000Z</published>
+    <updated>2017-12-29T16:18:20.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;その日、ザンは昨夜の二日酔いから目覚め、ハチミツ水を飲んで少し気分が良くなった。二日酔いも治まり、時間を見ると12時だった。&lt;/p&gt;
+&lt;p&gt;このとき、グループの中に夕食、お粥、麺類を求めている人がいたので、その人と個人的に話をし、時間と場所を確認しました。数分、シャワーを浴</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Yesterday I saw you</title>
+    <link href="https://www.igerm.ee/jp/essay/YesterdayIsawyou/"/>
+    <id>https://www.igerm.ee/jp/essay/YesterdayIsawyou/</id>
+    <published>2017-12-28T16:36:58.000Z</published>
+    <updated>2017-12-28T16:36:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Yesterday I saw you when I stand next to the window and raining outside … the dream was very clearly …&lt;/p&gt;
+&lt;p&gt;Some day I was in a cab</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>V70を購入しました</title>
+    <link href="https://www.igerm.ee/jp/essay/V70%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/V70%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</id>
+    <published>2017-11-10T12:05:58.000Z</published>
+    <updated>2017-11-10T12:05:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;iPhone 8よりもずっといい感じです&lt;/p&gt;
+&lt;p&gt;電話をかけたりテキストメッセージを送信したりするのは問題ありません&lt;/p&gt;
+&lt;p&gt;メインマシンとして使えなくなるのが残念&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>無駄な努力</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%84%A1%E9%A7%84%E3%81%AA%E5%8A%AA%E5%8A%9B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%84%A1%E9%A7%84%E3%81%AA%E5%8A%AA%E5%8A%9B/</id>
+    <published>2017-11-08T23:52:58.000Z</published>
+    <updated>2017-11-08T23:52:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;若い頃&lt;br&gt;無駄な仕事をたくさんすることになる&lt;br&gt;でもとても幸せです&lt;br&gt;それを無罪というんだよ&lt;/p&gt;
+&lt;p&gt;後で&lt;br&gt;まだ無駄な仕事をたくさんしている&lt;br&gt;でも幸せなふりをして&lt;br&gt;これを人生と呼ぶ&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>夏至</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%A4%8F%E8%87%B3/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%A4%8F%E8%87%B3/</id>
+    <published>2017-06-19T02:39:58.000Z</published>
+    <updated>2017-06-19T02:39:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;星繁愁晝熱&lt;br&gt;露重有荷香&lt;br&gt;是曰夏至&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>タイトル僑城中南</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E5%83%91%E5%9F%8E%E4%B8%AD%E5%8D%97/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E5%83%91%E5%9F%8E%E4%B8%AD%E5%8D%97/</id>
+    <published>2016-12-19T20:29:54.000Z</published>
+    <updated>2016-12-19T20:29:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;今日とてもかわいいカップルを見かけました。男の子はハンサムで教養があり、女の子はかわいらしくて優しいので、この本を思いつきました。&lt;/p&gt;
+&lt;p&gt;5年以内に結婚する予定だというので、ぜひ5年後にこの記事を読んでいただければと思います。&lt;/p&gt;
+&lt;/</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杭州の印象</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%9D%AD%E5%B7%9E%E3%81%AE%E5%8D%B0%E8%B1%A1/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%9D%AD%E5%B7%9E%E3%81%AE%E5%8D%B0%E8%B1%A1/</id>
     <published>2016-09-23T12:47:31.000Z</published>
     <updated>2016-09-23T12:47:31.000Z</updated>
     
@@ -956,25 +2374,467 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
+    <summary type="html">&lt;h2 id=&quot;人を愛するには一生かかるが、街を愛するにはほんの一瞬しかかからない&quot;&gt;&lt;a href=&quot;#人を愛するには一生かかるが、街を愛するにはほんの一瞬しかかからない&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第四章 山海図</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E5%9B%9B%E7%AB%A0/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E5%9B%9B%E7%AB%A0/</id>
+    <published>2016-08-23T11:10:52.000Z</published>
+    <updated>2016-08-23T11:10:52.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;「彼の名前は伏羲ですか？」と劉政が尋ねると、そうだ、女媧が出てきたのだから、この若者は伏羲と呼ばれるのが理にかなっているようだ。&lt;/p&gt;
+&lt;p&gt;「エンジ神、彼には名前がありません。彼は子供の頃から賢かったです。彼は部族の長老に従って天を崇拝する方法を学びました。彼が太陽神を</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="盤古大荒経" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第三章 あえて冒涜しない女神</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E4%B8%89%E7%AB%A0/</id>
+    <published>2016-08-23T08:23:12.000Z</published>
+    <updated>2016-08-23T08:23:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;黒い髪、黄色い肌、ああ、このグループは全員黄色だと言うべきですが、彼らはアフリカ大陸に現れ、このグループが何をしたいのかわからず、ぼんやりと女性を見つめました。彼は劉政の横にひざまずいて、頭を上げてぼんやりと劉政を見た。&lt;/p&gt;
+&lt;p&gt;「何がしたいの？」と劉政は尋ねた。&lt;/</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="盤古大荒経" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第二章 彼の名前はエンジです</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E4%BA%8C%E7%AB%A0/</id>
+    <published>2016-08-23T07:23:12.000Z</published>
+    <updated>2016-08-23T07:23:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;20分後、劉政は左手にコーラ、右手に鶏の足を持ってコックピットに入ってきて、「調子はどうだ？」と尋ねた。&lt;/p&gt;
+&lt;p&gt;「いいえ、」ロボットはとても自信満々に言いました。「まだ衛星信号には接続できませんが、私たちが 7,000</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="盤古大荒経" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第一章 七千年前</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E7%AC%AC%E4%B8%80%E7%AB%A0/</id>
+    <published>2016-08-23T02:23:12.000Z</published>
+    <updated>2016-08-23T02:23:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;劉政は 30</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="盤古大荒経" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>引子</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E5%BC%95%E5%AD%90/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/%E5%BC%95%E5%AD%90/</id>
+    <published>2016-08-23T01:23:12.000Z</published>
+    <updated>2016-08-23T01:23:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="盤古大荒経" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9B%A4%E5%8F%A4%E5%A4%A7%E8%8D%92%E7%B5%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>共産主義の後継者</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%85%B1%E7%94%A3%E4%B8%BB%E7%BE%A9%E3%81%AE%E5%BE%8C%E7%B6%99%E8%80%85/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%85%B1%E7%94%A3%E4%B8%BB%E7%BE%A9%E3%81%AE%E5%BE%8C%E7%B6%99%E8%80%85/</id>
+    <published>2016-04-01T14:15:31.000Z</published>
+    <updated>2016-04-01T14:15:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;突然疑問が浮かんだ&lt;br&gt;僕らは歌いながら育った&lt;br&gt;私たちは共産主義の後継者として成長しました&lt;/p&gt;
+&lt;p&gt;なぜ今まで&lt;br&gt;まだ誰も私に引き継ぎについて話していないのですか？&lt;/p&gt;
+&lt;p&gt;実は私は選ばない&lt;br&gt;社会主義でもいいよ&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>私の服</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%AE%E6%9C%8D/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%AE%E6%9C%8D/</id>
+    <published>2015-10-26T00:27:21.000Z</published>
+    <updated>2015-10-26T00:27:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2003年夏&lt;br&gt;学校で自分でドレスをデザインした&lt;br&gt;それから私は25元を費やして作ってくれる人を探しました。&lt;br&gt;今でも履き続けています&lt;/p&gt;
+&lt;p&gt;ほぼ13年&lt;br&gt;北京、上海、広州、深セン、河北、河南、山東、湖北、湖南、東北三省、ヨーロッパまでついてきました</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>国に引き渡せ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%9B%BD%E3%81%AB%E5%BC%95%E3%81%8D%E6%B8%A1%E3%81%9B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%9B%BD%E3%81%AB%E5%BC%95%E3%81%8D%E6%B8%A1%E3%81%9B/</id>
+    <published>2015-06-17T00:01:21.000Z</published>
+    <updated>2015-06-17T00:01:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;兄は川を渡る&lt;br&gt;誤って牛の頭を川に落としてしまった&lt;/p&gt;
+&lt;p&gt;すると川の神様が出てきました&lt;br&gt;川の神様は弟に尋ねました。&lt;br&gt;私の手には金の牛の頭、銀の牛の頭、そして普通の牛の頭があります&lt;br&gt;どれがあなたのものですか？&lt;/p&gt;
+&lt;p&gt;弟はこれを読んでびっく</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>日毒體寬</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%97%A5%E6%AF%92%E9%AB%94%E5%AF%AC/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%97%A5%E6%AF%92%E9%AB%94%E5%AF%AC/</id>
+    <published>2015-06-03T06:10:21.000Z</published>
+    <updated>2015-06-03T06:10:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;正午歸途&lt;br&gt;驚覺後有人&lt;br&gt;回視之&lt;/p&gt;
+&lt;p&gt;一俏生生嬌滴滴小娘子站立&lt;br&gt;相距不足半尺&lt;br&gt;心中不覺大善！&lt;/p&gt;
+&lt;p&gt;遂問之，答曰:&lt;br&gt;日毒&lt;br&gt;君體寬&lt;br&gt;涼&lt;/p&gt;
+&lt;p&gt;啐之乃歸&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>魯迅の二本木</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%AD%AF%E8%BF%85%E3%81%AE%E4%BA%8C%E6%9C%AC%E6%9C%A8/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%AD%AF%E8%BF%85%E3%81%AE%E4%BA%8C%E6%9C%AC%E6%9C%A8/</id>
+    <published>2015-01-18T14:29:21.000Z</published>
+    <updated>2015-01-18T14:29:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;幼少期について&lt;br&gt;先生は私たちに魯迅の文章を理解するように強制した&lt;br&gt;「私の家の前に木が２本あります。１本はナツメの木で、もう１本もナツメの木です。」&lt;br&gt;目的は何ですか&lt;/p&gt;
+&lt;p&gt;中国語教師はそれぞれ異なるコメントを持っていると言えます。&lt;br&gt;しかし、勇気</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>老夫婦</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%80%81%E5%A4%AB%E5%A9%A6/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%80%81%E5%A4%AB%E5%A9%A6/</id>
+    <published>2014-10-13T22:07:27.000Z</published>
+    <updated>2014-10-13T22:07:27.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;南京東路Costa&lt;br&gt;二人の平均年齢は80、90歳くらいだろうか。&lt;br&gt;安定して歩くこともできません。&lt;/p&gt;
+&lt;p&gt;平凡な午後に&lt;br&gt;若者が行くカフェに座る&lt;br&gt;心地よい味わいをお楽しみください&lt;/p&gt;
 &lt;p&gt;&lt;img</summary>
         
       
     
     
     
-    <category term="essay" scheme="https://www.igerm.ee/en/categories/essay/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Raving</title>
-    <link href="https://www.igerm.ee/en/essay/Raving/"/>
-    <id>https://www.igerm.ee/en/essay/Raving/</id>
+    <title>テスラは理解できないことに加担している</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%86%E3%82%B9%E3%83%A9%E3%81%AF%E7%90%86%E8%A7%A3%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%81%93%E3%81%A8%E3%81%AB%E5%8A%A0%E6%8B%85%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%86%E3%82%B9%E3%83%A9%E3%81%AF%E7%90%86%E8%A7%A3%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%81%93%E3%81%A8%E3%81%AB%E5%8A%A0%E6%8B%85%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B/</id>
+    <published>2014-10-09T00:21:27.000Z</published>
+    <updated>2014-10-09T00:21:27.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;テスラはまだ中国に参入していない&lt;br&gt;あえて税金の詳細を列挙してみます&lt;br&gt;中国当局者への挑戦は本当に大したことだ&lt;br&gt;それが悲しみを予感させるのは残念だ&lt;/p&gt;
+&lt;p&gt;自分で発電所を宣伝するとしても&lt;br&gt;まず観客が少なすぎる&lt;br&gt;第二に、中国の自動車会社が電気自</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ダジは明らかに不当な扱いを受けた</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%80%E3%82%B8%E3%81%AF%E6%98%8E%E3%82%89%E3%81%8B%E3%81%AB%E4%B8%8D%E5%BD%93%E3%81%AA%E6%89%B1%E3%81%84%E3%82%92%E5%8F%97%E3%81%91%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%80%E3%82%B8%E3%81%AF%E6%98%8E%E3%82%89%E3%81%8B%E3%81%AB%E4%B8%8D%E5%BD%93%E3%81%AA%E6%89%B1%E3%81%84%E3%82%92%E5%8F%97%E3%81%91%E3%81%9F/</id>
+    <published>2014-04-20T12:51:21.000Z</published>
+    <updated>2014-04-20T12:51:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;封神榜プロットの紹介&lt;/p&gt;
+&lt;p&gt;1.女媧宮のトラブル&lt;br&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>長い間読んでいなかった</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%95%B7%E3%81%84%E9%96%93%E8%AA%AD%E3%82%93%E3%81%A7%E3%81%84%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%95%B7%E3%81%84%E9%96%93%E8%AA%AD%E3%82%93%E3%81%A7%E3%81%84%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F/</id>
+    <published>2014-03-13T01:37:31.000Z</published>
+    <updated>2014-03-13T01:37:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ここ数日の生活&lt;/p&gt;
+&lt;p&gt;午前中に商品計画を立てる&lt;br&gt;9時に花の通路を歩く&lt;br&gt;本屋が開いたら、気に入った本を買ってじっくり読んでください。&lt;br&gt;1日1冊。読んだ後に何も得られないと思って捨てた1冊を除いて、残りは手放しました。&lt;/p&gt;
+&lt;p&gt;10:30に時間通</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>この景色はいいですね</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%93%E3%81%AE%E6%99%AF%E8%89%B2%E3%81%AF%E3%81%84%E3%81%84%E3%81%A7%E3%81%99%E3%81%AD/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%93%E3%81%AE%E6%99%AF%E8%89%B2%E3%81%AF%E3%81%84%E3%81%84%E3%81%A7%E3%81%99%E3%81%AD/</id>
+    <published>2013-09-07T12:21:31.000Z</published>
+    <updated>2013-09-07T12:21:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;この景色は、見に来た人なら誰でも一目でわかるほど美しいです。はい。誰が遮るもののない高いところに立ちたくないでしょうか？大学生の頃、私には願いがありました。私の心の中のシーン。小さな庭、いくつかの野菜、犬、女性、子供、そしてワインのボトル。人生は十分です。社会に出ると人は変</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>人は本質的に利己的です</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BA%BA%E3%81%AF%E6%9C%AC%E8%B3%AA%E7%9A%84%E3%81%AB%E5%88%A9%E5%B7%B1%E7%9A%84%E3%81%A7%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BA%BA%E3%81%AF%E6%9C%AC%E8%B3%AA%E7%9A%84%E3%81%AB%E5%88%A9%E5%B7%B1%E7%9A%84%E3%81%A7%E3%81%99/</id>
+    <published>2013-09-06T00:41:31.000Z</published>
+    <updated>2013-09-06T00:41:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;人々は本質的に利己的ですが、家族に喫煙、飲酒、肉食をやめるように言うなど、自分自身を隠す言い訳をしたがります。実際、植物も痛みやパニックを経験することは科学によって長い間証明されてきました。なぜそれを積極的に宣伝しないのでしょうか。ベジタリアンのためのほんの少しの慰めです。</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>私たち以上に怠け者は誰ですか</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%9F%E3%81%A1%E4%BB%A5%E4%B8%8A%E3%81%AB%E6%80%A0%E3%81%91%E8%80%85%E3%81%AF%E8%AA%B0%E3%81%A7%E3%81%99%E3%81%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%9F%E3%81%A1%E4%BB%A5%E4%B8%8A%E3%81%AB%E6%80%A0%E3%81%91%E8%80%85%E3%81%AF%E8%AA%B0%E3%81%A7%E3%81%99%E3%81%8B/</id>
+    <published>2013-05-13T08:07:31.000Z</published>
+    <updated>2013-05-13T08:07:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;友人と外出についてくだらない話をする&lt;br&gt;私たちがコーヒーショップに到着したとき、たまたま入り口に席がありました。&lt;br&gt;二人は席に着くと、だらだらと比較を始めた。&lt;br&gt;誰も中に入って注文したくありません。&lt;/p&gt;
+&lt;p&gt;お金あげるって言ったんだ、行ってよ&lt;br&gt;彼女は</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>友人が深センに来ることになりました</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%8F%8B%E4%BA%BA%E3%81%8C%E6%B7%B1%E3%82%BB%E3%83%B3%E3%81%AB%E6%9D%A5%E3%82%8B%E3%81%93%E3%81%A8%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%8F%8B%E4%BA%BA%E3%81%8C%E6%B7%B1%E3%82%BB%E3%83%B3%E3%81%AB%E6%9D%A5%E3%82%8B%E3%81%93%E3%81%A8%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</id>
+    <published>2012-09-04T04:19:40.000Z</published>
+    <updated>2012-09-04T04:19:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;カナダの入国管理刑務所にいる友人が母国に帰りたいと考えている&lt;br&gt;最後に会ったのは2008年でした&lt;/p&gt;
+&lt;p&gt;数日前のメールでもまだこんなこと言ってた&lt;br&gt;お久しぶりです&lt;br&gt;少なくとも一度は会って昔のことを思い出すべきだ。&lt;br&gt;それから彼女は香港から転校できる</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>囈語</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%9B%88%E8%AA%9E/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%9B%88%E8%AA%9E/</id>
     <published>2012-08-08T16:09:40.000Z</published>
     <updated>2012-08-08T16:09:40.000Z</updated>
     
@@ -983,25 +2843,219 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;What I miss is not</summary>
+    <summary type="html">&lt;p&gt;私が恋しいのは、お互いに微笑み合うという暗黙の了解ではありません&lt;br&gt;私が恋しいのは、愛のない抱擁ではありません&lt;br&gt;私が恋しいのは実は暗闇の中で空へと駆け出す呼吸ではない&lt;br&gt;実は私が懐かしいのは、深センのバルコニーで初めてあなたに電話したときの聞き慣れない会話です</summary>
         
       
     
     
     
-    <category term="essay" scheme="https://www.igerm.ee/en/categories/essay/"/>
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>
   
   <entry>
-    <title>Father&#39;s son</title>
-    <link href="https://www.igerm.ee/en/novel/Father-and-child/Father&#39;s-son/"/>
-    <id>https://www.igerm.ee/en/novel/Father-and-child/Father&#39;s-son/</id>
+    <title>三国志の喜劇についての私の理解</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/%E4%B8%89%E5%9B%BD%E5%BF%97%E3%81%AE%E5%96%9C%E5%8A%87%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%A7%81%E3%81%AE%E7%90%86%E8%A7%A3/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/%E4%B8%89%E5%9B%BD%E5%BF%97%E3%81%AE%E5%96%9C%E5%8A%87%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%A7%81%E3%81%AE%E7%90%86%E8%A7%A3/</id>
+    <published>2012-07-20T00:41:53.000Z</published>
+    <updated>2012-07-20T00:41:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;劉備、関羽、張飛はみな中小企業家でした。ある日、三人は協力者であり、張飛のほうが資金力がありました。劉備は、私は交流でコネがあり、皇帝の叔父であり、漢王朝を再興したいと言いました。その結果、劉備が合弁会社のボスとなった。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="単一の記事" scheme="https://www.igerm.ee/jp/categories/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ある日</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%82%E3%82%8B%E6%97%A5/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%82%E3%82%8B%E6%97%A5/</id>
+    <published>2012-01-30T03:38:09.000Z</published>
+    <updated>2012-01-30T03:38:09.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ある日、私は自分とは一体何なのか、それとも何者でもないのではないかと考えました。&lt;br&gt;毎日が目的のないものです。しかし、私は真実を証明したいのです。&lt;br&gt;他の人はお尻からオナラをしますが、私は毎日革命について話します。&lt;br&gt;たとえ全世界が私を見捨てたとしても、幸せか悲</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>もう君を一人にはさせないよ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%82%E3%81%86%E5%90%9B%E3%82%92%E4%B8%80%E4%BA%BA%E3%81%AB%E3%81%AF%E3%81%95%E3%81%9B%E3%81%AA%E3%81%84%E3%82%88/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%82%E3%81%86%E5%90%9B%E3%82%92%E4%B8%80%E4%BA%BA%E3%81%AB%E3%81%AF%E3%81%95%E3%81%9B%E3%81%AA%E3%81%84%E3%82%88/</id>
+    <published>2011-05-16T05:45:56.000Z</published>
+    <updated>2011-05-16T05:45:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>誰かのために自分を変えないでください</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%AA%B0%E3%81%8B%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E8%87%AA%E5%88%86%E3%82%92%E5%A4%89%E3%81%88%E3%81%AA%E3%81%84%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%AA%B0%E3%81%8B%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E8%87%AA%E5%88%86%E3%82%92%E5%A4%89%E3%81%88%E3%81%AA%E3%81%84%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84/</id>
+    <published>2011-05-03T05:14:15.000Z</published>
+    <updated>2011-05-03T05:14:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;世の中に完璧なものなんてない&lt;br&gt;すべてが完璧なら&lt;br&gt;それはまだ美しいですか？&lt;br&gt;ああ&lt;/p&gt;
+&lt;p&gt;私はいつも経験が少なすぎると不満を言う&lt;br&gt;たぶんそれは私が見知らぬ人を経験したくないからです&lt;br&gt;私は友達が少なすぎることにいつも不満を抱いています&lt;/p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>トランス</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9/</id>
+    <published>2010-08-09T06:21:56.000Z</published>
+    <updated>2010-08-09T06:21:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;北京は大きく変わった&lt;br&gt;物事は違う、人は違うという感覚がある&lt;/p&gt;
+&lt;p&gt;都会では体験したことのない人たち&lt;br&gt;まだ喜びでいっぱいです&lt;br&gt;でも過去の思い出を撮りたい&lt;br&gt;一瞬で過去に戻ってしまった&lt;/p&gt;
+&lt;p&gt;ボーッとしています&lt;br&gt;みんなが前に進んでいる</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼の彼</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%81%AE%E5%BD%BC/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%81%AE%E5%BD%BC/</id>
+    <published>2010-07-02T02:23:12.000Z</published>
+    <updated>2010-07-02T02:23:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;論理的に言えば、XAN</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼らの彼女</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%82%89%E3%81%AE%E5%BD%BC%E5%A5%B3/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%82%89%E3%81%AE%E5%BD%BC%E5%A5%B3/</id>
+    <published>2010-06-30T17:22:03.000Z</published>
+    <updated>2010-06-30T17:22:03.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;トレイシーはキルトがとても重いと漠然と感じたので、とても強く押しました。そして、パンという音が聞こえました。トレイシーは目を開けると、自分がまだ酔う前にいた部屋にいることに気づきました。そして、XAN</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼女それ</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E5%A5%B3%E3%81%9D%E3%82%8C/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E5%A5%B3%E3%81%9D%E3%82%8C/</id>
+    <published>2010-06-30T16:40:01.000Z</published>
+    <updated>2010-06-30T16:40:01.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;MIYA さんは運転免許証を持っているが、XAN さんに 13 時間連続で運転してほしいと頼まれたとき、MIYA さんは運転免許証の取り方をこっそり習いに行ったが、XAN さんの車に乗るのがとても安定していて安全だったので、それを言わなかった。 。</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>他の</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E4%BB%96%E3%81%AE/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E4%BB%96%E3%81%AE/</id>
     <published>2010-06-30T16:30:29.000Z</published>
     <updated>2010-06-30T16:30:29.000Z</updated>
     
@@ -1010,44 +3064,849 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using Google&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Recently we often</summary>
+    <summary type="html">&lt;p&gt;実際、XAN の気分は常に少し悲しいものでしたが、おそらく唯一理解できるのは、フィンランドに来てから最初の半年の間、XAN は毎日ファッティとクラブに行っていたため、ヒーター HPDV5</summary>
         
       
     
     
     
-    <category term="novel" scheme="https://www.igerm.ee/en/categories/novel/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
     
-    <category term="Father and child" scheme="https://www.igerm.ee/en/categories/novel/Father-and-child/"/>
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
     
     
   </entry>
   
   <entry>
-    <title>Consciousness | Sharo Double Tree Garden</title>
-    <link href="https://www.igerm.ee/en/essay/Consciousness-Sharo-Double-Tree-Garden/"/>
-    <id>https://www.igerm.ee/en/essay/Consciousness-Sharo-Double-Tree-Garden/</id>
-    <published>1997-07-29T04:36:54.000Z</published>
-    <updated>1997-07-29T04:36:54.000Z</updated>
+    <title>彼の私</title>
+    <link href="https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E5%BD%BC%E3%81%AE%E7%A7%81/"/>
+    <id>https://www.igerm.ee/jp/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/%E5%BD%BC%E3%81%AE%E7%A7%81/</id>
+    <published>2010-06-30T16:30:29.000Z</published>
+    <updated>2010-06-30T16:30:29.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This article was automatically translated using</summary>
+    <summary type="html">&lt;p&gt;最近よく話します&lt;br&gt;毎回喧嘩で終わるけど&lt;/p&gt;
+&lt;p&gt;今でもそう思います&lt;br&gt;彼は自分の考えに合わない私の言うことすべてに反対する&lt;br&gt;今でも感動しています&lt;/p&gt;
+&lt;p&gt;おそらく彼が私の将来についての考えを話したのはN+1回目だったでしょう&lt;br&gt;平穏に暮らせれ</summary>
         
       
     
     
     
-    <category term="essay" scheme="https://www.igerm.ee/en/categories/essay/"/>
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="瞻望父兮" scheme="https://www.igerm.ee/jp/categories/novel/%E7%9E%BB%E6%9C%9B%E7%88%B6%E5%85%AE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼のそれ</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%81%AE%E3%81%9D%E3%82%8C/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E3%81%AE%E3%81%9D%E3%82%8C/</id>
+    <published>2010-06-30T16:20:44.000Z</published>
+    <updated>2010-06-30T16:20:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;XAN は自分を怠け者だと常々思っていますが、怠け者にもアイデアはあります。 XAN</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彼女彼</title>
+    <link href="https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E5%A5%B3%E5%BD%BC/"/>
+    <id>https://www.igerm.ee/jp/novel/10%E5%B9%B4/%E5%BD%BC%E5%A5%B3%E5%BD%BC/</id>
+    <published>2010-06-30T13:46:02.000Z</published>
+    <updated>2010-06-30T13:46:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;目を閉じると、右下隅の MSN プロフィール写真が点滅したままでした…&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;———-ビアハウス————–&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;今日はどうですか？背が高くて太った男が笑顔で彼のところにやって来た。&lt;/p&gt;
+&lt;p&gt;FK！</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="10年" scheme="https://www.igerm.ee/jp/categories/novel/10%E5%B9%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>つぶやく</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8F/</id>
+    <published>2009-11-08T20:48:54.000Z</published>
+    <updated>2009-11-08T20:48:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近イライラするようになった&lt;br&gt;ちょっとした風邪も引き続いているようです。&lt;br&gt;体調は基本的に崩壊寸前&lt;/p&gt;
+&lt;p&gt;実際、生活はとても快適です&lt;br&gt;のみ…&lt;/p&gt;
+&lt;p&gt;もしかしたら私は他人の落ち着きのなさを責めていたのかもしれない&lt;br&gt;実際、私は一番落ち着きの</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>愛には摂理がある</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/%E6%84%9B%E3%81%AB%E3%81%AF%E6%91%82%E7%90%86%E3%81%8C%E3%81%82%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/%E6%84%9B%E3%81%AB%E3%81%AF%E6%91%82%E7%90%86%E3%81%8C%E3%81%82%E3%82%8B/</id>
+    <published>2009-05-27T04:36:54.000Z</published>
+    <updated>2009-05-27T04:36:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="単一の記事" scheme="https://www.igerm.ee/jp/categories/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>8か月後の頭痛</title>
+    <link href="https://www.igerm.ee/jp/essay/8%E3%81%8B%E6%9C%88%E5%BE%8C%E3%81%AE%E9%A0%AD%E7%97%9B/"/>
+    <id>https://www.igerm.ee/jp/essay/8%E3%81%8B%E6%9C%88%E5%BE%8C%E3%81%AE%E9%A0%AD%E7%97%9B/</id>
+    <published>2009-04-03T06:46:54.000Z</published>
+    <updated>2009-04-03T06:46:54.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;頭痛が戻ってきた、旧友よ&lt;br&gt;最近、頭痛の頻度は減りましたが、頭痛がひどくなってきたのは頸椎症のせいかもしれません。&lt;br&gt;前日は朝5時まで苦しみ、翌日起きても痛みがあり、完全に治ったのは3日目でした。&lt;br&gt;でも、私はまだ後で出かけなければなりません…首を守って…ええ、</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>無題</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%84%A1%E9%A1%8C/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%84%A1%E9%A1%8C/</id>
+    <published>2008-09-22T01:56:56.000Z</published>
+    <updated>2008-09-22T01:56:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昔々、歌がありました&lt;br&gt;むかしむかし、愛がありました&lt;br&gt;昔々、ある人がいました&lt;/p&gt;
+&lt;p&gt;過去の日々を記録した日記&lt;br&gt;風がその人や物を通り過ぎていきました&lt;/p&gt;
+&lt;p&gt;人は依然として同じ人であり、物事は依然として同じものです&lt;br&gt;精神状態がすでに違ってい</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Lolita</title>
+    <link href="https://www.igerm.ee/jp/essay/Lolita/"/>
+    <id>https://www.igerm.ee/jp/essay/Lolita/</id>
+    <published>2008-09-20T03:17:56.000Z</published>
+    <updated>2008-09-20T03:17:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sudden Light</title>
+    <link href="https://www.igerm.ee/jp/essay/sudden%20light/"/>
+    <id>https://www.igerm.ee/jp/essay/sudden%20light/</id>
+    <published>2008-09-18T13:19:56.000Z</published>
+    <updated>2008-09-18T13:19:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;I have been here before,&lt;/p&gt;
+&lt;p&gt;But when or how I can not tell:&lt;/p&gt;
+&lt;p&gt;I know the grass beyond the door,&lt;/p&gt;
+&lt;p&gt;The sweet keen</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>つなぐ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%A4%E3%81%AA%E3%81%90/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%A4%E3%81%AA%E3%81%90/</id>
+    <published>2008-09-16T13:49:56.000Z</published>
+    <updated>2008-09-16T13:49:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;この言葉初めて見た&lt;br&gt;金庸の剣士に出てくるよ&lt;/p&gt;
+&lt;p&gt;正直に言うと、当時はこの 2</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>つなぐ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%BE%81%E7%BB%8A/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%BE%81%E7%BB%8A/</id>
+    <published>2008-09-16T13:49:56.000Z</published>
+    <updated>2008-09-16T13:49:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;第一次见到这个词&lt;br&gt;是在金大侠的笑傲江湖&lt;/p&gt;
+&lt;p&gt;老实讲当时不认识这两个字&lt;br&gt;专门查字典记住的&lt;br&gt;一记就是很多年&lt;br&gt;经常在我的小说里面使用&lt;/p&gt;
+&lt;p&gt;对我来说是非常特殊的两个字&lt;br&gt;也许&lt;br&gt;只有我个人这样认为&lt;/p&gt;
+&lt;p&gt;很多时候我都觉得&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>山水は人生を明らかにする</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%B1%B1%E6%B0%B4%E3%81%AF%E4%BA%BA%E7%94%9F%E3%82%92%E6%98%8E%E3%82%89%E3%81%8B%E3%81%AB%E3%81%99%E3%82%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%B1%B1%E6%B0%B4%E3%81%AF%E4%BA%BA%E7%94%9F%E3%82%92%E6%98%8E%E3%82%89%E3%81%8B%E3%81%AB%E3%81%99%E3%82%8B/</id>
+    <published>2008-08-18T00:18:56.000Z</published>
+    <updated>2008-08-18T00:18:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;人生には3つの領域がある&lt;br&gt;これら 3</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>お寺の縁日を訪ねて</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%81%8A%E5%AF%BA%E3%81%AE%E7%B8%81%E6%97%A5%E3%82%92%E8%A8%AA%E3%81%AD%E3%81%A6/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%81%8A%E5%AF%BA%E3%81%AE%E7%B8%81%E6%97%A5%E3%82%92%E8%A8%AA%E3%81%AD%E3%81%A6/</id>
+    <published>2008-02-08T08:34:56.000Z</published>
+    <updated>2008-02-08T08:34:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;親切&lt;/p&gt;
+&lt;p&gt;元宵節までに北京に戻るのは絶対に無理だと言いましたが&lt;/p&gt;
+&lt;p&gt;それでも私は、縁日を訪れるという口実を使って、あなたを騙して戻ってくるように仕向けました。&lt;/p&gt;
+&lt;p&gt;しかし&lt;/p&gt;
+&lt;p&gt;実は騙されてたんだよね&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>電話が私に言ったこと</title>
+    <link href="https://www.igerm.ee/jp/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/%E9%9B%BB%E8%A9%B1%E3%81%8C%E7%A7%81%E3%81%AB%E8%A8%80%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/"/>
+    <id>https://www.igerm.ee/jp/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/%E9%9B%BB%E8%A9%B1%E3%81%8C%E7%A7%81%E3%81%AB%E8%A8%80%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</id>
+    <published>2007-10-02T15:07:16.000Z</published>
+    <updated>2007-10-02T15:07:16.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2004年3月15日…私は店の棚の中でひっそりと眠っていました…。&lt;/p&gt;
+&lt;p&gt;一般的に、黒っぽい容姿は今の若者には受け入れられないでしょう。しかし、私が暴露されてから半年後に、ついに誰かが私に注目した…彼は私を不思議そうに見て、店員に何か言ったかもしれません。彼が私を好</summary>
+        
+      
+    
+    
+    
+    <category term="novel" scheme="https://www.igerm.ee/jp/categories/novel/"/>
+    
+    <category term="単一の記事" scheme="https://www.igerm.ee/jp/categories/novel/%E5%8D%98%E4%B8%80%E3%81%AE%E8%A8%98%E4%BA%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>人生</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%BA%BA%E7%94%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%BA%BA%E7%94%9F/</id>
+    <published>2007-09-19T14:24:25.000Z</published>
+    <updated>2007-09-19T14:24:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今日は試験のために休みを取ったのですが、とてもスムーズに進みました。家で長い時間を過ごした後、また緊張し始めました。&lt;/p&gt;
+&lt;p&gt;窓が開いていて冷たい秋風が吹き込んできて、8時頃までWorld of</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>母親</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%AF%8D%E8%A6%AA/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%AF%8D%E8%A6%AA/</id>
+    <published>2007-08-10T03:57:25.000Z</published>
+    <updated>2007-08-10T03:57:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;あなたが1歳のとき、彼女はあなたに食事を与え、お風呂に入れてくれましたが、あなたは一晩中泣きました。&lt;/p&gt;
+&lt;p&gt;あなたが3歳のとき、彼女は愛情を込めてあなたのために料理をしてくれました。そのお返しに、あなたは彼女の料理の皿を床に投げました。&lt;/p&gt;
+&lt;p&gt;あなたが4歳の</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>現実社会</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%8F%BE%E5%AE%9F%E7%A4%BE%E4%BC%9A/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%8F%BE%E5%AE%9F%E7%A4%BE%E4%BC%9A/</id>
+    <published>2007-08-04T03:08:25.000Z</published>
+    <updated>2007-08-04T03:08:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;民生銀行のクレジットカードを申請していると、女性が私に尋ねました。&lt;br&gt;部屋はありますか？あなたは車を持っています？家を持っている場合、それはローンですか？&lt;br&gt;おそらく必要なプロセスなので、必要なことを書き留めて書類をコピーしに戻りました。&lt;/p&gt;
+&lt;p&gt;土曜日に、学</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>天涯</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%A4%A9%E6%B6%AF/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%A4%A9%E6%B6%AF/</id>
+    <published>2007-07-31T14:39:25.000Z</published>
+    <updated>2007-07-31T14:39:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://inebriete.blog.tianya.cn/&quot;&gt;http://inebriete.blog.tianya.cn/&lt;/a&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>輪はますます小さくなり、人口はますます少なくなります</title>
+    <link href="https://www.igerm.ee/jp/essay/%E8%BC%AA%E3%81%AF%E3%81%BE%E3%81%99%E3%81%BE%E3%81%99%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%AA%E3%82%8A%E3%80%81%E4%BA%BA%E5%8F%A3%E3%81%AF%E3%81%BE%E3%81%99%E3%81%BE%E3%81%99%E5%B0%91%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E8%BC%AA%E3%81%AF%E3%81%BE%E3%81%99%E3%81%BE%E3%81%99%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%AA%E3%82%8A%E3%80%81%E4%BA%BA%E5%8F%A3%E3%81%AF%E3%81%BE%E3%81%99%E3%81%BE%E3%81%99%E5%B0%91%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99/</id>
+    <published>2007-07-28T14:32:25.000Z</published>
+    <updated>2007-07-28T14:32:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一緒にX-JAPANを聴いてくれる人がまだいる&lt;br&gt;私を変態呼ばわりもせずに、路上で可愛い女の子たちに向かって微笑み、よだれを垂らし、口笛を吹きながら&lt;br&gt;お酒を飲みながら可愛いふりをする私を許せる人が他にいますか？&lt;br&gt;あなたは、解決できない問題を鵜呑みにする性格で</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大変な一ヶ月でした</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%A4%A7%E5%A4%89%E3%81%AA%E4%B8%80%E3%83%B6%E6%9C%88%E3%81%A7%E3%81%97%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%A4%A7%E5%A4%89%E3%81%AA%E4%B8%80%E3%83%B6%E6%9C%88%E3%81%A7%E3%81%97%E3%81%9F/</id>
+    <published>2007-07-21T10:54:25.000Z</published>
+    <updated>2007-07-21T10:54:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;私は一ヶ月間一生懸命働いてきましたが、今日は実際に座って音楽を聴き、2002 年から書いたブログを読む機会があります。私はとても怒り、怒り、悲しんでいました。</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大好き</title>
+    <link href="https://www.igerm.ee/jp/essay/%E5%A4%A7%E5%A5%BD%E3%81%8D/"/>
+    <id>https://www.igerm.ee/jp/essay/%E5%A4%A7%E5%A5%BD%E3%81%8D/</id>
+    <published>2007-05-12T10:36:25.000Z</published>
+    <updated>2022-12-18T09:29:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昨夜、映画&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>もう迷惑ではありません</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%82%E3%81%86%E8%BF%B7%E6%83%91%E3%81%A7%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%82%E3%81%86%E8%BF%B7%E6%83%91%E3%81%A7%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93/</id>
+    <published>2007-05-12T05:39:25.000Z</published>
+    <updated>2007-05-12T05:39:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;自分は他人にとってとても迷惑な人間だと常々思っている&lt;br&gt;これは本当です&lt;/p&gt;
+&lt;p&gt;今日は機嫌が悪い…自分で起こしたんだ…&lt;br&gt;インターネットで名前を自分で検索してください…&lt;br&gt;その時、見てはいけないものを見てしまった&lt;br&gt;実際、彼女はそれを十分に理解していま</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>レビューレビュー</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</id>
+    <published>2006-07-24T03:57:25.000Z</published>
+    <updated>2006-07-24T03:57:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;9日に休暇から帰ってきてから15日間家にいて、1日8時間本を読んでいます…。&lt;br&gt;ゲイ…私は毎日家で退屈している情熱的な若者です。私は自分自身を本当に尊敬しています。&lt;br&gt;この状況では15日間も家から出ませんでした…。&lt;/p&gt;
+&lt;p&gt;うちの小さな庭にも一度も行ったことが</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>独占トライアルラブ</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%8B%AC%E5%8D%A0%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB%E3%83%A9%E3%83%96/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%8B%AC%E5%8D%A0%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB%E3%83%A9%E3%83%96/</id>
+    <published>2006-06-13T15:05:25.000Z</published>
+    <updated>2022-12-18T09:28:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>母親</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%AF%8D%E8%A6%AA/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%AF%8D%E8%A6%AA/</id>
+    <published>2006-05-25T05:05:25.000Z</published>
+    <updated>2006-05-25T05:05:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昨日、今月のお金を予定より早く使い切ってしまいました。&lt;/p&gt;
+&lt;p&gt;お金の管理方法をまだ学んでいません&lt;br&gt;私は母に、退屈な中国語テストには登録料 100</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>離れるか近づくか</title>
+    <link href="https://www.igerm.ee/jp/essay/%E9%9B%A2%E3%82%8C%E3%82%8B%E3%81%8B%E8%BF%91%E3%81%A5%E3%81%8F%E3%81%8B/"/>
+    <id>https://www.igerm.ee/jp/essay/%E9%9B%A2%E3%82%8C%E3%82%8B%E3%81%8B%E8%BF%91%E3%81%A5%E3%81%8F%E3%81%8B/</id>
+    <published>2006-05-24T01:12:25.000Z</published>
+    <updated>2006-05-24T01:12:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ずっと好きだった彼女がいるなら&lt;br&gt;あなたは彼女と永遠に一緒にいたいと願っています&lt;br&gt;でも彼はそうは思わない&lt;br&gt;もしかしたら彼女はあなたのことをあまり好きではないかもしれません&lt;/p&gt;
+&lt;p&gt;このときあなたは自分の気持ちを伝えることを主張します&lt;br&gt;そうするとエ</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Aさんのインスピレーション</title>
+    <link href="https://www.igerm.ee/jp/essay/A%E3%81%95%E3%82%93%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%94%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/"/>
+    <id>https://www.igerm.ee/jp/essay/A%E3%81%95%E3%82%93%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%94%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</id>
+    <published>2006-05-22T09:28:25.000Z</published>
+    <updated>2006-05-22T09:28:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1名様から2名様まで&lt;br&gt;それから3人&lt;/p&gt;
+&lt;p&gt;3名様から2名様まで&lt;br&gt;このプロセスは大文字の A を書くようなものです&lt;/p&gt;
+&lt;p&gt;読むと口が大きく開く</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>もしも</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%82%E3%81%97%E3%82%82/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%82%E3%81%97%E3%82%82/</id>
+    <published>2006-03-17T17:10:25.000Z</published>
+    <updated>2006-03-17T17:10:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;裏切られると約束が信じられなくなる&lt;br&gt;時間が経てば信じられなくなる&lt;/p&gt;
+&lt;p&gt;本当に存在するなら</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>検査異常</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%A4%9C%E6%9F%BB%E7%95%B0%E5%B8%B8/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%A4%9C%E6%9F%BB%E7%95%B0%E5%B8%B8/</id>
+    <published>2005-07-24T07:57:25.000Z</published>
+    <updated>2005-07-24T07:57:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今日はテストのためにイー兄弟と一緒に訓練所に行きました&lt;br&gt;先生は、どこかの大手企業の面接試験だと言った。&lt;br&gt;これを書きながら大量の汗をかいています&lt;/p&gt;
+&lt;p&gt;しかし、答えが発表されると、&lt;br&gt;これは詐欺ではないと思います！&lt;/p&gt;
+&lt;p&gt;問題は次のとおりです。</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>服を作ります</title>
+    <link href="https://www.igerm.ee/jp/essay/%E6%9C%8D%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%99/"/>
+    <id>https://www.igerm.ee/jp/essay/%E6%9C%8D%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%99/</id>
+    <published>2003-05-14T08:27:25.000Z</published>
+    <updated>2003-05-14T08:27:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;チャオ兄弟は私たちのプログラムが選ばれたと言いました&lt;br&gt;私たちはチームのユニフォームを手に入れる必要がある。&lt;br&gt;H.O.TのMVにある、ダンス後に毎日着られるようなワイドTシャツを真似しましょう、と。&lt;/p&gt;
+&lt;p&gt;その結果、服が作られる場所に行くと、入手可能な生地</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一人で新年を祝う</title>
+    <link href="https://www.igerm.ee/jp/essay/%E4%B8%80%E4%BA%BA%E3%81%A7%E6%96%B0%E5%B9%B4%E3%82%92%E7%A5%9D%E3%81%86/"/>
+    <id>https://www.igerm.ee/jp/essay/%E4%B8%80%E4%BA%BA%E3%81%A7%E6%96%B0%E5%B9%B4%E3%82%92%E7%A5%9D%E3%81%86/</id>
+    <published>2003-02-01T16:37:15.000Z</published>
+    <updated>2003-02-01T16:37:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今年は父が中国に帰らないので、一人で新年を迎えることにしました&lt;/p&gt;
+&lt;p&gt;夜はとても寒いので、暖房費が高すぎてまだ払っていません。&lt;/p&gt;
+&lt;p&gt;足を浸すために水を加熱する必要があり、水が冷めた後、部屋全体が水蒸気で満たされるまでさらに水を加えました。&lt;/p&gt;
+&lt;p&gt;そ</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>トラブルに巻き込まれた</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%81%AB%E5%B7%BB%E3%81%8D%E8%BE%BC%E3%81%BE%E3%82%8C%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%81%AB%E5%B7%BB%E3%81%8D%E8%BE%BC%E3%81%BE%E3%82%8C%E3%81%9F/</id>
+    <published>2002-11-05T12:37:15.000Z</published>
+    <updated>2002-11-05T12:37:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今日思い切って警察署に入りました。&lt;/p&gt;
+&lt;p&gt;数か月前にインターネットカフェに行ったとき、ネットワーク管理者の態度が非常に悪く、帰る前に追加で2元請求されたため、翌日そこに行ったとき、彼のコンピュータを少しいじってしまいました。実はこれも簡単で、スタートアップ項目に自動</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>私はイー兄弟に電話しました</title>
+    <link href="https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%AF%E3%82%A4%E3%83%BC%E5%85%84%E5%BC%9F%E3%81%AB%E9%9B%BB%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/"/>
+    <id>https://www.igerm.ee/jp/essay/%E7%A7%81%E3%81%AF%E3%82%A4%E3%83%BC%E5%85%84%E5%BC%9F%E3%81%AB%E9%9B%BB%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/</id>
+    <published>2000-01-01T12:37:15.000Z</published>
+    <updated>2000-01-01T12:37:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;半年ほど家を離れているので、食費や食費の心配はありません。友達に会えないのはちょっと寂しいけど、私のような大の大人として、恥ずかしがることはできません。&lt;/p&gt;
+&lt;p&gt;今日、私はイー兄弟に電話せずにはいられなかったので、叔母に「イー兄弟を探しています」と言いました。そして、</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>エンライトメント | サラ ツイン ツリー ガーデン</title>
+    <link href="https://www.igerm.ee/jp/essay/%E3%82%A8%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%20|%20%E3%82%B5%E3%83%A9%20%E3%83%84%E3%82%A4%E3%83%B3%20%E3%83%84%E3%83%AA%E3%83%BC%20%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3/"/>
+    <id>https://www.igerm.ee/jp/essay/%E3%82%A8%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%20|%20%E3%82%B5%E3%83%A9%20%E3%83%84%E3%82%A4%E3%83%B3%20%E3%83%84%E3%83%AA%E3%83%BC%20%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3/</id>
+    <published>1997-05-29T04:36:54.000Z</published>
+    <updated>2022-12-20T15:38:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;em&gt;&lt;strong&gt;—1997 年の夏に書かれた原文は教室でトイレットペーパーにこっそり書かれ、日本語のテキストはサラガ ガーデンで聖闘士星矢によってナレーションされます。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="essay" scheme="https://www.igerm.ee/jp/categories/essay/"/>
     
     
   </entry>

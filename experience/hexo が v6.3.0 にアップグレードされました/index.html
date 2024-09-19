@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>hexo が v6.3.0 にアップグレードされました | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">hexo が v6.3.0 にアップグレードされました</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2022-12-16 10:29
+      </span>
+      <span class="post-pubtime">
+        <i class="iconfont icon-updatetime" title="Update time"></i> 2022-12-29 21:16
+      </span>
+      <span class="post-count">≈ 1.1k字</span>
+      <span class="post-count">≈ 5分</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p>**2022.12.29更新、上下ページに同じカテゴリーしか表示されない問題を解決するため、元々分けていた章をここに統合しました 非常に短いので別記事に分ける必要はありません。 **</p>
+</blockquote>
+<p>ここ数日、記事の更新に集中していたのですが、いつも git に記事を送信して記事を自動生成していたので、 <code>hexo g</code> が強調表示エラーを表示することに気づきました。</p>
+<p>主な理由は、生成時に警告を報告するだけで、使用には影響しないためです。今回、テーマのスタイルを調整したいときに発見したため、プラグインをアップグレードする必要があります（1 年近くアップグレードしていませんでした）。私のhexoバージョンはまだ5.4ですが、現在は6.3です）</p>
+<h3 id="hexo-とプラグインをアップグレードする"><a href="#hexo-とプラグインをアップグレードする" class="headerlink" title="hexo とプラグインをアップグレードする"></a>hexo とプラグインをアップグレードする</h3><blockquote>
+<p>ノードと npm をアップグレードする方法はインターネット上にたくさんあります。検索すると見つかります。</p>
+</blockquote>
+<ol>
+<li>hexo バージョンを確認します: <code>hexo version</code></li>
+<li>グローバル アップグレード: <code>npm i hexo-cli -g</code></li>
+<li>hexo ディレクトリに移動します。</li>
+<li>プラグインを確認します: <code>npm-check</code></li>
+<li>プロンプトに従って手動でアップグレードすることも、<code>npm-upgrade</code> + <code>npm update --save</code> で直接アップグレードすることもできます。</li>
+<li>バージョン番号をもう一度チェックして確認します: <code>hexo version</code></li>
+</ol>
+<h3 id="変更した箇所が上書きされていないか確認してください"><a href="#変更した箇所が上書きされていないか確認してください" class="headerlink" title="変更した箇所が上書きされていないか確認してください"></a>変更した箇所が上書きされていないか確認してください</h3><p>アップグレード自体には何も問題はありません。ただ、私はコメントを書くのが好きではないので、いくつかのプラグインを手動で変更し、その後アップグレードによってそれらが上書きされた可能性があります。</p>
+<p>私が変更した主なシステム プラグインは 2 つあります。</p>
+<p><a href="https://www.igerm.ee/jp/experience/Hexo%20%E3%81%AE%E7%BE%8E%E5%8C%96%E3%80%81%E6%9C%80%E9%81%A9%E5%8C%96%E3%80%81Lighthouse%20%E3%81%AE%E7%A9%B6%E6%A5%B5%E3%81%AE%E3%82%B9%E3%82%B3%E3%82%A2%E8%BF%BD%E8%B7%A1/">hexo-generator-index</a> 記事で述べたように、ホームページからいくつかのカテゴリを削除しました。変更しないと、ページ分割されたページにはまだこのカテゴリの記事が含まれており、ページ上の記事の数が正しくなくなります。</p>
+<p><code>hexo-generator-category</code> も変更しましたが、完全に忘れていたため、小説のカテゴリの並べ替えに問題が発生しました。原因を見つけるために git を直接使用して変更し、比較しました。 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pagination = <span class="built_in">require</span>(<span class="string">&#x27;hexo-pagination&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span>(<span class="params">locals</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> config = <span class="variable language_">this</span>.<span class="property">config</span>;</span><br><span class="line">  <span class="keyword">const</span> perPage = config.<span class="property">category_generator</span>.<span class="property">per_page</span>;</span><br><span class="line">  <span class="keyword">const</span> paginationDir = config.<span class="property">pagination_dir</span> || <span class="string">&#x27;page&#x27;</span>;</span><br><span class="line">  <span class="keyword">var</span> orderBy = config.<span class="property">category_generator</span>.<span class="property">order_by</span> || <span class="string">&#x27;-order&#x27;</span>;  <span class="comment">//要用变量var 不要用常量</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> locals.<span class="property">categories</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">result, category</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!category.<span class="property">length</span>) <span class="keyword">return</span> result;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当分类为小说novel时，采用手动排序，其他的为默认日期排序，这个order是写在小说md文件的Front-matter里的</span></span><br><span class="line">    <span class="comment">//用于同一个分类的小说集中展示</span></span><br><span class="line">    <span class="comment">//然后在小说页面里面再进行日期排序</span></span><br><span class="line">    <span class="keyword">if</span>(category.<span class="property">name</span> == <span class="string">&#x27;novel&#x27;</span>)&#123;</span><br><span class="line">      orderBy = config.<span class="property">category_generator</span>.<span class="property">order_by</span> || <span class="string">&#x27;-order&#x27;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      orderBy = config.<span class="property">category_generator</span>.<span class="property">order_by</span> || <span class="string">&#x27;-date&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> posts = category.<span class="property">posts</span>.<span class="title function_">sort</span>(orderBy);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="title function_">pagination</span>(category.<span class="property">path</span>, posts, &#123;</span><br><span class="line">      perPage,</span><br><span class="line">      <span class="attr">layout</span>: [<span class="string">&#x27;category&#x27;</span>, <span class="string">&#x27;archive&#x27;</span>, <span class="string">&#x27;index&#x27;</span>],</span><br><span class="line">      <span class="attr">format</span>: paginationDir + <span class="string">&#x27;/%d/&#x27;</span>,</span><br><span class="line">      <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">category</span>: category.<span class="property">name</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result.<span class="title function_">concat</span>(data);</span><br><span class="line">  &#125;, []);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>急いでアップグレード プロセスを手動で記録すると、後で忘れてアップグレードする必要がなくなります。最終的な表示効果は非常に優れています。</p>
+<p><img src="https://s2.loli.net/2022/12/30/Cjxh8RQy7DFYp5X.jpg" alt="1671162733620"></p>
+<h3 id="前ページと次ページのリンクには、同じカテゴリの記事のみが表示されます"><a href="#前ページと次ページのリンクには、同じカテゴリの記事のみが表示されます" class="headerlink" title="前ページと次ページのリンクには、同じカテゴリの記事のみが表示されます"></a>前ページと次ページのリンクには、同じカテゴリの記事のみが表示されます</h3><p>私の hexo には、記事のコンテキスト アドレスという問題があります。このアドレスは、システム ページング中またはそれ以前に作成されました。元のロジックには問題ありませんが、エッセイ、経験、小説に基づいたものにしたいと考えています。分類により、3 つの異なるコンテキストに対応するアドレスが生成されます。</p>
+<p>つまり、私のWebサイトには3つの<code>categories</code>に属する3つのナビゲーションがあり、記事に入るとフッターにある前後のページのタイトルとリンクが、実はすべての記事で<code>date</code>順になっているのです。これらは全体的に配置されているため、たとえば、エッセイの次のページをクリックすると、体験共有の記事をクリックすることができますが、ここではこの問題を解決します。</p>
+<p>人それぞれテーマが違うので、記事ページに対応する ejs の書き方も違うかもしれません。 説明のための元のコードを載せておきます（見苦しいし、決してベストプラクティスではありませんが、使えます。誰かが見てくれれば。）それを彼は私が最適化したいので、メッセージを残してください（笑））。</p>
+<blockquote>
+<p>jsコードを見やすくするために、ejs構文とhtml構文をコメントアウトしました。</p>
+<p>これはpost.ejsファイルに書かれています</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmpNext = page.<span class="property">next</span>; <span class="comment">//現在のページの次のページオブジェクトを変数に代入します。</span></span><br><span class="line"> <span class="keyword">while</span>(<span class="literal">true</span>)&#123; <span class="comment">//暴力的なループ</span></span><br><span class="line"> <span class="keyword">if</span>(tmpNext)&#123; <span class="comment">//次のページは空ではありません</span></span><br><span class="line"> <span class="keyword">if</span>(page.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">name</span> == tmpNext.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">name</span>)&#123; <span class="comment">//現在のページの最初のカテゴリは次のページのカテゴリと同じです</span></span><br><span class="line"> <span class="keyword">if</span>(page.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">name</span> == <span class="string">&#x27;novel&#x27;</span>)&#123; <span class="comment">//現在のページは小説カテゴリです</span></span><br><span class="line"> <span class="keyword">if</span>(page.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">1</span>].<span class="property">name</span> == tmpNext.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">1</span>].<span class="property">name</span>)&#123; <span class="comment">//第二段階分類判定を追加</span></span><br><span class="line"> <span class="comment">// &lt;a href=&quot;&lt;%- url_for(tmpNext.path) %&gt;&quot; target=&quot;_self&quot;&gt;</span></span><br><span class="line"> <span class="comment">// &lt;span&gt;&lt;%= tmpNext.title %&gt;&lt;/span&gt;</span></span><br><span class="line"> <span class="comment">// &lt;i class=&quot;iconfont icon-chevronright&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"> <span class="comment">// &lt;/a&gt;</span></span><br><span class="line"> 壊す;</span><br><span class="line"> &#125;それ以外&#123;</span><br><span class="line"> tmpNext = tmpNext.<span class="property">next</span>; <span class="comment">//次の大きな不満を見つける</span></span><br><span class="line"> &#125;</span><br><span class="line"> &#125;それ以外&#123;</span><br><span class="line"> <span class="comment">// &lt;a href=&quot;&lt;%- url_for(tmpNext.path) %&gt;&quot; target=&quot;_self&quot;&gt;</span></span><br><span class="line"> <span class="comment">// &lt;span&gt;&lt;%= tmpNext.title %&gt;&lt;/span&gt;</span></span><br><span class="line"> <span class="comment">// &lt;i class=&quot;iconfont icon-chevronright&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"> <span class="comment">// &lt;/a&gt;</span></span><br><span class="line"> 壊す;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;それ以外&#123;</span><br><span class="line"> tmpNext = tmpNext.<span class="property">next</span>; <span class="comment">//次の大きな不満を見つける</span></span><br><span class="line"> &#125;</span><br><span class="line"> &#125;<span class="keyword">else</span>&#123; <span class="comment">//次のページは空なのでループを終了します</span></span><br><span class="line"> 壊す;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>私の書き方が乱暴すぎたためか、ソース コードを使用して説明するのが明確ではありませんでした。簡単に説明します。</p>
+<ol>
+<li>まず次のページがあるかどうかを判断します</li>
+<li>次に、現在のページと次のページのカテゴリが一致しているかどうかを判断し、一致していない場合は、次の大きな苦情を見つけます。</li>
+<li>現在のページと次のページが一致する場合、それが小説カテゴリであるかどうかを判断します。一致しない場合は、そのまま小説カテゴリに分類されます。</li>
+<li>現在のページが小説に分類されている場合、二次分類を決定します (私の小説は二次分類に従ってコレクションに保存されます)。そうでない場合は、次の大きな苦情を見つけます。</li>
+<li>現在のページは小説カテゴリであり、コレクションに属しているので、これで終わりです</li>
+</ol>
+<p>これは私のニーズを完全に満たしています:</p>
+<ol>
+<li>エッセイや体験談ごとに分類された記事はすべて前後のページにリンクされています。</li>
+<li>小説をコレクションごとに分類し、前後のページをリンクします。</li>
+</ol>
+<p>もっと良い書き方があると思いますし、他のトピックにも私と同じニーズがあるはずですが、このトピックが好きなので、他のトピックを勉強するのが面倒です。結局のところ、個人のウェブサイトで最も重要なのはそのコンテンツであり、その機能を満たすことができる場合は、まずそれを使用してください。</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(1)/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Flutter で Nas 音楽プレーヤーを作成する (1)</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/hexo%20%E3%81%AB%E7%99%BA%E8%A9%B1utterances%E3%82%92%E8%BF%BD%E5%8A%A0/" target="_self">
+                <span>hexo に発話utterancesを追加</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-%E3%81%A8%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B"><span class="toc-text">hexo とプラグインをアップグレードする</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%81%8C%E4%B8%8A%E6%9B%B8%E3%81%8D%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%81%8B%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84"><span class="toc-text">変更した箇所が上書きされていないか確認してください</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%A8%E6%AC%A1%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%AF%E3%80%81%E5%90%8C%E3%81%98%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%AE%E3%81%BF%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%BE%E3%81%99"><span class="toc-text">前ページと次ページのリンクには、同じカテゴリの記事のみが表示されます</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

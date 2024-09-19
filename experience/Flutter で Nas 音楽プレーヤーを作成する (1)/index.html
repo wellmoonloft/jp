@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Flutter で Nas 音楽プレーヤーを作成する (1) | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Flutter で Nas 音楽プレーヤーを作成する (1)</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2023-01-05 22:40
+      </span>
+      <span class="post-count">≈ 982字</span>
+      <span class="post-count">≈ 4分</span>
+    </div>
+    <div class="markdown-body"><p>ここ 2 か月間退屈していたので、家にある古い NAS をいじって [音楽サーバーをセットアップ](<a href="https://www.igerm.ee/">https://www.igerm.ee/</a> experience&#x2F;%E7%AE%A1%) しています。 ですが、特に満足のいくプレイヤーが見つからないというのもあります。デスクトップの <a target="_blank" rel="noopener" href="https://github.com/jeffvli/sonixd">Sonixd</a>  は見た目も良く、派手な機能もありませんが、モバイル版は <a target="_blank" rel="noopener" href="https://substreamerapp.com/">substreamer</a> だけがあまり満足のいくものではありません、も使えますが、あまり美しくありません。</p>
+<p>最も重要なことは、これら 2 つのプレーヤーは歌詞をサポートしておらず、あいまい検索や簡略化された従来の検索を実行できないことです。たとえば、ジェイ・チョウの<strong>退后</strong>を聴きたいのですが、検索で表示される名前は <strong>退後</strong> です。検索すると、繁体字中国語に切り替える必要があります。かなり迷惑です。</p>
+<p>私の最初の反応は、既製のマルチターミナル ホイールがあるかどうかを確認するために Github に行くことでした。しかし、私が見ることができるものはすべてローカルで再生されているか、NetEase Cloud の API を通じて構築された模造 NetEase Cloud 音楽プレーヤーが存在していました。切断はもちろん、Navidrome や Subsonic API もサポートしていません。なかなか見つからないので、頑張って自分で手に入れてみます！</p>
+<h3 id="Subsonic-API"><a href="#Subsonic-API" class="headerlink" title="Subsonic API"></a>Subsonic API</h3><p>Navidrome 自体にはネイティブ API がありますが、多くはありません。幸いなことに、作者は Subsonic の API をほぼすべてサポートしているため、Navidrome 自体に API ドキュメントがない場合でも、<a target="_blank" rel="noopener" href="https://www.subsonic.org/pages/api.jsp">Subsonic のドキュメント</a>は Postman でも試すことができます。</p>
+<h4 id="検証サーバー"><a href="#検証サーバー" class="headerlink" title="検証サーバー"></a>検証サーバー</h4><p><img src="https://s2.loli.net/2023/01/05/V3865yluGvdKPTz.jpg" alt="1672924014867"></p>
+<p>一見するとわかりにくいように思えるかもしれませんが、実際には非常に単純な 2 種類の検証があります。<strong>パスワード</strong> を渡すか、<strong>暗号化された (パスワード + 6 Salt値) に 6 Salt値 を加えたものを渡します</strong></p>
+<p>まず、テストするサーバーに<code>Ping</code>を実行します (<a target="_blank" rel="noopener" href="https://pub.dev/packages/dio">dio: ^4.0.6</a> を使用すると、多くの操作を節約できます)</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> response = <span class="keyword">await</span> Dio().<span class="keyword">get</span>(</span><br><span class="line">    _baseUrl +</span><br><span class="line">        <span class="string">&#x27;rest/ping?v=0.0.1&amp;c=xiumusic&amp;f=json&amp;u=&#x27;</span> +   </span><br><span class="line">        _username +  <span class="comment">//v はクライアントのバージョン番号、c はクライアントの名前、u はユーザー名、p はパスワードです</span></span><br><span class="line">        <span class="string">&#x27;&amp;p=&#x27;</span> +</span><br><span class="line">        _password,</span><br><span class="line">  );</span><br><span class="line">  <span class="built_in">print</span>(response);</span><br><span class="line">  <span class="keyword">if</span> (response.statusCode == <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="comment">//ここでもう 1 つのステップを実行する必要があります。つまり、code200 が返されても満足せず、subsonicサーバーからのフィードバックを確認します。</span></span><br><span class="line">    <span class="built_in">Map</span> _value = response.data[<span class="string">&#x27;subsonic-response&#x27;</span>];</span><br><span class="line">    <span class="built_in">String</span> _status = _value[<span class="string">&#x27;status&#x27;</span>];</span><br><span class="line">    <span class="comment">//通常は問題ありません、私は自給自足です、自己デバッグ中です、アップグレードするときはこの状況を認める必要があります、わかりません、わかりません。</span></span><br><span class="line">    <span class="keyword">if</span> (_status == <span class="string">&#x27;failed&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">print</span>(e);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2 段階認証サーバーと Subsonic の API が完了したら、後続のすべての API でその値を取得するために Salt  を使用できます。これらはすべて無料です。</p>
+<h4 id="暗号化されたログイン"><a href="#暗号化されたログイン" class="headerlink" title="暗号化されたログイン"></a>暗号化されたログイン</h4><ol>
+<li><code>Rondom</code> を使用して、ランダムに生成された 6 桁の文字を書き込みます</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> generateRandomString() &#123;</span><br><span class="line">  <span class="keyword">final</span> _random = Random();</span><br><span class="line">  <span class="keyword">const</span> _availableChars =</span><br><span class="line">      <span class="string">&#x27;AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890&#x27;</span>;</span><br><span class="line">  <span class="keyword">final</span> randomString = <span class="built_in">List</span>.generate(<span class="number">6</span>,</span><br><span class="line">          (index) =&gt; _availableChars[_random.nextInt(_availableChars.length)])</span><br><span class="line">      .join();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> randomString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>スプライシング後に MD5 暗号化を使用します。</li>
+</ol>
+<p>後で API で使用するためにこれらの 2 文字を保存します。</p>
+<h4 id="ディレクトリの取得"><a href="#ディレクトリの取得" class="headerlink" title="ディレクトリの取得"></a>ディレクトリの取得</h4><p>Subsonic のディレクトリは上から下にこのように分類されます</p>
+<ul>
+<li>音楽フォルダー</li>
+<li>アーティストフォルダー</li>
+<li>アルバム</li>
+<li>曲</li>
+</ul>
+<p>ただし、Navidrome には音楽フォルダーが 1 つしかないようなので、第 2 レベルの <code>getIndexes</code> を直接使用してディレクトリ マスター リストを作成し、その後 <code>ミュージシャン ID</code> に基づいてアルバム リストに進みました。</p>
+<p><img src="https://s2.loli.net/2023/01/05/IcxZnBTRm9P25f7.jpg" alt="1672925500580"></p>
+<h4 id="音楽を再生"><a href="#音楽を再生" class="headerlink" title="音楽を再生"></a>音楽を再生</h4><p>変更量を変更するには ValueNotifier を使用します。 <a target="_blank" rel="noopener" href="https://pub.dev/packages/provider">provider: ^6.0.5 </a> を使用する必要はありませんが、どのような場合でも ValueNotifier を使用する方が便利です。これはあなたが に求めたものであり、その場合は新しいコピーを最初から作成する必要があるということです。</p>
+<p>実際、<code>ValueNotifier</code> も非常に便利で、その後に <code>&lt;int&gt;</code> パラメータを指定して値の型を指定したり、この<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_Tony/article/details/112170758">記事</a>に基づいて監視データ型をカスタマイズしたりすることもできます。</p>
+<ol>
+<li>データモニターを定義する</li>
+</ol>
+<p> <code>ValueNotifier&lt;String&gt; activeSongValue = ValueNotifier&lt;String&gt;(&quot;1&quot;);</code></p>
+<p> 理論的には、これを任意のファイルに配置できますが、管理を容易にするために、ここでは曲の <code>id</code> を渡し、デフォルト値でフィルタリングすることをお勧めします。が <code>&quot;1&quot;</code> の場合、曲情報を取得するためにインターフェイスを呼び出さなくなりました (flutter 2.12 以降の Null 安全性の必須要件。最初は慣れませんでしたが、今ではかなり良いと思います)</p>
+<ol start="2">
+<li>データの値を変更する</li>
+</ol>
+<p> <code>activeSongValue.value = _tem[&quot;id&quot;];</code></p>
+<p> 直接使用するだけです。「provider」よりも簡単だと思われます。</p>
+<ol start="3">
+<li>データの変化を監視する</li>
+</ol>
+<p> <code>ValueListenableBuilder</code> コンストラクトを使用してリスニング部分を構築します</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> ValueListenableBuilder&lt;<span class="built_in">String</span>&gt;(</span><br><span class="line">        valueListenable: activeSongValue, <span class="comment">//监控器</span></span><br><span class="line">        builder: ((context, value, child) &#123;</span><br><span class="line">          <span class="keyword">if</span> (value != <span class="string">&quot;1&quot;</span>) &#123;         <span class="comment">//改变值</span></span><br><span class="line">            _setAudioSource(value);  <span class="comment">//直接使用id进行查询等后续工作</span></span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">return</span> Container()...</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>曲情報を取得する</li>
+</ol>
+<p> 曲の <code>id</code> を取得したら、<code>getSong</code> を使用して音楽情報を取得し、<code>getCoverArt</code> を使用してアルバム画像を取得し、<code>stream</code> を使用してストリーム ファイルを取得します。</p>
+<ol start="5">
+<li>音楽ストリームを再生する</li>
+</ol>
+<p> <a target="_blank" rel="noopener" href="https://pub.dev/packages/just_audio">just_audio: ^0.9.31</a> を使用すると、開発の進行を大幅にスピードアップできます。これは 2 番目にランク付けされた依存関係ですが、たまたま、ここ数日のバージョンでは、公式文書のアドレスが失われています、これは運命と呼ばれます。</p>
+<p> 使い方も非常にシンプルで、ボタンスライダーなどのコントロールの表示に関わらず、音楽をクリックしてから再生を開始するまでのコードはたったの3行です。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义组件</span></span><br><span class="line"><span class="keyword">final</span> _player = AudioPlayer();</span><br><span class="line"><span class="comment">//拼接流的url</span></span><br><span class="line"><span class="built_in">String</span> _url = <span class="keyword">await</span> getSongStreamUrl(_id);</span><br><span class="line"><span class="comment">//获取流并播放</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> _player.setAudioSource(AudioSource.uri(<span class="built_in">Uri</span>.parse(_url)));</span><br><span class="line">      _player.play();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&quot;Error loading audio source: <span class="subst">$e</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上記は、デスクトップでのサーバーテスト、曲レベルのディレクトリへの入力、音楽の再生を含む現在の進行状況です。</p>
+<p>まだまだ作業はたくさんありますが、バージョン 1 から注目しているのは Flutter です。モバイル端末への適応に注意するだけです。すべてを記述した後は、モバイルを調整するだけで十分だと思います。現在は単なる機能です）。</p>
+<p>こちらは <a target="_blank" rel="noopener" href="https://github.com/wellmoonloft/xiumusic">Github</a> に来て遊んでみるのは良いことですが、これは開発専用であり、通常の使用とは程遠いものです。</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(2)/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Flutter で Nas 音楽プレーヤーを作成する (2)</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/hexo%20%E3%81%8C%20v6.3.0%20%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F/" target="_self">
+                <span>hexo が v6.3.0 にアップグレードされました</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subsonic-API"><span class="toc-text">Subsonic API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A4%9C%E8%A8%BC%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC"><span class="toc-text">検証サーバー</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9F%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3"><span class="toc-text">暗号化されたログイン</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AE%E5%8F%96%E5%BE%97"><span class="toc-text">ディレクトリの取得</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9F%B3%E6%A5%BD%E3%82%92%E5%86%8D%E7%94%9F"><span class="toc-text">音楽を再生</span></a></li></ol></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

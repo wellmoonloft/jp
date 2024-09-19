@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Hexo は自動デプロイメントに GitHub Action を使用します | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Hexo は自動デプロイメントに GitHub Action を使用します</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2021-04-07 13:45
+      </span>
+      <span class="post-pubtime">
+        <i class="iconfont icon-updatetime" title="Update time"></i> 2022-11-30 10:23
+      </span>
+      <span class="post-count">≈ 933字</span>
+      <span class="post-count">≈ 4分</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>2022.11.30に更新され、node-versionのバージョンが12を使用すると、管理バックグラウンドでアップグレードを要求されますが、コード内のcheckout@v2に変更されます。 v3、setup-node@v1 は v3、node- バージョンを 16</strong> に変更するだけです</p>
+</blockquote>
+<p>Hexo を立ち上げてから 8 日が経ち、だいぶ使いやすくなってきており、改造もほぼ終わりました。</p>
+<p>より完璧な多言語 (記事も含む) を実現するために、私たちはまだまだ努力する必要があります。今日、Hexo のリリースは Github Action に引き継がれ、多言語の準備が整います。プラン。</p>
+<p>まず、Hexo がインストールされ、必要な作業がすべて完了していると仮定して、自動デプロイメントの構成を開始しましょう。</p>
+<p><a href="https://www.igerm.ee/jp/experience/Hexo-Github-Page/">Hexo をインストールして GitHub Pages にデプロイする方法はこちら</a></p>
+<p>まず、Hexo を使用しているため、Hexo Github Pages をデプロイするためのウェアハウスがすでにあると思います。ここで、Hexo の元のファイル (ローカル Hexo のルート ディレクトリにあるファイル) を保存するための別のウェアハウスを構築する必要があります。このステップでは、<code>VSCode</code>を直接使用してプロジェクトを Github に<code>共有</code>します。</p>
+<h3 id="キーを生成する"><a href="#キーを生成する" class="headerlink" title="キーを生成する"></a>キーを生成する</h3><p>おそらく Hexo を使用している人は全員この手順をすでに実行していると思いますが、私は以前は常に vscode を使用していたので、この手順を実行したことがありません。ここで自動的にデプロイするために、Hexo を自動的にデプロイするための新しいキーを生成します。</p>
+<p>以下は macOS での操作です。Windows 10 ユーザーは、市販の Ubuntu をインストールして後で実行できます。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;Hexo Deploy Key&quot;</span> -f github-deploy-key -N <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>これにより、現在のディレクトリに 2 つのファイルが生成されます。</p>
+<ul>
+<li>github-deploy-key - 秘密鍵</li>
+<li>github-deploy-key.pub - 公開鍵</li>
+</ul>
+<h3 id="GitHub-設定キー"><a href="#GitHub-設定キー" class="headerlink" title="GitHub 設定キー"></a>GitHub 設定キー</h3><p>ここで、<code>秘密キー</code>は、アクションをトリガーするときに使用する Hexo オリジナル ファイルを保存するコード リポジトリに配置されます。</p>
+<p>Hexo デプロイ中に書き込むために、GitHub Pages に対応するコード リポジトリに<code>公開キー</code>を置きます。</p>
+<h3 id="秘密キーを構成する"><a href="#秘密キーを構成する" class="headerlink" title="秘密キーを構成する"></a>秘密キーを構成する</h3><p>まず、GitHub 上で Hexo が保存されているリポジトリを開き、「設定 -&gt; シークレット」にアクセスして、「新しいリポジトリ シークレット」を選択します。</p>
+<p><img src="https://s2.loli.net/2022/12/30/iu8s2EZx6hmLRY7.png" alt="image-20210407125805861"></p>
+<p>名前の部分を入力します: <code>HEXO_DEPLOY_KEY</code>。大文字と小文字に注意してください。これは後ほど GitHub Actions ワークフローで使用されます。**は間違って記述しないでください。 **</p>
+<h3 id="公開キーを追加"><a href="#公開キーを追加" class="headerlink" title="公開キーを追加"></a>公開キーを追加</h3><p>次に、Web ページが保存されているウェアハウス (Hexo デプロイ後のウェアハウス) にアクセスする必要があります (例: <code>yourname.github.io</code>)。<code>Settings -&gt; Deploy keys</code>にアクセスし、<code>Add deploy key</code>を押します。新しい公開キーを追加するには:</p>
+<p><img src="https://s2.loli.net/2022/12/30/sInQUzm9vT5JAla.png" alt="image-20210407130033885"></p>
+<p><code>Title</code>に<code>HEXO_DEPLOY_PUB</code>と入力します。もちろん、他のカスタマイズされた名前を入力することもできます。</p>
+<p><code>github-deploy-key.pub</code>ファイルの内容を<code>Key</code>に貼り付けます。</p>
+<blockquote>
+<p>注: 必ず<code>Allow write access</code>にチェックを入れて書き込み権限をオープンしてください。そうしないと、書き込みできないため、デプロイメントが失敗します。</p>
+</blockquote>
+<h3 id="ワークフローの作成"><a href="#ワークフローの作成" class="headerlink" title="ワークフローの作成"></a>ワークフローの作成</h3><p>まず、Hexo のウェアハウスに新しいファイル <code>.github/workflows/deploy.yml</code> を作成します。ファイル名は自分で選択できますが、ファイルの内容は <code>.github/workflows</code> ディレクトリに配置する必要があります。次のように：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">name: Hexo Deploy</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - master</span><br><span class="line"></span><br><span class="line"><span class="built_in">env</span>:</span><br><span class="line">  TZ: Asia/Shanghai</span><br><span class="line"></span><br><span class="line"><span class="built_in">jobs</span>:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-18.04</span><br><span class="line">    <span class="keyword">if</span>: github.event.repository.owner.id == github.event.sender.id</span><br><span class="line"></span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout <span class="built_in">source</span></span><br><span class="line">        uses: actions/checkout@v2</span><br><span class="line">        with:</span><br><span class="line">          ref: master</span><br><span class="line"></span><br><span class="line">      - name: Setup Node.js</span><br><span class="line">        uses: actions/setup-node@v1</span><br><span class="line">        with:</span><br><span class="line">          node-version: <span class="string">&#x27;12&#x27;</span></span><br><span class="line"></span><br><span class="line">      - name: Setup Hexo</span><br><span class="line">        <span class="built_in">env</span>:</span><br><span class="line">          ACTION_DEPLOY_KEY: <span class="variable">$&#123;&#123; secrets.HEXO_DEPLOY_KEY &#125;</span>&#125;</span><br><span class="line">        run: |</span><br><span class="line">          <span class="built_in">mkdir</span> -p ~/.ssh/</span><br><span class="line">          <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$ACTION_DEPLOY_KEY</span>&quot;</span> &gt; ~/.ssh/id_rsa</span><br><span class="line">          <span class="built_in">chmod</span> 700 ~/.ssh</span><br><span class="line">          <span class="built_in">chmod</span> 600 ~/.ssh/id_rsa</span><br><span class="line">          ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts</span><br><span class="line">          git config --global user.email <span class="string">&quot;john@doe.com&quot;</span></span><br><span class="line">          git config --global user.name <span class="string">&quot;John Doe&quot;</span></span><br><span class="line">          npm install hexo-cli -g</span><br><span class="line">          npm install</span><br><span class="line"></span><br><span class="line">      - name: Deploy</span><br><span class="line">        run: |</span><br><span class="line">          hexo clean</span><br><span class="line">          hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>簡単に説明すると、コンテンツをリモートの<code>master</code>ブランチにプッシュすると、このワークフローがトリガーされます。</p>
+<p><code>hexodeploy</code>のシステムとして<code>ubuntu-latest</code>を使用します。</p>
+<p>まず <code>actions/checkout@v2</code> を実行してソース コード (これも他の人が書いたコード) を移動し、次に最新の Node.js v12 LTS をノード インタープリターとして使用するように設定します。</p>
+<p>次のステップは SSH 関連の設定ファイルを作成することです。<code>secrets.HEXO_DEPLOY_KEY</code>は前に設定した秘密鍵に対応するため、名前を間違えないように注意してください。</p>
+<p><code>git config</code>に関連する名前と電子メール アドレスを、実際に使用しているものに置き換えるだけです。</p>
+<p>最後のステップは、Hexo CLI、さまざまな依存モジュール、およびデプロイメントをインストールすることです。</p>
+<h4 id="依存関係パッケージをローカルにロードすることをお勧めします。"><a href="#依存関係パッケージをローカルにロードすることをお勧めします。" class="headerlink" title="依存関係パッケージをローカルにロードすることをお勧めします。"></a>依存関係パッケージをローカルにロードすることをお勧めします。</h4><p>ここで注意する必要があるのは、私の方法を使用することをお勧めします。これは、<code>npm install</code> を削除し、ローカルで <code>npm install</code> を実行し (注: <code>npm install hexo-cli -g</code> は保持する必要があります)、その後 <code>すべての依存パッケージをプッシュします </code> 倉庫に移動します。これには 2 つの利点があります。</p>
+<ol>
+<li><p>頻繁に更新する場合は、依存関係パッケージをダウンロードする時間を節約します (特定のファイルのみを更新する場合を考えてみてください。依存関係パッケージを再度ダウンロードする必要はありません)。</p>
+</li>
+<li><p>特別なニーズがあるため、<a href="https://www.igerm.ee/jp/experience/Hexo%20%E3%81%AE%E7%BE%8E%E5%8C%96%E3%80%81%E6%9C%80%E9%81%A9%E5%8C%96%E3%80%81Lighthouse%20%E3%81%AE%E7%A9%B6%E6%A5%B5%E3%81%AE%E3%82%B9%E3%82%B3%E3%82%A2%E8%BF%BD%E8%B7%A1/#hexo-generator-index-%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B">ページネーション時に特定のカテゴリの記事を削除する必要があります</a> なので、<code>hexo-generator-index</code>を変更しました。パッケージのコードを再度ダウンロードすると、変更した部分は実装されません。</p>
+</li>
+</ol>
+<p>構成が完了したら、コードをプッシュしてみて、ウェアハウスの<code>Actions</code>で実行ステータスを確認できます。</p>
+<p><img src="https://s2.loli.net/2024/07/16/3YRXsMSH59Dp2fr.png" alt="image-20210407133226277"></p>
+<h3 id="ピット-1-デプロイ構成ウェアハウスのアドレスを-git-モードに変更する"><a href="#ピット-1-デプロイ構成ウェアハウスのアドレスを-git-モードに変更する" class="headerlink" title="ピット 1: デプロイ構成ウェアハウスのアドレスを git モードに変更する"></a>ピット 1: デプロイ構成ウェアハウスのアドレスを git モードに変更する</h3><p><code>_config.yml</code>ファイルに次のような<code>GitHub Pages</code>構成があることを確認します。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:wellmoonloft/en.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注: http を使用すると、後で公開するときに問題が発生します。</p>
+</blockquote>
+<h3 id="落とし穴-2-自動デプロイメント構成ファイル内のタイムゾーンを削除しないように注意してください"><a href="#落とし穴-2-自動デプロイメント構成ファイル内のタイムゾーンを削除しないように注意してください" class="headerlink" title="落とし穴 2: 自動デプロイメント構成ファイル内のタイムゾーンを削除しないように注意してください"></a>落とし穴 2: 自動デプロイメント構成ファイル内のタイムゾーンを削除しないように注意してください</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br></pre></td></tr></table></figure>
+
+<p>これを追加しないと、中国の人々が記事を公開するときに表示される記事の時刻は、あなたの<code>date</code>の時刻とちょうど 8 時間異なります。</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/%E5%AE%8C%E7%92%A7%E3%81%AA%20Hexo%20%E5%A4%9A%E8%A8%80%E8%AA%9E%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>完璧な Hexo 多言語ソリューション</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/Hexo%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%A8%E3%83%A9%E3%83%BC/" target="_self">
+                <span>Hexo全文検索アドレスエラー</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%AD%E3%83%BC%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B"><span class="toc-text">キーを生成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub-%E8%A8%AD%E5%AE%9A%E3%82%AD%E3%83%BC"><span class="toc-text">GitHub 設定キー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%98%E5%AF%86%E3%82%AD%E3%83%BC%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B"><span class="toc-text">秘密キーを構成する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%96%8B%E3%82%AD%E3%83%BC%E3%82%92%E8%BF%BD%E5%8A%A0"><span class="toc-text">公開キーを追加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AE%E4%BD%9C%E6%88%90"><span class="toc-text">ワークフローの作成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E5%AD%98%E9%96%A2%E4%BF%82%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%AB%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E3%81%8A%E5%8B%A7%E3%82%81%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"><span class="toc-text">依存関係パッケージをローカルにロードすることをお勧めします。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%83%94%E3%83%83%E3%83%88-1-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E6%A7%8B%E6%88%90%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%8F%E3%82%A6%E3%82%B9%E3%81%AE%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%92-git-%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B"><span class="toc-text">ピット 1: デプロイ構成ウェアハウスのアドレスを git モードに変更する</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4-2-%E8%87%AA%E5%8B%95%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%83%A1%E3%83%B3%E3%83%88%E6%A7%8B%E6%88%90%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%86%85%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BE%E3%83%BC%E3%83%B3%E3%82%92%E5%89%8A%E9%99%A4%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E6%B3%A8%E6%84%8F%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84"><span class="toc-text">落とし穴 2: 自動デプロイメント構成ファイル内のタイムゾーンを削除しないように注意してください</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

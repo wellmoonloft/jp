@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Flutter で Nas 音楽プレーヤーを作成する (4) | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Flutter で Nas 音楽プレーヤーを作成する (4)</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2023-01-14 16:50
+      </span>
+      <span class="post-pubtime">
+        <i class="iconfont icon-updatetime" title="Update time"></i> 2023-01-15 15:54
+      </span>
+      <span class="post-count">≈ 2.1k字</span>
+      <span class="post-count">≈ 9分</span>
+    </div>
+    <div class="markdown-body"><p>今日、長い間後回しにしていたホームページを書き終えました。そのうちの 3 つは、ランダム アルバム、よく再生された曲のリスト、最近追加したアルバムです。</p>
+<p>実際、このアプリと NetEase Cloud の最大の違いは、これらの曲を自分で収集して聴くため、推奨アルゴリズムが必要ないことです。</p>
+<h3 id="CustomScrollView"><a href="#CustomScrollView" class="headerlink" title="CustomScrollView"></a>CustomScrollView</h3><p>ホームページで最も厄介な点は、水平リストと垂直リストが混在することですが、それほど複雑ではありません。主なことは、高さと幅、または最大幅と最大高さを固定することを覚えておくことです。それ以外の場合は、非常に簡単です。エラーを報告します。</p>
+<p>1 つ目は、人によって好まれたり嫌われたりする <strong>スライバー</strong> です。ただし、これらの自動化された機能により、彼の <strong>子供</strong> になることができるコントロールはほとんどありません。しかし幸いなことに、公式は <strong>SliverToBoxAdapter</strong> コンポーネントを提供しているので、<strong>子</strong> ではないコンポーネントをスキンのレイヤーで覆うことができます。これは非常に優れています。</p>
+<p>レイアウトは、ランダムな 10 枚のアルバムの水平スクロール リストです。以下は最も再生された 10 曲の垂直方向のリストで、その下には最近追加された 10 個の水平方向のアルバムのリストが表示されます。の方がいいです？</p>
+<p><img src="https://s2.loli.net/2023/01/13/OHhjqkunaQwzP4p.png" alt="WechatIMG650"></p>
+<p>実装も比較的単純です。たとえば、<strong>SliverList</strong> コントロールに加えて、タイトル部分を <strong>SliverToBoxAdapter</strong> でカバーする必要があります。</p>
+<p>デスクトップと互換性を持たせたいため、デスクトップ上で左右にスライドできる Apple の Magic Mouse を除いて、通常のマウスにはこの機能がないため、デスクトップ用に左右にスライドするボタンを追加する必要があります。クリック。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> CustomScrollView(</span><br><span class="line">      slivers: &lt;Widget&gt;[</span><br><span class="line">        <span class="comment">//这个是套首页文本的</span></span><br><span class="line">        SliverToBoxAdapter(</span><br><span class="line">          child: Container(</span><br><span class="line">              padding: leftrightPadding,</span><br><span class="line">              child: Text(indexLocal, style: titleText1)),</span><br><span class="line">        ),</span><br><span class="line">        <span class="keyword">if</span> (_albums != <span class="keyword">null</span> &amp;&amp; _albums!.length &gt; <span class="number">0</span>)</span><br><span class="line">          SliverToBoxAdapter(</span><br><span class="line">            <span class="comment">//这个套横向的标题栏，包括文本和左右按钮，我写了个公共文件方便套用</span></span><br><span class="line">              child: MySliverControlBar(</span><br><span class="line">            title: <span class="string">&quot;随机专辑&quot;</span>,</span><br><span class="line">            controller: _randomAlbumcontroller,</span><br><span class="line">          )),</span><br><span class="line">        <span class="keyword">if</span> (_albums != <span class="keyword">null</span> &amp;&amp; _albums!.length &gt; <span class="number">0</span>)</span><br><span class="line">          SliverToBoxAdapter(</span><br><span class="line">            <span class="comment">//这个套横向的滚动图片，我写了个公共文件方便套用</span></span><br><span class="line">              child: MySliverControlList(</span><br><span class="line">            controller: _randomAlbumcontroller,</span><br><span class="line">            albums: _albums!,</span><br><span class="line">            url: _imageURL!,</span><br><span class="line">          ))</span><br><span class="line">        ]</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+
+<p>これはホームページ ビルドのコンテンツであり、<strong>MySliverControlBar</strong> の内部は非常に単純で、行の中に 1 行が含まれているだけです。</p>
+<p><strong>MySliverControlList</strong> は実際には水平の <strong>ListView</strong> です</p>
+<p>ここで、デスクトップ要件がない場合、つまりスクロールを手動で制御する必要がない場合は、コントローラーを作成する必要はありませんが、スクロールを制御する必要がある場合は、制御メソッドを挿入する必要があることに注意してください。比較的単純で、ボタンをクリックするだけでトリガーされます。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">controller.animateTo(controller.offset - _size.width / <span class="number">2</span>,</span><br><span class="line">                        duration: <span class="built_in">Duration</span>(milliseconds: <span class="number">200</span>),</span><br><span class="line">                        curve: Curves.ease);</span><br></pre></td></tr></table></figure>
+
+<p>offsetは非常に雰囲気のあるもので、1 回のクリックで画面の半分が移動します。数回のクリックを節約できます。半日は動きません。</p>
+<p>このようにして、後でコンテンツを追加したい場合は、今のところはこれで完了です。</p>
+<p>さらに、今日は、下部のコントロール部分を <strong>bottomNavigationBar</strong> に完全に移動しました。これにより、レイアウトがよりシンプルに見えます。これは、後でもう一度調整する必要があるかもしれません。 <strong>LeftScreen</strong> を各ページに直接埋め込んで、フラッター全体のルーティングを使用し、ルーティングを制御するグローバル変数を削除できるようにします。</p>
+<p>最も重要なことは、デスクトップの場合は <strong>LeftScreen</strong> を表示し、<strong>bottomNavigationBar</strong> に直接ナビゲーションを追加して、横にスライドするボタンをオンにすることです。モバイル端末の左上は取り外し可能です。左側は Windows クライアント用の場所を自由に残すことができます。クライアントが Windows の場合、Windows のズームとクロスが右側にあるため、検索と設定のボタンを左側に配置できるため、削除しました。タイトル バーが表示されるため、十字をブロックすることはできません。</p>
+<h3 id="MediaQuery-を使用するとソフト-キーボードがポップアップしなくなる"><a href="#MediaQuery-を使用するとソフト-キーボードがポップアップしなくなる" class="headerlink" title="MediaQuery を使用するとソフト キーボードがポップアップしなくなる"></a>MediaQuery を使用するとソフト キーボードがポップアップしなくなる</h3><h4 id="モバイル-ソリューション"><a href="#モバイル-ソリューション" class="headerlink" title="モバイル ソリューション"></a>モバイル ソリューション</h4><p><strong>Scaffold</strong> はさまざまなデバイスに応じてさまざまなウィンドウ サイズに適応し、動的にウィンドウ サイズを取得するメソッドは <strong>MediaQuery.of(context).size</strong> であるため、これはマルチターミナル開発中に発生する問題です * , これはデスクトップ側で開発する場合には非常に便利ですが、モバイル側でキーボードがポップアップする場合に問題が発生します。</p>
+<p>パネルの高さが size を使用して強制的に定義されているが、ソフト キーボードがポップアップする場合、上にスライドしたときのフォームの高さもこれを使用して計算されるため、上にスライドした後、パネルはキーボードの位置を押し上げます。ソフトキーボードで頻繁に点滅するとポップアップ状態が維持されず、ページが更新され続けます。</p>
+<p>強制的な配置を行いたい場合、<strong>window.physicalSize</strong> を使用するのが最善の方法です。モバイル端末上のフォームのサイズは変更されず、複数の端末に適応させるために、使用される最終的な幅は次のとおりです。 <strong>window .physicalSize.width &#x2F; window.devicePixelRatio</strong> とし、<strong>resizeToAvoidBottomInset: false</strong> を <strong>Scaffold</strong> に追加して、小さな変位によって引き起こされるエラーを回避します</p>
+<h4 id="デスクトップ-ソリューション"><a href="#デスクトップ-ソリューション" class="headerlink" title="デスクトップ ソリューション"></a>デスクトップ ソリューション</h4><p>モバイル側の設定が完了すると、デスクトップ側で <strong>window.physicalSize</strong> が一度呼び出されます。ただし、デスクトップ上で <strong>window.physicalSize</strong> を使用し続ける場合、デスクトップをドラッグして拡大および縮小することができます。この時点では、パネルは元の高さを維持します。を動的に調整するには 2 つの方法があります。1 つはフォームにリスナーを追加し、フォームのサイズが変更されたときに window.physicalSize を再取得する方法で、最も簡単な方法は <strong>window を使い続けることです。 PhysicalSize</strong>、ただしグローバル変数に入れます</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ValueNotifier&lt;<span class="built_in">double</span>&gt; windowsWidth =</span><br><span class="line">    ValueNotifier&lt;<span class="built_in">double</span>&gt;(<span class="built_in">window</span>.physicalSize.width / <span class="built_in">window</span>.devicePixelRatio);</span><br><span class="line"></span><br><span class="line">ValueNotifier&lt;<span class="built_in">double</span>&gt; windowsHeight =</span><br><span class="line">    ValueNotifier&lt;<span class="built_in">double</span>&gt;(<span class="built_in">window</span>.physicalSize.height / <span class="built_in">window</span>.devicePixelRatio);</span><br></pre></td></tr></table></figure>
+
+<p>次に、build の最も外側の層、<strong>Saffold</strong> のすぐ外側で、<strong>MediaQuery.of(context).size</strong> を取得できる場所で値の変更が行われます。その後、他の層で値を変更する必要はありません。 Flutter はフォームが変更されると自動的に <strong>saffold を再構築</strong>するため、このとき、これら 2 つの値の変更が最初にトリガーされ、その後、レンダリング時に後続の値がトリガーされます。新しい値は自然に取得されるので、必要はありません。可能であれば、もう一度監視を実行しましょう。監視タスクには別のネストが必要です。さまざまなマトリョーシカ人形を見るのはあまりにも不快です。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当不是移动端的时候使用这个可以动态监听窗体变化</span></span><br><span class="line">    <span class="comment">//如果是移动端的话，窗体不会变化</span></span><br><span class="line">    <span class="keyword">if</span> (!isMobile.value) &#123;</span><br><span class="line">      windowsWidth.value = MediaQuery.of(context).size.width;</span><br><span class="line">      windowsHeight.value = MediaQuery.of(context).size.height;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>このようにして、モバイルとデスクトップの間の適応を最小限のコードで完了できます。</p>
+<h3 id="現在再生中のマットエフェクト"><a href="#現在再生中のマットエフェクト" class="headerlink" title="現在再生中のマットエフェクト"></a>現在再生中のマットエフェクト</h3><p>当初は、もっと「規律正しく」、上部と下部を <strong>AppBar</strong> と <strong>bottomSheet</strong> に移動したかったのですが、再生ページを作成しているときに考えが変わりました。下部のポップアップを作成するときに、ウィンドウ内で、<strong>AppBar</strong> と <strong>bottomSheet</strong> の間に挟まれるのではなく、全画面ページが直接ポップアップ表示されることを願っています。この方法では、たとえすりガラス効果があるとしても…実際はとてもいいのですが、うーん、私は強迫性障害を持っています…</p>
+<p><img src="https://s2.loli.net/2023/01/14/4TIs16giHNxMPdm.png" alt="WechatIMG21777"></p>
+<p>この種の再生中のポップアップ ウィンドウは見苦しいと感じたので、暴力的なアイデアを続けて、再生コントロールの上部と下部を自分のコントロールに直接書き込み、同時に全画面効果を実現します。ポップアップページのボタンで並べ替えることができるので、さらにボタンを配置して移動します。</p>
+<p>ここで設定しているのは**BoxDecoration(color: Colors.black.withOpacity(0.7))**で、実際には0.8程度に設定できると思います。</p>
+<p>実装方法はStackを使って1層をカバーしてコードを見ます。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Stack(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          ConstrainedBox(</span><br><span class="line">              constraints: <span class="keyword">const</span> BoxConstraints.expand(),</span><br><span class="line">              child: ValueListenableBuilder&lt;<span class="built_in">Map</span>&gt;(</span><br><span class="line">                  valueListenable: activeSong,</span><br><span class="line">                  builder: ((context, value, child) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ClipRRect(</span><br><span class="line">                      <span class="comment">//这里设置背景图片，其实可以直接Image的，不需要做个圆角矩形，我是复制过来的，无所谓啦</span></span><br><span class="line">                      borderRadius: BorderRadius.circular(<span class="number">15</span>),</span><br><span class="line">                      child: (value.isEmpty)</span><br><span class="line">                          ? Image.asset(<span class="string">&quot;assets/images/logo.jpg&quot;</span>)</span><br><span class="line">                          : CachedNetworkImage(</span><br><span class="line">                              imageUrl: value[<span class="string">&quot;url&quot;</span>],</span><br><span class="line">                              fit: BoxFit.cover,</span><br><span class="line">                              placeholder: (context, url) &#123;</span><br><span class="line">                                <span class="keyword">return</span> AnimatedSwitcher(</span><br><span class="line">                                  child: Image.asset(<span class="string">&quot;assets/images/logo.jpg&quot;</span>),</span><br><span class="line">                                  duration:</span><br><span class="line">                                      <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: imageMilli),</span><br><span class="line">                                );</span><br><span class="line">                              &#125;,</span><br><span class="line">                            ),</span><br><span class="line">                    );</span><br><span class="line">                  &#125;))),</span><br><span class="line">          Center(</span><br><span class="line">            child: ClipRect(</span><br><span class="line">              child: BackdropFilter(</span><br><span class="line">                filter: ImageFilter.blur(sigmaX: <span class="number">10.0</span>, sigmaY: <span class="number">10.0</span>),</span><br><span class="line">                child: Container(</span><br><span class="line">                  width: windowsWidth.value,</span><br><span class="line">                  height: windowsHeight.value,</span><br><span class="line">                  decoration:</span><br><span class="line">                      BoxDecoration(color: Colors.black.withOpacity(<span class="number">0.8</span>)), <span class="comment">//这里是控制透明度的，然后前面的颜色设置成白色和黑色有不同的效果，都可以调整</span></span><br><span class="line">                  child:... <span class="comment">//放上层控件</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://s2.loli.net/2023/01/14/yVBtma79ERxfC82.jpg" alt="1673685301772"></p>
+<p>＃＃＃ 歌詞</p>
+<p>歌詞の実装には、pub 上の唯一の非常に優れたサードパーティ コンポーネント <a target="_blank" rel="noopener" href="https://pub.dev/packages/flutter_lyric">flutter_lyric: ^2.0.4+6</a> を使用します。実装は難しくありません。デモを作成してオンラインに公開します。ソース コードのサンプルをダウンロードして、それを読み込むことができます。歌詞自体は「描画」されているため、非常に安定しています。再生コントロールとプログレス バーは <strong>StreamBuilder</strong> を使用して取得するため、定義する必要があります。著者の例よりもはるかに少ないものがあります。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lyricModel =</span><br><span class="line">    LyricsModelBuilder.create().bindLyricToMain(normalLyric).getModel();  <span class="comment">//歌词文件normalLyric就是个字符串，照着抄就行</span></span><br><span class="line"><span class="keyword">var</span> lyricUI = UINetease();  <span class="comment">//拿到UI文件，这个后面也可以自己改，字体颜色等等</span></span><br><span class="line"><span class="keyword">var</span> lyricPadding = <span class="number">40.0</span>;    <span class="comment">//直接复制了，可以改</span></span><br><span class="line"><span class="keyword">var</span> playing = <span class="keyword">true</span>;         <span class="comment">//这个是控制歌词播放的，作者用来联动按钮控制歌词高亮，我不需要联动直接传了true，后面需要加到自己的暂停按钮里面去（其实不加好像也行...就一直true呗）</span></span><br></pre></td></tr></table></figure>
+
+<p>次に、<strong>initState</strong> に 2 行を追加します。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lyricUI.highlight = <span class="keyword">true</span>;  <span class="comment">//设置高亮</span></span><br></pre></td></tr></table></figure>
+
+<p>次に、歌詞読み取り UI の Widget をビルドし、必要な場所に配置します。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">  Widget _buildReaderWidget() &#123;</span><br><span class="line">    <span class="keyword">return</span> StreamBuilder&lt;PositionData&gt;(</span><br><span class="line">        stream: _positionDataStream,</span><br><span class="line">        builder: (context, snapshot) &#123;</span><br><span class="line">          <span class="keyword">final</span> positionData = snapshot.data;</span><br><span class="line">          <span class="keyword">final</span> position = positionData?.position.inMilliseconds ?? <span class="number">0</span>;</span><br><span class="line">          <span class="comment">//我的定位信息是用StreamBuilder控制的，所以要套个头</span></span><br><span class="line">          <span class="keyword">return</span> LyricsReader(</span><br><span class="line">            padding: EdgeInsets.symmetric(horizontal: lyricPadding),</span><br><span class="line">            model: lyricModel,  <span class="comment">//这里需要注意的是，因为这个StreamBuilder是一直在跑的，这里面可不敢放变量赋值，不然会一直run，如果跟我一样做了歌词的全局变量来读的话，检测值一定要放到StreamBuilder的外层！！！否则字幕会一直闪烁</span></span><br><span class="line">            position: position,</span><br><span class="line">            lyricUi: lyricUI,</span><br><span class="line">            playing: playing,</span><br><span class="line">            <span class="comment">//设置大小</span></span><br><span class="line">            size: Size(windowsWidth.value / <span class="number">2</span>, windowsHeight.value / <span class="number">2</span>),</span><br><span class="line">            emptyBuilder: () =&gt; Center(</span><br><span class="line">              child: Text(</span><br><span class="line">                <span class="string">&quot;No lyrics&quot;</span>,</span><br><span class="line">                style: lyricUI.getOtherMainTextStyle(),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            selectLineBuilder: (progress, confirm) &#123;</span><br><span class="line">              <span class="keyword">return</span> Row(</span><br><span class="line">                children: [</span><br><span class="line">                  IconButton(</span><br><span class="line">                      onPressed: () &#123;</span><br><span class="line">                        LyricsLog.logD(<span class="string">&quot;点击事件&quot;</span>);</span><br><span class="line">                        confirm.call();</span><br><span class="line">                        <span class="comment">//这里是更新seek的位置，不过我那个进度条做好了监听，所以不需要setState,直接改就可以了</span></span><br><span class="line">                        <span class="comment">//setState(() &#123;</span></span><br><span class="line">                        widget.player.seek(<span class="built_in">Duration</span>(milliseconds: progress));</span><br><span class="line">                        <span class="comment">// &#125;);</span></span><br><span class="line">                      &#125;,</span><br><span class="line">                      icon: Icon(Icons.play_arrow, color: kGrayColor)),</span><br><span class="line">                  Expanded(</span><br><span class="line">                    child: Container(</span><br><span class="line">                      decoration: BoxDecoration(color: kGrayColor),</span><br><span class="line">                      height: <span class="number">1</span>,</span><br><span class="line">                      width: <span class="built_in">double</span>.infinity,</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                  Text(</span><br><span class="line">                    <span class="comment">//这是自己写的方法，用于把Duration改成小时、分钟、秒这样的字符串</span></span><br><span class="line">                    formatDurationMilliseconds(progress),,</span><br><span class="line">                    style: TextStyle(color: kGrayColor),</span><br><span class="line">                  )</span><br><span class="line">                ],</span><br><span class="line">              );</span><br><span class="line">            &#125;,</span><br><span class="line">          );</span><br><span class="line">        &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span> formatDurationMilliseconds(<span class="built_in">int</span> _duration) &#123;</span><br><span class="line">  <span class="built_in">Duration</span> _dura = <span class="built_in">Duration</span>(milliseconds: _duration);</span><br><span class="line">  <span class="keyword">if</span> (_dura.inHours != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">String</span> hours = _dura.inHours.toString().padLeft(<span class="number">0</span>, <span class="string">&#x27;2&#x27;</span>);</span><br><span class="line">    <span class="built_in">String</span> minutes = _dura.inMinutes.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    <span class="built_in">String</span> seconds = _dura.inSeconds.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;<span class="subst">$hours</span>:<span class="subst">$minutes</span>:<span class="subst">$seconds</span>&quot;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">String</span> minutes = _dura.inMinutes.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    <span class="built_in">String</span> seconds = _dura.inSeconds.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;<span class="subst">$minutes</span>:<span class="subst">$seconds</span>&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>この時点で、歌詞の問題は解決されています。後で別の <strong>normalLyric</strong> を渡すだけです。進行状況バーの値モニターに遭遇しないように注意する必要があります。そうしないと、そのままだと歌詞が点滅し続けます。ランニング。</p>
+<p>現在のコントロールに問題があります。歌詞をドラッグして特定の文を見つけると、確かに [OK] をクリックして目的の位置を見つけることができますが、歌詞のスクロールが停止します。作者のデモでも同じことを見たので、後で解決する方法を確認するために、<a target="_blank" rel="noopener" href="https://github.com/ozyl/flutter_lyric/issues/23">問題</a> を作者に提起しました。</p>
+<p><img src="https://s2.loli.net/2023/01/15/WCFZOToQYNlg47s.jpg" alt="1673766650968"></p>
+<p>となると、肝心なのは…歌詞を一括で見つける方法…NetEase CloudのAPIを使わないといけないかも…</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/nas%E3%81%8C%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8BSSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92mac%E3%81%A7%E7%94%B3%E8%AB%8B%E3%81%99%E3%82%8B/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>nasが使用するSSL証明書をmacで申請する</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20(3)/" target="_self">
+                <span>Flutter で Nas 音楽プレーヤーを作成する (3)</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CustomScrollView"><span class="toc-text">CustomScrollView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MediaQuery-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%81%A8%E3%82%BD%E3%83%95%E3%83%88-%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E3%83%9D%E3%83%83%E3%83%97%E3%82%A2%E3%83%83%E3%83%97%E3%81%97%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B"><span class="toc-text">MediaQuery を使用するとソフト キーボードがポップアップしなくなる</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB-%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"><span class="toc-text">モバイル ソリューション</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97-%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"><span class="toc-text">デスクトップ ソリューション</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8F%BE%E5%9C%A8%E5%86%8D%E7%94%9F%E4%B8%AD%E3%81%AE%E3%83%9E%E3%83%83%E3%83%88%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88"><span class="toc-text">現在再生中のマットエフェクト</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
