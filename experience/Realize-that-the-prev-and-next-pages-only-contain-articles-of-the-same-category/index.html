@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Realize that the prev and next pages only contain articles of the same category | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Realize that the prev and next pages only contain articles of the same category</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2022-12-16 22:16
+      </span>
+      <span class="post-count">≈ 653Words</span>
+      <span class="post-count">≈ 4Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<p>I upgraded hexo to 6.3.0 during the day, but it’s still boring at night, and the outside is still very dangerous, so I just put <a href="https://www.igerm.ee/en/experience/Update-hexo-to-v6-3-0/#Remaining-problem">this function is realized</a>, this problem has always existed, However, due to laziness, it dragged on for nearly a year.</p>
+<p>Let me briefly introduce that my website has three navigations belonging to three <code>categories</code>, so when entering the article, the titles and links of the previous and next pages in the footer are actually in the order of <code>date</code> for all articles as a whole Arranged, so for example, if you click on the next page in the essay, you may click on the article in the experience sharing, which is a bit of a drama. Solve that problem tonight.</p>
+<p>Since each person’s theme is different, the writing method of <code>ejs</code> corresponding to the article page may also be different, here is the original code to explain it (it’s ugly, definitely not the best practice, but it can be used, some masters see it and want to help I’ll optimize it and ask for a message [laughing])</p>
+<blockquote>
+<p>I commented out the ejs syntax and html syntax, in order to better display the js code</p>
+<p>This is written in the post.ejs file</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmpNext = page.<span class="property">next</span>; <span class="comment">//Give the next page object of the current page to a variable</span></span><br><span class="line">     <span class="keyword">while</span>(<span class="literal">true</span>)&#123; <span class="comment">//violent loop</span></span><br><span class="line">       <span class="keyword">if</span>(tmpNext)&#123; <span class="comment">//When the next page is not empty</span></span><br><span class="line">         <span class="keyword">if</span>(page.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">name</span> == tmpNext.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">name</span>)&#123; <span class="comment">//The first category of the current page is the same as the category of the next page</span></span><br><span class="line">           <span class="keyword">if</span>(page.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">name</span> == <span class="string">&#x27;novel&#x27;</span>)&#123; <span class="comment">//The current page is a novel category</span></span><br><span class="line">             <span class="keyword">if</span>(page.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">1</span>].<span class="property">name</span> == tmpNext.<span class="property">categories</span>.<span class="property">data</span>[<span class="number">1</span>].<span class="property">name</span>)&#123; <span class="comment">//Add a second-level category judgment</span></span><br><span class="line">               <span class="comment">// &lt;a href=&quot;&lt;%- url_for(tmpNext.path) %&gt;&quot; target=&quot;_self&quot;&gt;</span></span><br><span class="line">               <span class="comment">// &lt;span&gt;&lt;%= tmpNext. title %&gt;&lt;/span&gt;</span></span><br><span class="line">               <span class="comment">// &lt;i class=&quot;iconfont icon-chevronright&quot;&gt;&lt;/i&gt;</span></span><br><span class="line">               <span class="comment">// &lt;/a&gt;</span></span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">             &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               tmpNext = tmpNext.<span class="property">next</span>; <span class="comment">//Find the next big complaint</span></span><br><span class="line">           &#125;</span><br><span class="line">         &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="comment">// &lt;a href=&quot;&lt;%- url_for(tmpNext.path) %&gt;&quot; target=&quot;_self&quot;&gt;</span></span><br><span class="line">               <span class="comment">// &lt;span&gt;&lt;%= tmpNext. title %&gt;&lt;/span&gt;</span></span><br><span class="line">               <span class="comment">// &lt;i class=&quot;iconfont icon-chevronright&quot;&gt;&lt;/i&gt;</span></span><br><span class="line">               <span class="comment">// &lt;/a&gt;</span></span><br><span class="line">           <span class="keyword">break</span>;</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         tmpNext = tmpNext.<span class="property">next</span>; <span class="comment">//Find the next big complaint</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123; <span class="comment">//The next page is empty and exit the loop</span></span><br><span class="line">     <span class="keyword">break</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>I found that it is not clear to use the source code, it is also because I wrote too violently, let me briefly explain:</p>
+<ol>
+<li>First judge whether there is a next page</li>
+<li>Then judge whether the classification of the current page and the next page are consistent, if not, find the next big complaint</li>
+<li>When the current page is consistent with the next page, then judge whether it is a novel category, if not, it will be it directly</li>
+<li>When the current page is a novel classification, then judge the second-level classification (my novels are stored in collections according to the second-level classification), if not, find the next big complaint</li>
+<li>The current page is a novel category, and it belongs to a collection, that’s it</li>
+</ol>
+<p>This perfectly fulfills my needs:</p>
+<ol>
+<li>Essays and experience classification All articles are linked to the next page</li>
+<li>Classification of novels is linked to the next page by collection</li>
+</ol>
+<p>I think there is a better way of writing, and other topics should have the same needs as mine, but since I like this topic, I am too lazy to study other topics. After all, the most important thing about a personal website is the content, so use it first if it can satisfy the function.</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(1)/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Flutter writes a Nas music player (1)</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Update-hexo-to-v6-3-0/" target="_self">
+                <span>Update hexo to v6.3.0</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

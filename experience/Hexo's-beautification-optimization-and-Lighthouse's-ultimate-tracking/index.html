@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Hexo&#39;s beautification, optimization and Lighthouse&#39;s ultimate tracking | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Hexo's beautification, optimization and Lighthouse's ultimate tracking</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2021-04-04 10:28
+      </span>
+      <span class="post-count">≈ 2kWords</span>
+      <span class="post-count">≈ 12Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<p>I wrote an article before <a href="https://www.igerm.ee/en/experience/Use-Hexo-GitHub-Page-Typora-to-write-articles/">Using Hexo, GitHub Page, Typora to write articles</a> and shared the process of installing Hexo in detail. Today, let’s talk about how I did article migration in the past few days, choose Hexo theme, and the process of theme modification and Hexo pagination modification. Finally, I will briefly talk about how to achieve 100 points in Lighthouse.</p>
+<h2 id="Hexo-Beautify"><a href="#Hexo-Beautify" class="headerlink" title="Hexo Beautify"></a>Hexo Beautify</h2><p>First of all, after Hexo is installed, the default theme is <code>landscape</code>, which is also very concise. It is completely fine for those who focus on writing articles. However, when I used Halo before, I used <a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/">Next theme</a>, so the first idea of ​​this migration is to still use <code>next</code></p>
+<h3 id="Theme-installation"><a href="#Theme-installation" class="headerlink" title="Theme installation"></a>Theme installation</h3><p>What’s interesting is that I didn’t search for <code>next</code> directly, but wanted to find <code>next</code> in <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo’s official theme library</a>. I think this is a kind of fate, let I found the theme of Oranges, you can take a look at <a target="_blank" rel="noopener" href="https://hexo.theme.oranges.zcheng.site/">Demo</a>, this theme is more concise than <code>next</code></p>
+<p><img src="https://s2.loli.net/2022/12/30/9FJTBEkxAMhI6gD.png" alt="image-20210404103130252"></p>
+<p>All the variable buttons and columns have been removed, which brings a benefit. When selecting other tab buttons on the mobile terminal, there is no need to click a drop-down menu. Just a little bit of simplification made me choose [this theme](https: &#x2F;&#x2F;github.com&#x2F;zchengsite&#x2F;hexo-theme-oranges)</p>
+<p>The installation process is very simple, there are only two steps:</p>
+<ol>
+<li><p><code>$ git clone https://github.com/zchengsite/hexo-theme-oranges.git themes/oranges</code></p>
+</li>
+<li><p>Modify the <code>_config.yml</code> file in the hexo root directory and change <code>theme</code> to <code>oranges</code></p>
+</li>
+</ol>
+<h3 id="Theme-configuration"><a href="#Theme-configuration" class="headerlink" title="Theme configuration"></a>Theme configuration</h3><p>Before officially using the theme, you can also make some personalized configuration based on the theme. It can be seen that the author has very strict standards for the opening of some functions. Basically, the functions listed in the Readme file are basically required, which can be found in <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges/blob/master/README-zh.md#%E9%85%8D%E7%BD%AE">here View</a>, because the author’s document is very detailed , I won’t list it separately, I will just briefly talk about the functions I have enabled:</p>
+<p>Categories, tags, article directories, RSS, comments, Google Analytics, top and bottom pages, full text search</p>
+<p>The image lazy loading is not turned on, mainly because I feel that the original image has already used the image bed + CDN, and one more lazy loading is unnecessary, and the look and feel is not good, you must first look at an unloaded image</p>
+<h3 id="Theme-modification"><a href="#Theme-modification" class="headerlink" title="Theme modification"></a>Theme modification</h3><p>Let’s talk about what I’ve changed. It’s broken, let’s talk about it bit by bit.</p>
+<h4 id="Add-email-recognition-to-footer"><a href="#Add-email-recognition-to-footer" class="headerlink" title="Add email recognition to footer"></a>Add email recognition to footer</h4><p><img src="https://s2.loli.net/2022/12/30/foYqDkQxIWFGV9m.png" alt="image-20210404104415928"></p>
+<p>All the icons here correspond to a URL, so the author directly writes the address of the configuration file into the <code>href</code> of the <code>&lt;a&gt;</code> tag when processing, but as a mailbox, it needs to be added to the <code>href</code> The previous <code>mailto:</code>, but because there is a <code>:</code> in it, writing directly in the configuration file will report an error, so I modified the code as follows:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;footer&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;social&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      &lt;% for(let item of theme.footer.social)&#123; %&gt;</span><br><span class="line">        &lt;% if (item.name == &quot;email&quot;) &#123;%&gt;</span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">&quot;&lt;%- item.name %&gt;&quot;</span> <span class="attr">href</span>=<span class="string">&quot;mailto:&lt;%- item.path %&gt;&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;iconfont icon-&lt;%- item.icon %&gt;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &lt;%&#125; else &#123;%&gt;</span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">&quot;&lt;%- item.name %&gt;&quot;</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- item.path %&gt;&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;iconfont icon-&lt;%- item.icon %&gt;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &lt;%&#125; %&gt;</span><br><span class="line">      &lt;%&#125; %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  &lt;% for(let item of theme.footer.more)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;footer-more&quot;</span>&gt;</span></span><br><span class="line">      &lt;% if (item.path) &#123;%&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- item.path %&gt;&quot;</span>&gt;</span>&lt;%- item.name %&gt;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      &lt;%&#125; else &#123;%&gt;</span><br><span class="line">        &lt;%- item.name %&gt;</span><br><span class="line">      &lt;%&#125; %&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  &lt;%&#125; %&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>When the social name in the configuration file is <code>email</code>, add <code>mailto:</code> to the code</p>
+<h4 id="Remove-a-category-from-the-homepage-article-list"><a href="#Remove-a-category-from-the-homepage-article-list" class="headerlink" title="Remove a category from the homepage article list"></a>Remove a category from the homepage article list</h4><p>I don’t know if anyone else has this requirement, because in addition to technical articles in my blog, there are also some novels, and a daily paragraph similar to the previous talk, all piled in the homepage list is very confusing, so I modified After the code, remove a certain category from the list (it doesn’t matter if you remove a few), the code changes little, but the structure is more complicated, so I posted all index.ejs, if you want to change it, just copy it, and then Then manually change the 11th line</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container index&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;post-list&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Traverse the rendered article --&gt;</span></span><br><span class="line">    &lt;%</span><br><span class="line">    var prev = -10086;// prev year</span><br><span class="line">    var curr;// curr year, ever step be updated</span><br><span class="line"></span><br><span class="line">    page.posts.forEach(function(item) &#123;</span><br><span class="line">      var mark = true;</span><br><span class="line">      item.categories.forEach(function(item1)&#123;</span><br><span class="line">        if(item1.name == &quot;novel&quot; || item1.name == &quot;breaking thoughts&quot;)&#123;</span><br><span class="line">          mark = false;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      if(mark)&#123;</span><br><span class="line">        curr = item.date.year()</span><br><span class="line">        if (curr !== prev) &#123;</span><br><span class="line">          prev = curr;</span><br><span class="line"></span><br><span class="line">    %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content-title&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&lt;%- curr %&gt;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &lt;%</span><br><span class="line">      &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;post-item&quot;</span> <span class="attr">title</span>=<span class="string">&quot;&lt;%- item.title %&gt;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;time-m-d&quot;</span>&gt;</span>&lt;%- item.date.format(&quot;MM-DD&quot;) %&gt;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- url_for(item.path) %&gt;&quot;</span>&gt;</span></span><br><span class="line">            &lt;% if(item.title !== &quot;&quot;) &#123;%&gt;</span><br><span class="line">              &lt;% if (item.top) &#123;%&gt;</span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">&quot;&lt;%= __(&#x27;pinned&#x27;) %&gt;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;icon iconfont icon-pin-top post-top&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>&lt;%- item.title %&gt;&lt;/span &gt;</span><br><span class="line">              &lt;%&#125; else &#123;%&gt;</span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>&lt;%- item.title %&gt;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              &lt;%&#125; %&gt;</span><br><span class="line">            &lt;%&#125; else &#123;%&gt;</span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span>&gt;</span>untitled<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            &lt;%&#125; %&gt;</span><br><span class="line">          <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &lt;% &#125;&#125;) %&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;post-navigation&quot;</span>&gt;</span></span><br><span class="line">    &lt;% if(page.prev !== 0)&#123; %&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- url_for(page.prev_link)%&gt;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;iconfont icon-angleleft&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    &lt;%&#125; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;page-num&quot;</span>&gt;</span>&lt;%- page.current %&gt; / &lt;%- page.total -%&gt;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    &lt;% if(page.next !== 0)&#123; %&gt;</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- url_for(page.next_link)%&gt;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;iconfont icon-angleright&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    &lt;%&#125; %&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>The difference from the original theme is that I extracted the year in the list and displayed it separately. This way, the look and feel is better. Of course, I copied it from the archive page.</p>
+<p><img src="https://s2.loli.net/2022/12/30/ba4HmDgAX7t1VCM.png" alt="image-20210404105509804"></p>
+<h4 id="Modify-hexo-generator-index-pagination"><a href="#Modify-hexo-generator-index-pagination" class="headerlink" title="Modify hexo-generator-index pagination"></a>Modify hexo-generator-index pagination</h4><p>It should be noted that unless you do not use paging (it seems unlikely), if you use system paging, then the system will not remove the articles you want to remove when paging by itself. This will cause a problem, such as If you divide 10 articles, but the homepage only displays 7 articles, then this page will be 7 articles after pagination. If a page happens to contain all the articles you want to remove, then there will be nothing on this page. Contrary to our original intention, so if we want to achieve a better look and feel, we also need to modify the paging program of Hexo</p>
+<p>The modified location is in the <code>node_modules</code> folder of the root directory of your blog. Find the file <code>generator.js</code> in the folder <code>hexo-generator-index</code>, and open it with <code>vscode</code> or Notepad. After the article array is generated, before calling the paging function, add a piece of code. My method is to create a new array, then add a judgment to the old array, and push the unexcluded articles into the new array. The code is as follows, the change is from the 16th Line start</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pagination = <span class="built_in">require</span>(<span class="string">&#x27;hexo-pagination&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;sort&#125; = <span class="built_in">require</span>(<span class="string">&#x27;timsort&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span>(<span class="params">locals</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> config = <span class="variable language_">this</span>.<span class="property">config</span>;</span><br><span class="line">  <span class="keyword">const</span> posts = locals.<span class="property">posts</span>.<span class="title function_">sort</span>(config.<span class="property">index_generator</span>.<span class="property">order_by</span>);</span><br><span class="line">  <span class="keyword">const</span> temp_posts = [];</span><br><span class="line"></span><br><span class="line">  <span class="title function_">sort</span>(posts.<span class="property">data</span>, <span class="function">(<span class="params">a, b</span>) =&gt;</span> (b.<span class="property">sticky</span> || <span class="number">0</span>)-(a.<span class="property">sticky</span> || <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> paginationDir = config.<span class="property">pagination_dir</span> ||<span class="string">&#x27;page&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> path = config.<span class="property">index_generator</span>.<span class="property">path</span> ||<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(config.<span class="property">index_generator</span>.<span class="property">exclude</span>)&#123;</span><br><span class="line">    posts.<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> mark=<span class="literal">true</span>;</span><br><span class="line">      element.<span class="property">categories</span>.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">categories</span>)&#123;</span><br><span class="line">        config.<span class="property">index_generator</span>.<span class="property">exclude_list</span>.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">category</span>)&#123;</span><br><span class="line">          <span class="keyword">if</span>(categories.<span class="property">name</span> == category)&#123;</span><br><span class="line">            mark=<span class="literal">false</span>;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">if</span>(mark)&#123;</span><br><span class="line">        temp_posts.<span class="title function_">push</span>(element);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">pagination</span>(path, config.<span class="property">index_generator</span>.<span class="property">exclude</span>? <span class="attr">temp_posts</span>: posts, &#123;</span><br><span class="line">    <span class="attr">perPage</span>: config.<span class="property">index_generator</span>.<span class="property">per_page</span>,</span><br><span class="line">    <span class="attr">layout</span>: [<span class="string">&#x27;index&#x27;</span>,<span class="string">&#x27;archive&#x27;</span>],</span><br><span class="line">    <span class="attr">format</span>: paginationDir +<span class="string">&#x27;/%d/&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">      <span class="attr">__index</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Then add the category name to be excluded in the system configuration file <code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="string">path:&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line">  <span class="attr">exclude:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">exclude_list:</span></span><br><span class="line">    <span class="string">-novel</span></span><br><span class="line">    <span class="string">-gossip</span></span><br></pre></td></tr></table></figure>
+
+<p>At this point, basically the visual changes are almost the same</p>
+<h3 id="Hurry-Must-be-fast"><a href="#Hurry-Must-be-fast" class="headerlink" title="Hurry! Must be fast"></a>Hurry! Must be fast</h3><p>Next, the part I modified is mainly to open up the speed. Since I chose such a concise theme, it would be shameful for the <code>Lighthouse</code> to run less than 100 points? Below are the running scores of <a href="https://www.igerm.ee/">My Homepage</a>, including desktop and mobile</p>
+<p><img src="https://s2.loli.net/2022/12/30/51DyS6NCAGRMEib.png"></p>
+<p><img src="https://s2.loli.net/2022/12/30/p9A5OTWf3Fnyus8.png"></p>
+<p>How to do it, in fact, google has given a lot of suggestions, here I will only talk about some of my practices for the subject</p>
+<h4 id="Save-all-static-files-in-CDN"><a href="#Save-all-static-files-in-CDN" class="headerlink" title="Save all static files in CDN"></a>Save all static files in CDN</h4><p>The method is also very simple, upload the theme directory to a public repository in <code>github</code>, and then publish a <code>release</code> version, so that the static files in your version will be cached in jsdelivr, and the method to call is also very simple</p>
+<p><code>https://cdn.jsdelivr.net/gh/your username/your warehouse name@Release version number/source/iconfont/iconfont-min.css</code></p>
+<h4 id="Load-the-js-file-asynchronously"><a href="#Load-the-js-file-asynchronously" class="headerlink" title="Load the js file asynchronously"></a>Load the js file asynchronously</h4><p>After having the CDN address, change all the resources in the theme to CDN, mainly in <code>/layout/_partial/header.ejs</code>, there are also a few scattered places, look at the <code>source/*</code> for yourself Files, what needs to be modified can be changed, and there will be corresponding prompts when <code>Lighthouse</code> runs. Remember to add the <code>async</code> keyword to all the loading of <code>js</code> files, <code>jquery.min</code> is here It is used for full-text search. It is not involved when loading. <code>jquery.fancybox.min-3.5.2</code> is used here for the purpose of clicking on the image to enlarge the article, and it does not involve the initial page rendering, so it doesn’t matter if you add it without worry. Let these <code>js</code> files hinder page rendering</p>
+<h4 id="Compress-all-js-and-css-files"><a href="#Compress-all-js-and-css-files" class="headerlink" title="Compress all js and css files"></a>Compress all js and css files</h4><p>This is a standard action. Search for css compression directly. There will be many online compression sites. Copy the file and click on the compression, then create a file of <code>XX-min.js</code> and save it.</p>
+<p>So far, after a toss, my page desktop simulation is 100 points, and the mobile terminal simulation is 99 points. Of course, there is room for improvement, but I have the opportunity to toss again in the future.</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Wrong-address-when-using-Hexo-full-text-search/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Wrong address when using Hexo full text search</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Use-Hexo-GitHub-Page-Typora-to-write-articles/" target="_self">
+                <span>Use Hexo, GitHub Page, Typora to write articles</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-Beautify"><span class="toc-text">Hexo Beautify</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Theme-installation"><span class="toc-text">Theme installation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Theme-configuration"><span class="toc-text">Theme configuration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Theme-modification"><span class="toc-text">Theme modification</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Add-email-recognition-to-footer"><span class="toc-text">Add email recognition to footer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Remove-a-category-from-the-homepage-article-list"><span class="toc-text">Remove a category from the homepage article list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Modify-hexo-generator-index-pagination"><span class="toc-text">Modify hexo-generator-index pagination</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hurry-Must-be-fast"><span class="toc-text">Hurry! Must be fast</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Save-all-static-files-in-CDN"><span class="toc-text">Save all static files in CDN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Load-the-js-file-asynchronously"><span class="toc-text">Load the js file asynchronously</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Compress-all-js-and-css-files"><span class="toc-text">Compress all js and css files</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

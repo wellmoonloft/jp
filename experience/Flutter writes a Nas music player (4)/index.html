@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Flutter writes a Nas music player (4) | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Flutter writes a Nas music player (4)</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2023-01-14 16:50
+      </span>
+      <span class="post-pubtime">
+        <i class="iconfont icon-updatetime" title="Update time"></i> 2023-01-15 15:54
+      </span>
+      <span class="post-count">≈ 2.3kWords</span>
+      <span class="post-count">≈ 13Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<p>Today I finished the long-awaited homepage, including three: random albums, most played songs list, and recently added albums</p>
+<p>In fact, the biggest difference between this APP and Netease Cloud is that you collect and listen to these songs yourself, so those recommended algorithms are not needed</p>
+<h3 id="CustomScrollView"><a href="#CustomScrollView" class="headerlink" title="CustomScrollView"></a>CustomScrollView</h3><p>The most troublesome thing about the homepage is the mixed arrangement of horizontal and vertical lists, but it is not very complicated. The main thing is that you must remember to set a fixed height and width, or the maximum width and maximum height, otherwise it is very easy to report an error</p>
+<p>The first is <strong>Sliver</strong>, which makes people love and hate. The built-in animation saves a lot of things, but because of these automatic functions, only a small number of controls support it as its <strong>child</strong>. But fortunately, the official gave a <strong>SliverToBoxAdapter</strong> component, so that components that are not his <strong>child</strong> can be layered, which is very nice</p>
+<p>The layout is a horizontal scrolling list of 10 random albums, below is a vertical list of the 10 most played songs, and below that is the most recently added horizontal 10 albums, maybe changing the most played songs to 5 looks better?</p>
+<p><img src="https://s2.loli.net/2023/01/13/OHhjqkunaQwzP4p.png" alt="WechatIMG650"></p>
+<p>The implementation is also relatively simple. In addition to the pro-son <strong>SliverList</strong> control, for example, the title part needs to be set with <strong>SliverToBoxAdapter</strong>, just look at the code</p>
+<p>Because I want to be compatible with the desktop, the desktop can slide left and right except Apple’s Magic Mouse, the general mouse does not have this function, so I need to add a button that slides left and right to click on the desktop</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> CustomScrollView(</span><br><span class="line">       slivers: &lt;Widget&gt;[</span><br><span class="line">         <span class="comment">//This is the home page text</span></span><br><span class="line">         SliverToBoxAdapter(</span><br><span class="line">           child: Container(</span><br><span class="line">               padding: leftrightPadding,</span><br><span class="line">               child: Text(indexLocal, style: titleText1)),</span><br><span class="line">         ),</span><br><span class="line">         <span class="keyword">if</span> (_albums != <span class="keyword">null</span> &amp;&amp; _albums!.length &gt; <span class="number">0</span>)</span><br><span class="line">           SliverToBoxAdapter(</span><br><span class="line">             <span class="comment">//This set of horizontal title bars, including text and left and right buttons, I wrote a public file for easy application</span></span><br><span class="line">               child: MySliverControlBar(</span><br><span class="line">             title: <span class="string">&quot;Random Album&quot;</span>,</span><br><span class="line">             controller: _randomAlbumcontroller,</span><br><span class="line">           )),</span><br><span class="line">         <span class="keyword">if</span> (_albums != <span class="keyword">null</span> &amp;&amp; _albums!.length &gt; <span class="number">0</span>)</span><br><span class="line">           SliverToBoxAdapter(</span><br><span class="line">             <span class="comment">//This set of horizontal scrolling pictures, I wrote a public file for easy application</span></span><br><span class="line">               child: MySliverControlList(</span><br><span class="line">             controller: _randomAlbumcontroller,</span><br><span class="line">             albums: _albums!,</span><br><span class="line">             url: _imageURL!,</span><br><span class="line">           ))</span><br><span class="line">         ]</span><br><span class="line">   );</span><br></pre></td></tr></table></figure>
+
+<p>This is the content in the homepage build, and then <strong>MySliverControlBar</strong> is very simple, it is a Row set a Row layout</p>
+<p><strong>MySliverControlList</strong> is actually a horizontal <strong>ListView</strong></p>
+<p>Note here that if there is no need for the desktop side, that is, if you don’t need to manually control the scrolling, you don’t need to write a controller, but if I need to control the scrolling, I need to inject a controller. The control method is relatively simple, just click the button to trigger</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">controller.animateTo(controller.offset - _size.width / <span class="number">2</span>,</span><br><span class="line">                         duration: <span class="built_in">Duration</span>(milliseconds: <span class="number">200</span>),</span><br><span class="line">                         curve: Curves. ease);</span><br></pre></td></tr></table></figure>
+
+<p>Offset is the displacement, atmospheric point, click once to move half the screen directly, the saved point will not be driven for half a day</p>
+<p>In this way, the homepage is finished, and if you want to add any content to it later, it will be done in minutes, so let’s leave it at that.</p>
+<p>In addition, the layout was adjusted again today, and the following control part was completely taken into <strong>bottomNavigationBar</strong>, so that the layout looks much simpler, and there may be another adjustment later, which is the middle part. Directly embed <strong>LeftScreen</strong> into each page, so that I can use flutter’s overall routing, and I can remove a global variable that controls routing</p>
+<p>The most important thing is to make another judgment. If it is on the desktop, it will display <strong>LeftScreen</strong>. If it is on the mobile terminal, add navigation directly in <strong>bottomNavigationBar</strong>, so that the side-sliding button on the top left of the mobile terminal It can be removed. The left side is free to leave a place for Windows. When the client is Windows, the search and setting buttons can be pasted to the left, because the zoom in and out of Windows and the fork are on the right. I removed it for the sake of looking good. The title bar, so it can’t block the fork</p>
+<h3 id="Using-MediaQuery-causes-the-soft-keyboard-to-not-pop-up"><a href="#Using-MediaQuery-causes-the-soft-keyboard-to-not-pop-up" class="headerlink" title="Using MediaQuery causes the soft keyboard to not pop up"></a>Using MediaQuery causes the soft keyboard to not pop up</h3><h4 id="Mobile-solution"><a href="#Mobile-solution" class="headerlink" title="Mobile solution"></a>Mobile solution</h4><p>This is a problem encountered during multi-terminal development, because <strong>Scaffold</strong> will adapt to different window sizes according to different devices, and the method to dynamically get the window size is *<em>MediaQuery.of(context).size</em> *, this is very convenient when developing on the desktop, but there will be problems when the keyboard pops up on the mobile phone</p>
+<p>If the height of your panel is defined by size, but the soft keyboard pops up, the height of sliding up the form is also calculated by this, so after sliding up, your panel pushes down the position of the keyboard, which will cause the soft keyboard Frequent flashing will not keep the pop-up state, and the page keeps refreshing</p>
+<p>If you want to do forced positioning, the best way is to use <strong>window.physicalSize</strong>, because the size of the form on the mobile terminal will not change, and then in order to do multi-terminal adaptation, the final width used should be: <strong>window .physicalSize.width &#x2F; window.devicePixelRatio</strong>, and add <strong>resizeToAvoidBottomInset: false</strong> in <strong>Scaffold</strong> to avoid errors caused by small displacements</p>
+<h4 id="Desktop-solution"><a href="#Desktop-solution" class="headerlink" title="Desktop solution"></a>Desktop solution</h4><p>After the mobile terminal is set up, there will be such a problem on the desktop terminal, <strong>window.physicalSize</strong> is called once. However, the desktop side can be dragged to zoom in and out. If we continue to use <strong>window.physicalSize</strong> on the desktop side, the panel will still be at the original height when zooming in and out. At this time, we want it to make dynamic adjustments , there are two ways to do it, one is to add a window listener to reacquire window.physicalSize when the size of the window changes, and the easiest way is to continue to use <strong>window.physicalSize</strong>, But put it in a global variable</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ValueNotifier&lt;<span class="built_in">double</span>&gt; windowsWidth =</span><br><span class="line">     ValueNotifier&lt;<span class="built_in">double</span>&gt;(<span class="built_in">window</span>. physicalSize. width / <span class="built_in">window</span>. devicePixelRatio);</span><br><span class="line"></span><br><span class="line">ValueNotifier&lt;<span class="built_in">double</span>&gt; windowsHeight =</span><br><span class="line">     ValueNotifier&lt;<span class="built_in">double</span>&gt;(<span class="built_in">window</span>. physicalSize. height / <span class="built_in">window</span>. devicePixelRatio);</span><br></pre></td></tr></table></figure>
+
+<p>Then when the outermost layer is built, it is outside <strong>Saffold</strong>, just right where <strong>MediaQuery.of(context).size</strong> can be obtained to make a value change, and then there is no need to do Value in other places Listening, because flutter will automatically <strong>rebuild saffold</strong> when the window changes. At this time, the change of these two values ​​will be triggered first, and then the latter will be rendered. When rendering, the new value will naturally be taken, no need Do the monitoring again, if you can be a little lazy, just be a little lazy, the value monitoring needs to be set up again, all kinds of nesting dolls are too uncomfortable to watch</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Use this to dynamically monitor form changes when it is not a mobile terminal</span></span><br><span class="line">     <span class="comment">//If it is a mobile terminal, the form will not change</span></span><br><span class="line">     <span class="keyword">if</span> (!isMobile. value) &#123;</span><br><span class="line">       windowsWidth.value = MediaQuery.of(context).size.width;</span><br><span class="line">       windowsHeight.value = MediaQuery.of(context).size.height;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>In this way, the adaptation of the mobile terminal and the desktop terminal can be completed with the least code</p>
+<h3 id="The-matte-effect-being-played"><a href="#The-matte-effect-being-played" class="headerlink" title="The matte effect being played"></a>The matte effect being played</h3><p>Originally, I wanted to be “rule” and split the top and bottom into <strong>AppBar</strong> and <strong>bottomSheet</strong>, but I changed my mind when writing the playing page, because when making the bottom pop-up window, I hope that a full-screen page will pop up directly, instead of being stuck between <strong>AppBar</strong> and <strong>bottomSheet</strong>, so that even if the effect of frosted glass is done, it looks…actually pretty good, but um , I have OCD…</p>
+<p><img src="https://s2.loli.net/2023/01/14/4TIs16giHNxMPdm.png" alt="WechatIMG21777"></p>
+<p>This kind of pop-up window that is playing feels…not good-looking, so I still continue my violent thinking, directly write the top and bottom into my own control to achieve a full-screen effect, and at the same time, I can rearrange the playback control on the pop-up page button, so put more buttons on it for movement.</p>
+<p>The setting here is <strong>BoxDecoration(color: Colors.black.withOpacity(0.7))</strong>, I think it can actually be set to about 0.8</p>
+<p>The implementation method is to use Stack to cover a layer, see the code</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Stack(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          ConstrainedBox(</span><br><span class="line">              constraints: <span class="keyword">const</span> BoxConstraints.expand(),</span><br><span class="line">              child: ValueListenableBuilder&lt;<span class="built_in">Map</span>&gt;(</span><br><span class="line">                  valueListenable: activeSong,</span><br><span class="line">                  builder: ((context, value, child) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ClipRRect(</span><br><span class="line">                      <span class="comment">//这里设置背景图片，其实可以直接Image的，不需要做个圆角矩形，我是复制过来的，无所谓啦</span></span><br><span class="line">                      borderRadius: BorderRadius.circular(<span class="number">15</span>),</span><br><span class="line">                      child: (value.isEmpty)</span><br><span class="line">                          ? Image.asset(<span class="string">&quot;assets/images/logo.jpg&quot;</span>)</span><br><span class="line">                          : CachedNetworkImage(</span><br><span class="line">                              imageUrl: value[<span class="string">&quot;url&quot;</span>],</span><br><span class="line">                              fit: BoxFit.cover,</span><br><span class="line">                              placeholder: (context, url) &#123;</span><br><span class="line">                                <span class="keyword">return</span> AnimatedSwitcher(</span><br><span class="line">                                  child: Image.asset(<span class="string">&quot;assets/images/logo.jpg&quot;</span>),</span><br><span class="line">                                  duration:</span><br><span class="line">                                      <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: imageMilli),</span><br><span class="line">                                );</span><br><span class="line">                              &#125;,</span><br><span class="line">                            ),</span><br><span class="line">                    );</span><br><span class="line">                  &#125;))),</span><br><span class="line">          Center(</span><br><span class="line">            child: ClipRect(</span><br><span class="line">              child: BackdropFilter(</span><br><span class="line">                filter: ImageFilter.blur(sigmaX: <span class="number">10.0</span>, sigmaY: <span class="number">10.0</span>),</span><br><span class="line">                child: Container(</span><br><span class="line">                  width: windowsWidth.value,</span><br><span class="line">                  height: windowsHeight.value,</span><br><span class="line">                  decoration:</span><br><span class="line">                      BoxDecoration(color: Colors.black.withOpacity(<span class="number">0.8</span>)), <span class="comment">//这里是控制透明度的，然后前面的颜色设置成白色和黑色有不同的效果，都可以调整</span></span><br><span class="line">                  child:... <span class="comment">//放上层控件</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://s2.loli.net/2023/01/14/yVBtma79ERxfC82.jpg" alt="1673685301772"></p>
+<h3 id="Lyrics"><a href="#Lyrics" class="headerlink" title="Lyrics"></a>Lyrics</h3><p>The implementation of the lyrics uses the only and very good third-party component <a target="_blank" rel="noopener" href="https://pub.dev/packages/flutter_lyric">flutter_lyric: ^2.0.4+6</a> on the pub. It is not difficult to implement. The author wrote a demo and put it online. You can download the example in the source code and look at it accordingly. The lyrics themselves are “drawn”, so they are quite stable. Since my playback control and progress bar are obtained with <strong>StreamBuilder</strong>, I need to define There are a lot less things in the author’s example</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lyricModel =</span><br><span class="line">    LyricsModelBuilder.create().bindLyricToMain(normalLyric).getModel(); <span class="comment">//The lyrics file normalLyric is just a string, just copy it</span></span><br><span class="line"><span class="keyword">var</span> lyricUI = UINetease(); <span class="comment">//Get the UI file, you can also change it later, font color, etc.</span></span><br><span class="line"><span class="keyword">var</span> lyricPadding = <span class="number">40.0</span>; <span class="comment">//Copied directly, can be changed</span></span><br><span class="line"><span class="keyword">var</span> playing = <span class="keyword">true</span>; <span class="comment">//This is to control the playback of the lyrics. The author uses the linkage button to control the highlighting of the lyrics. I don’t need linkage to pass true directly, and I need to add it to my own pause button later (actually, it seems to be OK if you don’t add it ...it will always be true)</span></span><br></pre></td></tr></table></figure>
+
+<p>Then add two lines in <strong>initState</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lyricUI.highlight = <span class="keyword">true</span>; <span class="comment">//Set highlight</span></span><br></pre></td></tr></table></figure>
+
+<p>Then build the Widget of the lyrics reading UI and put it in the desired position</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">   Widget _buildReaderWidget() &#123;</span><br><span class="line">     <span class="keyword">return</span> StreamBuilder&lt;PositionData&gt;(</span><br><span class="line">         stream: _positionDataStream,</span><br><span class="line">         builder: (context, snapshot) &#123;</span><br><span class="line">           <span class="keyword">final</span> positionData = snapshot.data;</span><br><span class="line">           <span class="keyword">final</span> position = positionData?.position.inMilliseconds??<span class="number">0</span>;</span><br><span class="line">           <span class="comment">//My positioning information is controlled by StreamBuilder, so I have to wrap my head around it</span></span><br><span class="line">           <span class="keyword">return</span> LyricsReader(</span><br><span class="line">             padding: EdgeInsets.symmetric(horizontal: lyricPadding),</span><br><span class="line">             model: lyricModel, <span class="comment">//What needs to be noted here is that because this StreamBuilder is running all the time, don’t dare to assign variable values here, otherwise it will run all the time. If you make a global variable of lyrics to read like me, the detection value Be sure to put it in the outer layer of StreamBuilder! ! ! Otherwise the subtitles will keep flashing</span></span><br><span class="line">             position: position,</span><br><span class="line">             lyricUi: lyricUI,</span><br><span class="line">             playing: playing,</span><br><span class="line">             <span class="comment">// set the size</span></span><br><span class="line">             size: Size(windowsWidth. value / <span class="number">2</span>, windowsHeight. value / <span class="number">2</span>),</span><br><span class="line">             emptyBuilder: () =&gt; Center(</span><br><span class="line">               child: Text(</span><br><span class="line">                 <span class="string">&quot;No lyrics&quot;</span>,</span><br><span class="line">                 style: lyricUI. getOtherMainTextStyle(),</span><br><span class="line">               ),</span><br><span class="line">             ),</span><br><span class="line">             selectLineBuilder: (progress, confirm) &#123;</span><br><span class="line">               <span class="keyword">return</span> Row(</span><br><span class="line">                 children: [</span><br><span class="line">                   IconButton(</span><br><span class="line">                       onPressed: () &#123;</span><br><span class="line">                         LyricsLog.logD(<span class="string">&quot;click event&quot;</span>);</span><br><span class="line">                         confirm. call();</span><br><span class="line">                         <span class="comment">//Here is the position to update seek, but my progress bar has been monitored, so I don’t need setState, just change it directly</span></span><br><span class="line">                         <span class="comment">//setState(() &#123;</span></span><br><span class="line">                         widget.player.seek(<span class="built_in">Duration</span>(milliseconds: progress));</span><br><span class="line">                         <span class="comment">// &#125;);</span></span><br><span class="line">                       &#125;,</span><br><span class="line">                       icon: Icon(Icons. play_arrow, color: kGrayColor)),</span><br><span class="line">                   Expanded(</span><br><span class="line">                     child: Container(</span><br><span class="line">                       decoration: BoxDecoration(color: kGrayColor),</span><br><span class="line">                       height: <span class="number">1</span>,</span><br><span class="line">                       width: <span class="built_in">double</span>.infinity,</span><br><span class="line">                     ),</span><br><span class="line">                   ),</span><br><span class="line">                   Text(</span><br><span class="line">                     <span class="comment">//This is a method written by myself, which is used to change Duration to a string such as hours, minutes, and seconds</span></span><br><span class="line">                     formatDurationMilliseconds(progress),,</span><br><span class="line">                     style: TextStyle(color: kGrayColor),</span><br><span class="line">                   )</span><br><span class="line">                 ],</span><br><span class="line">               );</span><br><span class="line">             &#125;,</span><br><span class="line">           );</span><br><span class="line">         &#125;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span> formatDurationMilliseconds(<span class="built_in">int</span> _duration) &#123;</span><br><span class="line">   <span class="built_in">Duration</span> _dura = <span class="built_in">Duration</span>(milliseconds: _duration);</span><br><span class="line">   <span class="keyword">if</span> (_dura.inHours != <span class="number">0</span>) &#123;</span><br><span class="line">     <span class="built_in">String</span> hours = _dura.inHours.toString().padLeft(<span class="number">0</span>, <span class="string">&#x27;2&#x27;</span>);</span><br><span class="line">     <span class="built_in">String</span> minutes = _dura.inMinutes.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">     <span class="built_in">String</span> seconds = _dura.inSeconds.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;<span class="subst">$hours</span>:<span class="subst">$minutes</span>:<span class="subst">$seconds</span>&quot;</span>;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="built_in">String</span> minutes = _dura.inMinutes.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">     <span class="built_in">String</span> seconds = _dura.inSeconds.remainder(<span class="number">60</span>).toString().padLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;<span class="subst">$minutes</span>:<span class="subst">$seconds</span>&quot;</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>At this point, the lyrics problem is solved, and it is enough to pass in different <strong>normalLyric</strong> later. You need to be careful not to run into the value monitoring of the progress bar, otherwise the lyrics will keep flashing if you keep running</p>
+<p>It’s just that there is a problem with the current control. When you drag the lyrics to a certain sentence, you can indeed locate the desired position by clicking OK, but the scrolling of the lyrics will be stuck. I think the same is true in the author’s demo, so I raised an <a target="_blank" rel="noopener" href="https://github.com/ozyl/flutter_lyric/issues/23">issue</a> to the author, let’s see how to solve it later</p>
+<p><img src="https://s2.loli.net/2023/01/15/WCFZOToQYNlg47s.jpg" alt="1673766650968"></p>
+<p>Then the key thing is… how to find lyrics in batches… maybe I have to use Netease Cloud’s api…</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(5)/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Flutter writes a Nas music player (5)</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(3)/" target="_self">
+                <span>Flutter writes a Nas music player (3)</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CustomScrollView"><span class="toc-text">CustomScrollView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-MediaQuery-causes-the-soft-keyboard-to-not-pop-up"><span class="toc-text">Using MediaQuery causes the soft keyboard to not pop up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mobile-solution"><span class="toc-text">Mobile solution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Desktop-solution"><span class="toc-text">Desktop solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-matte-effect-being-played"><span class="toc-text">The matte effect being played</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lyrics"><span class="toc-text">Lyrics</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

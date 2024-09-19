@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Flutter writes a Nas music player (5) | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Flutter writes a Nas music player (5)</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2023-01-16 18:59
+      </span>
+      <span class="post-count">≈ 1.1kWords</span>
+      <span class="post-count">≈ 6Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<h3 id="1-Encapsulate-a-Toast"><a href="#1-Encapsulate-a-Toast" class="headerlink" title="1. Encapsulate a Toast"></a>1. Encapsulate a Toast</h3><p>There is no such a useful prompt box in Flutter, there is only a <strong>snackbar</strong> at the bottom, which feels outrageous</p>
+<p>If I click to save the server, and there are important prompts such as missing information, it must be in the form of a dialog box, asking the user to click confirm to troubleshoot the error. But for example, the subtle operation of clicking on the single cycle is also a control that needs to prompt the user to change successfully and automatically close within one second. I searched the whole Internet and said that there is no official corresponding one, and I can only use a third-party plug-in. I am afraid that such a small thing will lead to a third-party control. I am afraid that it is a waste of money. It is also very simple to write one by myself.</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyToast</span> </span>&#123;</span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">void</span> <span class="keyword">show</span>(&#123;<span class="keyword">required</span> BuildContext context, <span class="keyword">required</span> <span class="built_in">String</span> message&#125;) &#123;</span><br><span class="line">     OverlayEntry overlayEntry = <span class="keyword">new</span> OverlayEntry(builder: (context) &#123;</span><br><span class="line">       <span class="keyword">return</span> Positioned(</span><br><span class="line">           bottom: <span class="number">95</span>,</span><br><span class="line">           child: Container(</span><br><span class="line">             <span class="comment">//It&#x27;s actually a full-screen horizontal bar, just a transparent color</span></span><br><span class="line">             color: Colors.transparent,</span><br><span class="line">             width: MediaQuery.of(context).size.width,</span><br><span class="line">             alignment: Alignment. center,</span><br><span class="line">             child: Card(</span><br><span class="line">               child: Padding(</span><br><span class="line">                 padding: EdgeInsets. all(<span class="number">10</span>),</span><br><span class="line">                 child: Text(</span><br><span class="line">                   message,</span><br><span class="line">                   style: normalGrayText,</span><br><span class="line">                 ),</span><br><span class="line">               ),</span><br><span class="line">               color: badgeDark,</span><br><span class="line">             ),</span><br><span class="line">           ));</span><br><span class="line">     &#125;);</span><br><span class="line"></span><br><span class="line">     Overlay.of(context)?.insert(overlayEntry);</span><br><span class="line">     Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">1</span>)).then((value) &#123;</span><br><span class="line">       overlayEntry. remove();</span><br><span class="line">     &#125;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// call method</span></span><br><span class="line">MyToast.<span class="keyword">show</span>(context: context, message: <span class="string">&quot;Single cycle&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>All colors and backgrounds can be customized, how beautiful it is, this code can really be used directly, it is much better than introducing a third-party control, welcome to copy, it is in <strong>lib&#x2F;screens&#x2F;common&#x2F;myToast. In dart</strong>, there is a style file in <strong>baseCSS.dart</strong> in the same directory. If I could find someone to provide this code yesterday, I would not write it myself. How delicious it is to copy</p>
+<p><img src="https://s2.loli.net/2023/01/16/emf1QUVuktnd8Gq.jpg" alt="1673846278685"></p>
+<h3 id="2-Still-started-with-NetEase-Cloud"><a href="#2-Still-started-with-NetEase-Cloud" class="headerlink" title="2. Still started with NetEase Cloud"></a>2. Still started with NetEase Cloud</h3><h4 id="2-1-Deploy-the-ready-made-NetEase-Cloud-API"><a href="#2-1-Deploy-the-ready-made-NetEase-Cloud-API" class="headerlink" title="2.1 Deploy the ready-made NetEase Cloud API"></a>2.1 Deploy the ready-made NetEase Cloud API</h4><p>The main reason is that it is too silly to upload and download lyrics on the webpage by yourself, and then put them on your own server? What if <a target="_blank" rel="noopener" href="https://www.navidrome.org/">Navidrome</a> supports it after the update that day, right? This should be what the server should do, so don’t worry about it</p>
+<p>First of all, NetEase Cloud’s <strong>pc api</strong> is still available, and you can directly capture the data with postman, that’s for sure, otherwise, how to do it on the web side, it must be released. But you can only use the http protocol. If you want to use https, you need to log in and get your identity information. However, it is well known that ios does not support the http protocol for a long time (of course there are ways, but I just think it is unnecessary)</p>
+<p>There are ready-made wheels on Github that can be used <a target="_blank" rel="noopener" href="https://github.com/Binaryify/NeteaseCloudMusicApi">NeteaseCloudMusicApi</a>, its working principle is cross-site request forgery (CSRF), forging request headers, calling official API, anyway, as long as you External services are also unavoidable. At the same time, it supports serverless deployment to Vercel, which is very flattering.</p>
+<p>Of course, due to the well-known brain-dead reasons (I really hate this wall now, because of the wall, there are a large number of brain-dead little pinks, okay digress), Vercel needs to make another address when doing CNAME, Otherwise, domestic visits will not be possible. You see, we are such an exception, so great!</p>
+<ol>
+<li><p>First fork this library to make your own library <a target="_blank" rel="noopener" href="https://github.com/Binaryify/NeteaseCloudMusicApi">NeteaseCloudMusicApi</a></p>
+</li>
+<li><p>Log in to <a target="_blank" rel="noopener" href="https://vercel.com/">vercel</a>, log in with the github account, and then you will be prompted to install the githubAPP, and you can deploy it directly after completion</p>
+</li>
+<li><p>Bind a custom domain name, pointing to a CNAME record that supports domestic access: <strong>cname-china.vercel-dns.com</strong>, I seriously doubt that this may be blocked in the future</p>
+</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/01/16/4nRqAG61YtiT7gD.png" alt="image-20230116183737042"></p>
+<p>Seeing this page means that the deployment is successful. As long as there is no problem in the future, you don’t need to open this page again…</p>
+<h4 id="2-2-Make-a-page-to-manually-get-lyrics"><a href="#2-2-Make-a-page-to-manually-get-lyrics" class="headerlink" title="2.2 Make a page to manually get lyrics"></a>2.2 Make a page to manually get lyrics</h4><p>Why not make it automatic in batches? Because of two reasons:</p>
+<ol>
+<li>The songs I collected are not necessarily sung by the original singers, so you may not be able to find them when you search for the lyrics, and even if you receive the original singers, there are many versions of the lyrics, and it is very possible to make them automatic The lyrics that came down are all wrong, and it will be more troublesome to adjust them when the time comes</li>
+<li>If it is made in batches, it is easy to be blocked, and it is not necessary</li>
+</ol>
+<p>The workflow is just:</p>
+<ol>
+<li>Create a new song lyrics correspondence table</li>
+<li>Make two DIO requests: search for songs according to the song title and artist name, get the song id of NetEase Cloud, and then use this song id to grab the lyrics, this is a one-to-one correspondence</li>
+<li>Make a page, three tabs, search out the songs in your own music library, and then click to pop up a box, put the singer and song name in, this box can be modified. If it is sung by an online singer, change it to the original singer’s name, use the above request to search for songs on NetEase Cloud, get the second TAB, then choose a song that you think is right to search for lyrics, and get the lyrics back to the third View the page, if you think it is what you want, then click Bind, save your song id and lyrics in the database and it will be OK!</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/01/16/q4cTbEs5YerWy3P.jpg" alt="1673866175582"></p>
+<p><img src="https://s2.loli.net/2023/01/16/ZxgDQAP6BtcsHbj.jpg"></p>
+<p><img src="https://s2.loli.net/2023/01/16/7bAVZG2edyTkjQB.jpg" alt="1673866144745"></p>
+<p>As a result… the lyrics are all finished, but the playlist is still not done, hahahaha, maybe I repel it in my heart…</p>
+<p>I can’t write any more functions, if I write any more, I’ll finish writing, then there’s nothing left to play with… Now what’s left is a playlist, which is a big function, and what’s left is to make error-throwing adjustments and UAT</p>
+<p>After running everything on Mac OS, I can start to adapt the IOS side, but I put it on the real machine and the virtual machine for a brief look the day before yesterday, basically there is nothing to adjust</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Esketit's-investment-platform-from-Ireland/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Esketit A investment platform from Ireland</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(4)/" target="_self">
+                <span>Flutter writes a Nas music player (4)</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Encapsulate-a-Toast"><span class="toc-text">1. Encapsulate a Toast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Still-started-with-NetEase-Cloud"><span class="toc-text">2. Still started with NetEase Cloud</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Deploy-the-ready-made-NetEase-Cloud-API"><span class="toc-text">2.1 Deploy the ready-made NetEase Cloud API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Make-a-page-to-manually-get-lyrics"><span class="toc-text">2.2 Make a page to manually get lyrics</span></a></li></ol></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

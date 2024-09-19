@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Flutter writes a Nas music player (1) | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Flutter writes a Nas music player (1)</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2023-01-05 22:40
+      </span>
+      <span class="post-count">≈ 1.3kWords</span>
+      <span class="post-count">≈ 7Minutes</span>
+    </div>
+    <div class="markdown-body"><blockquote>
+<p><strong>Note</strong></p>
+<p>This article was automatically translated using Google</p>
+</blockquote>
+<p>Because the last two months have been boring, I have been tossing my old NAS at home, [set up a music server](<a href="https://www.igerm.ee/experience/%E7%AE%A1%E7%90%86">https://www.igerm.ee/experience/%E7%AE%A1%E7%90%86</a> %E7%BC%96%E8%BE%91%E5%88%86%E8%BD%A8%E6%AC%A3%E8%B5%8F%E6%9C%AC%E5%9C%B0%E9 %9F%B3%E4%B9%90%E4%B8%80%E6%9D%A1%E9%BE%99&#x2F;), but I can’t find a particularly satisfactory player. There is also [Sonixd] on the desktop (<a target="_blank" rel="noopener" href="https://github.com/jeffvli/sonixd">https://github.com/jeffvli/sonixd</a>) has a good appearance and no fancy functions, but I am not satisfied with the mobile phone. Only <a target="_blank" rel="noopener" href="https://substreamerapp.com/">substreamer</a> can be used. But not very pretty.</p>
+<p>The most important thing is that these two players do not support lyrics, and they cannot search in fuzzy or simplified or traditional characters. For example, I want to listen to Jay Chou’s “Back Back”, but the name I searched is <strong>Back Back</strong>, so when I search, I need to switch to traditional Chinese to find it out, which is quite annoying.</p>
+<p>My first reaction was to go to Github to find out if there are any ready-made multi-terminal wheels, but the ones I like are all played locally, or there is a music player imitating NetEase Cloud through the API of NetEase Cloud, which may be blocked at any time. Not to mention breaking it, and it doesn’t even support Navidrome or Subsonic’s API. I really can’t find it, so I gritted my teeth and stomped my feet to make one myself!</p>
+<h3 id="Subsonic-API"><a href="#Subsonic-API" class="headerlink" title="Subsonic API"></a>Subsonic API</h3><p>Navidrome itself has a native API, but not many, and the author is planning to rewrite, but fortunately he has almost all support for Subsonic’s API, so even if Navidrome itself has no API documentation, look at [Subsonic’s documentation](http: &#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.subsonic.org/pages/api.jsp">www.subsonic.org/pages/api.jsp</a>) can also be put on Postman to try</p>
+<h4 id="Authentication-Server"><a href="#Authentication-Server" class="headerlink" title="Authentication Server"></a>Authentication Server</h4><p><img src="https://s2.loli.net/2023/01/05/V3865yluGvdKPTz.jpg" alt="1672924014867"></p>
+<p>It’s a bit confusing at first glance, but it’s actually very simple. There are two types of verification: either pass in <strong>password</strong>, or pass in <strong>encrypted (password + six-digit salt value) plus six-digit salt value</strong></p>
+<p>First <code>Ping</code> the server for testing (using <a target="_blank" rel="noopener" href="https://pub.dev/packages/dio">dio: ^4.0.6</a> can save a lot of operations)</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> response = <span class="keyword">await</span> Dio(). <span class="keyword">get</span>(</span><br><span class="line">    _baseUrl +</span><br><span class="line">        <span class="string">&#x27;rest/ping?v=0.0.1&amp;c=xiumusic&amp;f=json&amp;u=&#x27;</span> +</span><br><span class="line">        _username + <span class="comment">//v is the client version number, c is the name of the client, u is the username, p is the password</span></span><br><span class="line">        <span class="string">&#x27;&amp;p=&#x27;</span> +</span><br><span class="line">        _password,</span><br><span class="line">  );</span><br><span class="line">  <span class="built_in">print</span>(response);</span><br><span class="line">  <span class="keyword">if</span> (response. statusCode == <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="comment">//There needs to be one more step here, that is, don’t be happy even if code200 is returned, and verify the feedback from the subsonic server</span></span><br><span class="line">    <span class="built_in">Map</span> _value = response.data[<span class="string">&#x27;subsonic-response&#x27;</span>];</span><br><span class="line">    <span class="built_in">String</span> _status = _value[<span class="string">&#x27;status&#x27;</span>];</span><br><span class="line">    <span class="comment">//The normal state is ok, I am too lazy to throw it wrong, I check it in the debug, and I will definitely throw it out when it is commercialized, but hey, hehe</span></span><br><span class="line">    <span class="keyword">if</span> (_status == <span class="string">&#x27;failed&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">print</span>(e);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>After completing the two-step verification server and Subsonic’s api, you can save the server information. The subsequent apis are obtained using salt values. In fact, it doesn’t matter, they are all free.</p>
+<h4 id="Encrypted-Login"><a href="#Encrypted-Login" class="headerlink" title="Encrypted Login"></a>Encrypted Login</h4><ol>
+<li><p>Use <code>Rondom</code> to write a randomly generated 6-bit character</p>
+ <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> generateRandomString() &#123;</span><br><span class="line">  final_random = Random();</span><br><span class="line">  <span class="keyword">const</span> _availableChars =</span><br><span class="line">      <span class="string">&#x27;AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890&#x27;</span>;</span><br><span class="line">  <span class="keyword">final</span> randomString = <span class="built_in">List</span>. generate(<span class="number">6</span>,</span><br><span class="line">          (index) =&gt; _availableChars[_random.nextInt(_availableChars.length)])</span><br><span class="line">      .join();</span><br><span class="line">   </span><br><span class="line">  <span class="keyword">return</span> randomString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Then encrypt with MD5 after splicing</p>
+</li>
+</ol>
+<p>Save these two characters for later API use</p>
+<h4 id="Get-directory"><a href="#Get-directory" class="headerlink" title="Get directory"></a>Get directory</h4><p>The directories in Subsonic are hierarchical from top to bottom like this</p>
+<ul>
+<li>music folder</li>
+<li>Artist folder</li>
+<li>Album</li>
+<li>songs</li>
+</ul>
+<p>However, Navidrome seems to have only one music folder, so I directly use the second-level <code>getIndexes</code> to make my directory master list, and then go down to the album list according to the <code>musician ID</code></p>
+<p><img src="https://s2.loli.net/2023/01/05/IcxZnBTRm9P25f7.jpg" alt="1672925500580"></p>
+<h4 id="play-music"><a href="#play-music" class="headerlink" title="play music"></a>play music</h4><p>Use <code>ValueNotifier</code> for variable monitoring, do not use <a target="_blank" rel="noopener" href="https://pub.dev/packages/provider">provider: ^6.0.5 </a> lightly, although it is really convenient, there will always be various global variables The problem, especially when you rely on him and want to change the code back, the workload simply makes you rewrite it!</p>
+<p>In fact, <code>ValueNotifier</code> is also very convenient to use. It can be followed by <code>&lt;int&gt;</code> parameters to specify the type of value, and you can also customize the monitoring data type. I am based on [this article](<a target="_blank" rel="noopener" href="https://blog/">https://blog</a>. csdn.net&#x2F;Mr_Tony&#x2F;article&#x2F;details&#x2F;112170758) to operate</p>
+<ol>
+<li><p>Define the data monitor</p>
+<p> <code>ValueNotifier&lt;String&gt; activeSongValue = ValueNotifier&lt;String&gt;(&quot;1&quot;);</code></p>
+<p> In theory, it can be placed in any file, but it is recommended to put it in a unified global variable definition file for easy management. Here I pass in the <code>id</code> of the song and filter it with a default value. If it is <code>&quot;1&quot;</code>, it will be Do not call the interface to get song information (<code>Null safety</code> is mandatory after flutter2.12, I didn’t adapt to it at first, but now I think it’s good)</p>
+</li>
+<li><p>Change the value of the data</p>
+<p> <code>activeSongValue. value = _tem[&quot;id&quot;];</code></p>
+<p> You can use it directly, so it seems that it is actually simpler than <code>provider</code></p>
+</li>
+<li><p>Monitor data changes</p>
+<p> Use the <code>ValueListenableBuilder</code> construct to construct the listening part</p>
+ <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> ValueListenableBuilder&lt;<span class="built_in">String</span>&gt;(</span><br><span class="line">        valueListenable: activeSongValue, <span class="comment">//monitor</span></span><br><span class="line">        builder: ((context, value, child) &#123;</span><br><span class="line">          <span class="keyword">if</span> (value != <span class="string">&quot;1&quot;</span>) &#123; <span class="comment">// change the value</span></span><br><span class="line">            _setAudioSource(value); <span class="comment">//Directly use id to query and other follow-up work</span></span><br><span class="line">          &#125;</span><br><span class="line">         </span><br><span class="line">          <span class="keyword">return</span> Container()...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Get song information</p>
+<p> After you have the song <code>id</code>, you can use <code>getSong</code> to get the music information, use <code>getCoverArt</code> to get the album image, and then use <code>stream</code> to get the streaming file</p>
+</li>
+<li><p>Play the music stream</p>
+<p> Using <a target="_blank" rel="noopener" href="https://pub.dev/packages/just_audio">just_audio: ^0.9.31</a> can greatly speed up the development progress, it is the second-ranked dependencies, the first is audioplayers, but just these days he updated the version , the address of the official document is lost, this is called fate</p>
+<p> It is also extremely simple to use. If you don’t care about the display of controls such as button sliders, it only takes three lines of code from clicking the music to starting playback:</p>
+ <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Define the component</span></span><br><span class="line">final_player = AudioPlayer();</span><br><span class="line"><span class="comment">//The url of splicing stream</span></span><br><span class="line"><span class="built_in">String</span> _url = <span class="keyword">await</span> getSongStreamUrl(_id);</span><br><span class="line"><span class="comment">// Get the stream and play it</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> _player.setAudioSource(AudioSource.uri(<span class="built_in">Uri</span>.parse(_url)));</span><br><span class="line">      _player.play();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&quot;Error loading audio source: <span class="subst">$e</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>The above is the current progress, including the server test on the desktop, and then the directory enters the song level, and then plays the music.</p>
+<p>There is still a lot of work in the future, but I have been paying attention to Flutter since the 1.x version. I once complained that Huawei’s engineers are useless if they don’t use Flutter. Just pay attention to the adaptation of the mobile terminal. After finishing writing, it is estimated that a simple adjustment of the mobile terminal will be enough. Currently, it is only for functions)</p>
+<p>Here is the <a target="_blank" rel="noopener" href="https://github.com/wellmoonloft/xiumusic">Github address</a>, it’s good to be willing to come down and play, but it’s only for development, it’s far from normal use.</p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Flutter%20writes%20a%20Nas%20music%20player%20(2)/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Flutter writes a Nas music player (2)</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Realize-that-the-prev-and-next-pages-only-contain-articles-of-the-same-category/" target="_self">
+                <span>Realize that the prev and next pages only contain articles of the same category</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subsonic-API"><span class="toc-text">Subsonic API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Authentication-Server"><span class="toc-text">Authentication Server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encrypted-Login"><span class="toc-text">Encrypted Login</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Get-directory"><span class="toc-text">Get directory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#play-music"><span class="toc-text">play music</span></a></li></ol></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2024</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
