@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Synology automatically updates DDNS via cloudflare&#39;s API | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Synology automatically updates DDNS via cloudflare's API</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2025-01-23 18:32
+      </span>
+      <span class="post-count">≈ 1.3kWords</span>
+      <span class="post-count">≈ 8Minutes</span>
+    </div>
+    <div class="markdown-body"><p>I have been using freedns as ddns before, which is actually quite convenient. Freedns has a free interface for updating dns, which can be updated directly using curl.</p>
+<p><code>curl http://sync.afraid.org/u/*******</code>, but certificate renewal is more troublesome. Although it can be achieved using <a target="_blank" rel="noopener" href="https://acme.sh/">acme.sh</a>, it is not so suitable to implement it because freedns does not have a standard interface. In addition, freedns always gives the secondary domain name to others, so I gritted my teeth and simply migrated the domain name to cloudflare for management.</p>
+<h3 id="1-Implement-DDNS"><a href="#1-Implement-DDNS" class="headerlink" title="1. Implement DDNS"></a>1. Implement DDNS</h3><p>It is actually a little more troublesome to implement ddns with cloudflare than freedns. You also need to write a sh file, but it is not like freedns that can be done in one sentence. You need to call the standard interface. I actually recommend putting it on the router, because my Synology actually hangs a proxy all year round. I don’t know why. After the system proxy, you can find the real ip by going to ip138, but using the script to get the ip always gets the proxy ip, so putting it on the router is the best choice. Of course, if you still want to use Synology’s scheduled tasks, then put the script somewhere in Synology, and then use the scheduled tasks. Just use bash to execute the sh file.</p>
+<p>Before writing the script, first take the following 4 values: <strong>API_TOKEN, ZONE_ID, RECORD_ID, RECORD_NAME</strong></p>
+<h4 id="1-1-Take-four-parameters"><a href="#1-1-Take-four-parameters" class="headerlink" title="1.1. Take four parameters"></a>1.1. Take four parameters</h4><h5 id="1-1-1-API-TOKEN"><a href="#1-1-1-API-TOKEN" class="headerlink" title="1.1.1. API_TOKEN"></a>1.1.1. API_TOKEN</h5><p>First, create a DNS token in the user profile</p>
+<p><img src="https://images.igerm.ee/myimages/20250214170401611.png"></p>
+<p>Select Edit Permissions and save it. This token is saved and only displayed once.</p>
+<p><img src="https://images.igerm.ee/myimages/20250214170408772.png"></p>
+<h5 id="1-1-2-Cloudflare-Zone-ID"><a href="#1-1-2-Cloudflare-Zone-ID" class="headerlink" title="1.1.2. Cloudflare Zone ID"></a>1.1.2. Cloudflare Zone ID</h5><p>This can be found in the lower right corner of the website overview. The Zone ID is usually a 32-bit hexadecimal string, for example:<code>0123456789abcdef0123456789abcdef</code></p>
+<h5 id="1-1-3-DNS-record-ID-record-ID-that-needs-to-be-updated"><a href="#1-1-3-DNS-record-ID-record-ID-that-needs-to-be-updated" class="headerlink" title="1.1.3. DNS record ID (record ID that needs to be updated)"></a>1.1.3. DNS record ID (record ID that needs to be updated)</h5><p>This can be checked using developer tools, but it is easier to check using the API</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/&lt;你的Zone ID&gt;/dns_records?name=&lt;你的RECORD_NAME&gt;&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;X-Auth-Email: &lt;你的Cloudflare邮箱&gt;&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;X-Auth-Key: &lt;你的CloudflareAPI Token&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Simply replace Zone ID, Email, Token and RECORD_NAME to find the DNS record ID</p>
+<h5 id="1-1-4-RECORD-NAME"><a href="#1-1-4-RECORD-NAME" class="headerlink" title="1.1.4. RECORD_NAME"></a>1.1.4. RECORD_NAME</h5><p>This is the domain name of the IP you want to update. It can be the root domain name or the subdomain name. Anyway, it is the one you want to update the A record</p>
+<h4 id="1-2-Write-the-script"><a href="#1-2-Write-the-script" class="headerlink" title="1.2. Write the script"></a>1.2. Write the script</h4><p>After getting the above four values, you can write the script. SSH into the router, get root privileges, and then choose a location. I saved it in <code>/usr</code>. Use <code>vi ddns.sh</code> directly, open the editor, press <code>I</code> to enter the edit mode, copy the following script into it, and remember to replace the four values</p>
+<p>The script is as follows:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># Cloudflare API Token</span></span><br><span class="line">API_TOKEN=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># Cloudflare Zone ID</span></span><br><span class="line">ZONE_ID=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># DNS record ID (the ID of the record that needs to be updated)</span></span><br><span class="line">RECORD_ID=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># Domains that need to be updated，subdomain.example.com</span></span><br><span class="line">RECORD_NAME=<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the current public IP</span></span><br><span class="line">CURRENT_IP=$(curl -s http://ipv4.icanhazip.com)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;current public IP: <span class="variable">$CURRENT_IP</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the existing DNS record IP</span></span><br><span class="line">DNS_RECORD_RESPONSE=$(curl -s -k -X GET <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/<span class="variable">$&#123;ZONE_ID&#125;</span>/dns_records/<span class="variable">$&#123;RECORD_ID&#125;</span>&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;Authorization: Bearer <span class="variable">$&#123;API_TOKEN&#125;</span>&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;Content-Type: application/json&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extract the IP address of an existing DNS record</span></span><br><span class="line">DNS_RECORD_IP=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$DNS_RECORD_RESPONSE</span>&quot;</span> | sed -n <span class="string">&#x27;s/.*&quot;content&quot;:&quot;\([^&quot;]*\)&quot;.*/\1/p&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Extract the IP address of an existing DNS record: <span class="variable">$DNS_RECORD_IP</span>&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check if the IP needs to be updated</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CURRENT_IP</span>&quot;</span> == <span class="string">&quot;<span class="variable">$DNS_RECORD_IP</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;The IP address has not changed, no update is required&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;The IP address has changed, start updating DNS records&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Update DNS records</span></span><br><span class="line">    RESPONSE=$(curl -s -k -X PUT <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/<span class="variable">$&#123;ZONE_ID&#125;</span>/dns_records/<span class="variable">$&#123;RECORD_ID&#125;</span>&quot;</span> \</span><br><span class="line">         -H <span class="string">&quot;Authorization: Bearer <span class="variable">$&#123;API_TOKEN&#125;</span>&quot;</span> \</span><br><span class="line">         -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">         --data <span class="string">&quot;&#123;\&quot;type\&quot;:\&quot;A\&quot;,\&quot;name\&quot;:\&quot;<span class="variable">$&#123;RECORD_NAME&#125;</span>\&quot;,\&quot;content\&quot;:\&quot;<span class="variable">$&#123;CURRENT_IP&#125;</span>\&quot;,\&quot;ttl\&quot;:120,\&quot;proxied\&quot;:false&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Check update results</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$RESPONSE</span>&quot;</span> | grep -q <span class="string">&quot;\&quot;success\&quot;:true&quot;</span>; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;DNS records successfully updated to new IP: <span class="variable">$&#123;CURRENT_IP&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Failed to update DNS record：<span class="variable">$RESPONSE</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>**PS: **If the script you copied from other places cannot run on Xiaomi router, or Xiaomi router does not return value when using curl to access https address, remember to add the <code>-k</code> parameter after curl</p>
+<h4 id="1-3-Scheduled-tasks"><a href="#1-3-Scheduled-tasks" class="headerlink" title="1.3. Scheduled tasks"></a>1.3. Scheduled tasks</h4><p>After writing the script, just add a scheduled task to <code>crontab -e</code></p>
+<p><code>*/10 * * * * /usr/ddns.sh</code></p>
+<p>Execute every 10 minutes. If your dynamic IP is updated once a week, you can adjust the scheduled task as appropriate</p>
+<h3 id="2-Use-acme-sh-to-automatically-update-the-certificate-for-Synology"><a href="#2-Use-acme-sh-to-automatically-update-the-certificate-for-Synology" class="headerlink" title="2. Use acme.sh to automatically update the certificate for Synology"></a>2. Use acme.sh to automatically update the certificate for Synology</h3><p>It is recommended to install acme.sh directly on Synology without using docker, which can greatly simplify the verification process when renewing the certificate.</p>
+<p>First open the SSH port, and then log in to Synology with any tool. I use <a target="_blank" rel="noopener" href="https://termius.com/">Termius</a>, which I think is a good app for Mac.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">curl https://get.acme.sh | sh -s email=my@example.com --force</span><br><span class="line"><span class="built_in">cd</span> .acme.sh</span><br><span class="line">./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail <span class="string">&quot;email@gmail.com&quot;</span></span><br><span class="line"><span class="built_in">source</span> ~/.profile</span><br><span class="line"><span class="built_in">cd</span> /usr/local/share/acme.sh</span><br></pre></td></tr></table></figure>
+
+<p>Just enter the values line by line, and then get the Account_ID and Token. You can use the same Token as above, because it is definitely the same. Then the Account_ID is on the same page as the Zone ID. With these two values, continue with the following operations.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> CF_Account_ID=<span class="string">&quot;*****************&quot;</span> </span><br><span class="line"><span class="built_in">export</span> CF_Token=<span class="string">&quot;*****************&quot;</span></span><br><span class="line"><span class="comment"># Apply for a certificate, --server letsencrypt specifies to apply for a letsencrypt certificate</span></span><br><span class="line"><span class="comment"># -d example.com specifies that the domain name to apply for the certificate is example.com</span></span><br><span class="line"><span class="comment"># -d *.example.com indicates that the certificate applied for is a wildcard domain name certificate</span></span><br><span class="line">./acme.sh --issue --server letsencrypt --home . -d example.com --dns dns_cf --keylength 2048</span><br></pre></td></tr></table></figure>
+
+<p>Normally, the certificate has been obtained here. Next, deploy the certificate. If you deploy it locally, you can use the temporary administrator user to deploy it directly. This is why it is not recommended to install it in docker. If you need to deploy a certificate to a remote server, it is more complicated. You can <a target="_blank" rel="noopener" href="https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide">refer to here</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set up a temporary administrator account</span></span><br><span class="line"><span class="built_in">export</span> SYNO_USE_TEMP_ADMIN=1</span><br><span class="line"><span class="built_in">export</span> SYNO_SCHEME=<span class="string">&quot;https&quot;</span></span><br><span class="line"><span class="comment"># The port number here needs to be changed to the port number of https you set, the default is 5001</span></span><br><span class="line"><span class="built_in">export</span> SYNO_PORT=<span class="string">&quot;9530&quot;</span></span><br><span class="line"><span class="comment"># The last step is to deploy the certificate. Use the pre-written hook to do it directly.</span></span><br><span class="line">./acme.sh --deploy --insecure --home . -d nas.igerm.ee --deploy-hook synology_dsm</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-Automatic-renewal"><a href="#2-1-Automatic-renewal" class="headerlink" title="2.1 Automatic renewal"></a>2.1 Automatic renewal</h4><p>Actually, it is also possible to use a custom cronjob, just like I automatically update ddns. But if you use cronjob in Synology, Synology’s security advisor will tell you a serious warning. Although this is added by you, it is not a good mood to see this warning, so you can renew directly in Synology’s scheduled task.</p>
+<p>In the DSM control panel, open “Task Scheduler” and create a new scheduled task for the user-defined script.</p>
+<p>Select the user account as root, and then enter the custom user script in the task settings:</p>
+<p>I set the start time to the first Monday of each month, you can also set it yourself</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># renew certificates </span></span><br><span class="line">/usr/local/share/acme.sh/acme.sh --cron --home /usr/local/share/acme.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images.igerm.ee/myimages/20250214170420095.png"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Use%20N8N%20to%20send%20emails%20with%20different%20contents%20and%20attachments/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Use N8N to send emails with different contents and attachments</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Transform%20iMac5K%20into%20Studio%20Display/" target="_self">
+                <span>Transform iMac5K into Studio Display</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Implement-DDNS"><span class="toc-text">1. Implement DDNS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Take-four-parameters"><span class="toc-text">1.1. Take four parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-1-API-TOKEN"><span class="toc-text">1.1.1. API_TOKEN</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-Cloudflare-Zone-ID"><span class="toc-text">1.1.2. Cloudflare Zone ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-3-DNS-record-ID-record-ID-that-needs-to-be-updated"><span class="toc-text">1.1.3. DNS record ID (record ID that needs to be updated)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-4-RECORD-NAME"><span class="toc-text">1.1.4. RECORD_NAME</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Write-the-script"><span class="toc-text">1.2. Write the script</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Scheduled-tasks"><span class="toc-text">1.3. Scheduled tasks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Use-acme-sh-to-automatically-update-the-certificate-for-Synology"><span class="toc-text">2. Use acme.sh to automatically update the certificate for Synology</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Automatic-renewal"><span class="toc-text">2.1 Automatic renewal</span></a></li></ol></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2025</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
