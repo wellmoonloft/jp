@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Technology,Novel,Essay,Hexo" />
+  <meta name="author" content="wellmoonloft" />
+  <meta name="subtitle" content="Connotation fatty refuses to lose weight" />  
+  <meta name="description" content="Technology, Essay, Gossip" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Use N8N to send emails with different contents and attachments | Well Talk</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/en/atom.xml" title="Well Talk" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/en"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/en/"><a href="/en/">Experience</a></li>
+      <li class="nav-item" data-path="/en/categories/essay/"><a href="/en/categories/essay/">Essay</a></li>
+      <li class="nav-item" data-path="/en/categories/novel/"><a href="/en/categories/novel/">Novel</a></li>
+      <li class="nav-item" data-path="/en/about/"><a href="/en/about/">About</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Use N8N to send emails with different contents and attachments</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2025-02-14 12:34
+      </span>
+      <span class="post-count">≈ 1kWords</span>
+      <span class="post-count">≈ 6Minutes</span>
+    </div>
+    <div class="markdown-body"><p>Recently, due to work needs, I hope to do a mass email, about 80,000 emails to different people, modify some content, and attach attachments. The principle is actually very simple. There are some existing projects on <a target="_blank" rel="noopener" href="https://github.com/">github</a> that can be used, but the projects are very old and need to adjust the code. At the same time, some existing mass email tools are cloud-based, and the attachments I want to send actually want to be sent point-to-point, not uploaded to the cloud.</p>
+<p>It happens that I am studying <a target="_blank" rel="noopener" href="https://n8n.io/">N8N</a> recently. This is an open source that supports self-deployment and can be installed on a local server or home NAS, so this is a good attempt to ensure data security, and later on, email tracking and modification can be performed through a large model.</p>
+<h4 id="N8N-installation"><a href="#N8N-installation" class="headerlink" title="N8N installation"></a>N8N installation</h4><h4 id="1-Install-using-docker-compose"><a href="#1-Install-using-docker-compose" class="headerlink" title="1. Install using docker compose"></a>1. Install using docker compose</h4><p>N8N installation can be selected as cloud-based, self-hosted, or system-embedded. I installed it directly in <a target="_blank" rel="noopener" href="https://docs.n8n.io/hosting/installation/docker/">my NAS’s docker</a>.</p>
+<p>You can choose PostgresDB as a backup database, or you can add Redis, but since I am using it alone, I think the built-in SQLite is enough, which makes installation very simple.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">n8n:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">n8nio/n8n:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">n8n</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">&#x27;unless-stopped&#x27;</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">&#x27;host&#x27;</span>    </span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">N8N_PORT=1204</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">GENERIC_TIMEZONE=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NODE_OPTIONS=--max-old-space-size=2048</span> </span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/volume1/docker/n8n/data:/home/node/.n8n:rw</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/volume1/docker/n8n/binaryData1:/binaryData1:rw</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>You can use bridge mode or host mode. If you use host, the port number needs to be declared in the environment variable.</p>
+<p>In addition, two paths are mapped, one is the local file of n8n, including configuration information and database, and the other is the path where the binary file is saved. You don’t need to set this, but if you need to read the mail list from Excel later, you can only save it in something like Google Sheets. I don’t want to upload the data to the cloud, so I map an address and put the Excel file here for the n8n node to read.</p>
+<h4 id="2-Port-forwarding"><a href="#2-Port-forwarding" class="headerlink" title="2. Port forwarding"></a>2. Port forwarding</h4><p>In the router, forward the port you want to bind the SSL certificate to, not 1204, but 1201. These two are set by you, just define them</p>
+<h4 id="3-nginx-proxy"><a href="#3-nginx-proxy" class="headerlink" title="3. nginx proxy"></a>3. nginx proxy</h4><p>After the port forwarding takes effect, use the reverse proxy server that comes with Synology</p>
+<p>Be sure to add WebSocket in the custom title, which includes Upgrade and Connection. I remember an article saying that there will be some problems if you don’t add it, but I have added all my reverse proxies</p>
+<p>One advantage of using the reverse proxy server that comes with Synology is that you don’t have to manage SSL certificates separately. If you don’t use this, you can also start an Nginx yourself, but it’s not necessary. You still have to import the certificate, which is currently once every three months. Although you can use acme to achieve automation, it is completely unnecessary</p>
+<p><img src="https://images.igerm.ee/myimages/20250214115210251.png"></p>
+<h3 id="Start-setting-up-the-N8N-process"><a href="#Start-setting-up-the-N8N-process" class="headerlink" title="Start setting up the N8N process"></a>Start setting up the N8N process</h3><p>The whole process looks like this. I figured it out after a while. It’s relatively simple.</p>
+<p>I strongly recommend not to read the document! Don’t read the document! Don’t read the document!</p>
+<p>Because you will want to give up after reading the document…</p>
+<p>You can design the process according to your own logic:</p>
+<ol>
+<li><p>First, you need a start node, click start</p>
+</li>
+<li><p>Then read the excel file</p>
+</li>
+<li><p>Then split the excel file</p>
+</li>
+<li><p>Then enter the loop</p>
+</li>
+<li><p>Then read the attachment file</p>
+</li>
+<li><p>Then send the email</p>
+</li>
+<li><p>Then add a delay. I set it to 5 seconds, 12 emails per minute, 17280 emails in 24 hours. This speed is acceptable. If it is too fast, I am worried that the account will be blocked.</p>
+</li>
+</ol>
+<p><img src="https://images.igerm.ee/myimages/20250214115924263.png"></p>
+<h4 id="1-Read-Binary-File-node"><a href="#1-Read-Binary-File-node" class="headerlink" title="1. Read Binary File node"></a>1. Read Binary File node</h4><p>The left side is input, and the right side is output. What needs to be set here is the File Path. I specifically mapped a location in the environment variable in docker to docker. Therefore, after saving the file in the corresponding location of the host, you can directly read the file in the mapped location of the root directory.</p>
+<p><img src="https://images.igerm.ee/myimages/20250214120354799.png"></p>
+<h4 id="2-Spreadsheet-File-node"><a href="#2-Spreadsheet-File-node" class="headerlink" title="2. Spreadsheet File node"></a>2. Spreadsheet File node</h4><p>The only thing you need to set here is whether to batch read or batch write. I choose to batch read the Excel file sent from the previous node and then send it to the next node.</p>
+<p><img src="https://images.igerm.ee/myimages/20250214120614089.png"></p>
+<h4 id="3-Loop-Over-Items-node"><a href="#3-Loop-Over-Items-node" class="headerlink" title="3. Loop Over Items node"></a>3. Loop Over Items node</h4><p>Set the number of splits here. We can send them one by one, or 5 at a time. It is safer to set a smaller number.</p>
+<p><img src="https://images.igerm.ee/myimages/20250214120755145.png"></p>
+<h4 id="4-Send-Email-node"><a href="#4-Send-Email-node" class="headerlink" title="4. Send Email node"></a>4. Send Email node</h4><p>There are many things that need to be configured in this node. First, you need to configure the mailbox to enable STMP. I used GMAIL to enable two-step verification and then applied for an application password. You can search for other mailboxes directly or ask ChatGPT.</p>
+<p>The sending email is the email address you set, and the receiving email is the email address transferred from the previous Excel. You don’t need to write this yourself. You can directly select the mailbox column in the INPUT on the left and drag it to To Email.</p>
+<p>For the attachment part, fill in the name you read the node setting, not your file name. Don’t worry about this. The name will still be your original file name after sending. Here you can understand it as writing this variable in.</p>
+<p>Then HTML email, in order to be more secure, because some small company bosses may not use formal emails and may not support HTML emails, so choose both. As for HTML email templates, you can search for HTML template generators on the Internet. I directly asked ChatGPT to write one for me and copied it in.</p>
+<p><img src="https://images.igerm.ee/myimages/20250214121007789.png"></p>
+<h4 id="5-Test-the-effect"><a href="#5-Test-the-effect" class="headerlink" title="5. Test the effect"></a>5. Test the effect</h4><p>First, send 10 emails to your own mailbox, and it will be successful. Then you can use it officially. Anyway, my NAS is turned on 24 hours a day, so send it slowly</p>
+<p><img src="https://images.igerm.ee/myimages/20250214121802339.png"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/en/experience/Personal%20long-term%20investment%20and%20consumption%20patterns/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>Personal long-term investment and consumption patterns</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/en/experience/Synology%20automatically%20updates%20DDNS%20via%20cloudflare's%20API/" target="_self">
+                <span>Synology automatically updates DDNS via cloudflare&#39;s API</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#N8N-installation"><span class="toc-text">N8N installation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Install-using-docker-compose"><span class="toc-text">1. Install using docker compose</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Port-forwarding"><span class="toc-text">2. Port forwarding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-nginx-proxy"><span class="toc-text">3. nginx proxy</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Start-setting-up-the-N8N-process"><span class="toc-text">Start setting up the N8N process</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Read-Binary-File-node"><span class="toc-text">1. Read Binary File node</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Spreadsheet-File-node"><span class="toc-text">2. Spreadsheet File node</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Loop-Over-Items-node"><span class="toc-text">3. Loop Over Items node</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Send-Email-node"><span class="toc-text">4. Send Email node</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Test-the-effect"><span class="toc-text">5. Test the effect</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/en/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/en/">Copyright © wellmoonloft 2025</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
