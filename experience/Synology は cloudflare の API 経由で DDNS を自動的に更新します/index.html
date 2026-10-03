@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>Synology は cloudflare の API 経由で DDNS を自動的に更新します | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">Synology は cloudflare の API 経由で DDNS を自動的に更新します</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2025-01-23 18:32
+      </span>
+      <span class="post-count">≈ 1.4k字</span>
+      <span class="post-count">≈ 6分</span>
+    </div>
+    <div class="markdown-body"><p>私は以前、freedns を ddns として使用していましたが、これは実は非常に便利です。freedns には dns を更新するための無料のインターフェイスがあり、curl を使用して直接更新できます。</p>
+<p><code>curl http://sync.afraid.org/u/*******</code>ですが、証明書の更新は面倒です。<a target="_blank" rel="noopener" href="https://acme.sh/">acme.sh</a>実装することはできますが、freedns には標準インターフェースがないため、実装するのはあまり適切ではないように感じられます。さらに、freedns は常にセカンダリドメイン名を他人に渡してしまうため、私は歯を食いしばってドメイン名を cloudflare に移行して管理することにしました。</p>
+<h3 id="1-DDNSを実装する"><a href="#1-DDNSを実装する" class="headerlink" title="1. DDNSを実装する"></a>1. DDNSを実装する</h3><p>cloudflare を使用して ddns を実装するのは、実は freedns よりも少し面倒です。sh ファイルも記述する必要がありますが、1 文だけで実行できる freedns とは異なり、標準インターフェイスを呼び出す必要があります。実際にはルーターに設置することをお勧めします。私のSynologyは実際には一年中プロキシをハングアップしているからです。理由はわかりません。システムプロキシの後、ip138にアクセスして実際のIPを見つけることができますが、スクリプトを使用するとIP を取得するには、常にプロキシ IP を取得します。したがって、最善のオプションはルーターに移動することです。もちろん、Synology のスケジュールされたタスクを引き続き使用したい場合は、スクリプトを Synology のどこかに配置して、スケジュールされたタスクを使用します。コマンドは、この sh ファイルを bash で実行することです。</p>
+<p>スクリプトを書く前に、次の 4 つの値を取得します: <strong>API_TOKEN、ZONE_ID、RECORD_ID、RECORD_NAME</strong></p>
+<h4 id="1-1-4つのパラメータを取る"><a href="#1-1-4つのパラメータを取る" class="headerlink" title="1.1. 4つのパラメータを取る"></a>1.1. 4つのパラメータを取る</h4><h5 id="1-1-1-API-TOKEN"><a href="#1-1-1-API-TOKEN" class="headerlink" title="1.1.1. API_TOKEN"></a>1.1.1. API_TOKEN</h5><p>まずユーザープロファイルにDNSトークンを作成します</p>
+<p><img src="https://images.igerm.ee/myimages/20250214170401611.png"></p>
+<p>「権限の編集」を選択して保存します。このトークンは保存され、一度だけ表示されます。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214170408772.png"></p>
+<h5 id="1-1-2-Cloudflare-Zone-ID"><a href="#1-1-2-Cloudflare-Zone-ID" class="headerlink" title="1.1.2. Cloudflare Zone ID"></a>1.1.2. Cloudflare Zone ID</h5><p>これは、Web サイトの概要の右下隅にあります。ゾーン ID は通常、32 ビットの 16 進文字列です。例:<code>0123456789abcdef0123456789abcdef</code></p>
+<h5 id="1-1-3-DNS-レコード-ID-更新が必要なレコード-ID"><a href="#1-1-3-DNS-レコード-ID-更新が必要なレコード-ID" class="headerlink" title="1.1.3. DNS レコード ID (更新が必要なレコード ID)"></a>1.1.3. DNS レコード ID (更新が必要なレコード ID)</h5><p>これは開発者ツールを使って確認することもできますが、APIを使って確認する方が簡単です。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/&lt;你的Zone ID&gt;/dns_records?name=&lt;你的RECORD_NAME&gt;&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;X-Auth-Email: &lt;你的Cloudflare邮箱&gt;&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;X-Auth-Key: &lt;你的CloudflareAPI Token&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>DNS レコードの ID を見つけるには、ゾーン ID、電子メール、トークン、RECORD_NAME を置き換えるだけです。</p>
+<h5 id="1-1-4-レコード名"><a href="#1-1-4-レコード名" class="headerlink" title="1.1.4. レコード名"></a>1.1.4. レコード名</h5><p>これは、IP を更新するドメイン名です。ルート ドメイン名でもサブドメイン名でもかまいません。いずれにしても、A レコードを更新するドメイン名です。</p>
+<h4 id="1-2-スクリプトの作成"><a href="#1-2-スクリプトの作成" class="headerlink" title="1.2. スクリプトの作成"></a>1.2. スクリプトの作成</h4><p>上記の 4 つの値を取得したら、スクリプトを記述できます。ルーターにSSHでログインし、ルート権限を取得して、保存場所を選択します。私は&#x2F;usrに保存しました。vi ddns.shを使用してエディターを開き、Iを押して編集モードに入り、次のスクリプトをコピーします。覚えておいてください4つの値を置き換える</p>
+<p>スクリプトは次のとおりです。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># Cloudflare API令牌</span></span><br><span class="line">API_TOKEN=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># Cloudflare Zone ID</span></span><br><span class="line">ZONE_ID=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># DNS记录ID（需要更新的记录ID）</span></span><br><span class="line">RECORD_ID=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="comment"># 需要更新的域名，subdomain.example.com</span></span><br><span class="line">RECORD_NAME=<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前公网IP</span></span><br><span class="line">CURRENT_IP=$(curl -s http://ipv4.icanhazip.com)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;当前公网IP: <span class="variable">$CURRENT_IP</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取现有的DNS记录IP</span></span><br><span class="line">DNS_RECORD_RESPONSE=$(curl -s -k -X GET <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/<span class="variable">$&#123;ZONE_ID&#125;</span>/dns_records/<span class="variable">$&#123;RECORD_ID&#125;</span>&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;Authorization: Bearer <span class="variable">$&#123;API_TOKEN&#125;</span>&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;Content-Type: application/json&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取现有DNS记录的IP地址</span></span><br><span class="line">DNS_RECORD_IP=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$DNS_RECORD_RESPONSE</span>&quot;</span> | sed -n <span class="string">&#x27;s/.*&quot;content&quot;:&quot;\([^&quot;]*\)&quot;.*/\1/p&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;提取到的DNS记录IP: <span class="variable">$DNS_RECORD_IP</span>&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查IP是否需要更新</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CURRENT_IP</span>&quot;</span> == <span class="string">&quot;<span class="variable">$DNS_RECORD_IP</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;IP地址未改变，无需更新&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;IP地址已改变，开始更新DNS记录&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 更新DNS记录</span></span><br><span class="line">    RESPONSE=$(curl -s -k -X PUT <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/<span class="variable">$&#123;ZONE_ID&#125;</span>/dns_records/<span class="variable">$&#123;RECORD_ID&#125;</span>&quot;</span> \</span><br><span class="line">         -H <span class="string">&quot;Authorization: Bearer <span class="variable">$&#123;API_TOKEN&#125;</span>&quot;</span> \</span><br><span class="line">         -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">         --data <span class="string">&quot;&#123;\&quot;type\&quot;:\&quot;A\&quot;,\&quot;name\&quot;:\&quot;<span class="variable">$&#123;RECORD_NAME&#125;</span>\&quot;,\&quot;content\&quot;:\&quot;<span class="variable">$&#123;CURRENT_IP&#125;</span>\&quot;,\&quot;ttl\&quot;:120,\&quot;proxied\&quot;:false&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 检查更新结果</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$RESPONSE</span>&quot;</span> | grep -q <span class="string">&quot;\&quot;success\&quot;:true&quot;</span>; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;DNS记录已成功更新为新IP: <span class="variable">$&#123;CURRENT_IP&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;更新DNS记录失败：<span class="variable">$RESPONSE</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>**追記: **他の場所からコピーしたスクリプトがXiaomiルーターで実行できない場合、またはcurlでhttpsアドレスにアクセスしたときにXiaomiルーターが値を返さない場合は、curlの後に<code>-k</code>パラメータを追加することを忘れないでください。</p>
+<h4 id="1-3-スケジュールされたタスク"><a href="#1-3-スケジュールされたタスク" class="headerlink" title="1.3. スケジュールされたタスク"></a>1.3. スケジュールされたタスク</h4><p>スクリプトを書いたら、<code>crontab -e</code>でスケジュールされたタスクを追加するだけです。</p>
+<p><code>*/10 * * * * /usr/ddns.sh</code></p>
+<p>10 分ごとに実行されます。動的 IP が週に 1 回更新される場合は、スケジュールされたタスクを適宜調整できます。</p>
+<h3 id="2-acme-shを使用してSynologyの証明書を自動的に更新する"><a href="#2-acme-shを使用してSynologyの証明書を自動的に更新する" class="headerlink" title="2. acme.shを使用してSynologyの証明書を自動的に更新する"></a>2. acme.shを使用してSynologyの証明書を自動的に更新する</h3><p>docker を使用せずに Synology に acme.sh を直接インストールすることをお勧めします。これにより、証明書を更新する際の検証プロセスが大幅に簡素化されます。</p>
+<p>まず SSH ポートを開き、任意のツールを使用して Synology にログインします。私は <a target="_blank" rel="noopener" href="https://termius.com/">Termius</a> を使用していますが、これは Mac に適したアプリだと思います。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">curl https://get.acme.sh | sh -s email=my@example.com --force</span><br><span class="line"><span class="built_in">cd</span> .acme.sh</span><br><span class="line">./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail <span class="string">&quot;email@gmail.com&quot;</span></span><br><span class="line"><span class="built_in">source</span> ~/.profile</span><br><span class="line"><span class="built_in">cd</span> /usr/local/share/acme.sh</span><br></pre></td></tr></table></figure>
+
+<p>値を1行ずつ入力し、Account_IDとTokenを取得します。上記と同じTokenを使用できます。同じである必要があります。Account_IDはZone IDと同じページにあります。これら2つで値を変更するには、次の手順に進みます。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> CF_Account_ID=<span class="string">&quot;*****************&quot;</span> </span><br><span class="line"><span class="built_in">export</span> CF_Token=<span class="string">&quot;*****************&quot;</span></span><br><span class="line"><span class="comment"># 申请证书，--server letsencrypt 指定申请 letsencrypt 证书</span></span><br><span class="line"><span class="comment"># -d example.com 指定要申请证书的域名是 example.com</span></span><br><span class="line"><span class="comment"># -d *.example.com 说明申请的证书是泛域名证书</span></span><br><span class="line">./acme.sh --issue --server letsencrypt --home . -d example.com --dns dns_cf --keylength 2048</span><br></pre></td></tr></table></figure>
+
+<p>通常、ここで証明書を取得しています。次に、証明書を展開します。ローカルコンピューターに直接展開する場合は、一時的な管理者ユーザーを使用して直接展開できます。そのため、Docker にインストールすることは推奨されません。リモートサーバーに証明書を展開する必要がある場合は、より複雑になります。<a target="_blank" rel="noopener" href="https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide">こちら</a> を参照してください。</p>
+<p>デプロイする際は、IPでログインしてHTTPでアクセスする場合は追加の操作は必要ありません。私のようにドメイン名アクセスを使用し、同時にSSLを有効にする場合は、2つの環境変数を追加する必要があります。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置使用临时管理员账户</span></span><br><span class="line"><span class="built_in">export</span> SYNO_USE_TEMP_ADMIN=1</span><br><span class="line"><span class="built_in">export</span> SYNO_SCHEME=<span class="string">&quot;https&quot;</span></span><br><span class="line"><span class="comment"># 这里的端口号需要改成你设置的https的端口号，默认是5001</span></span><br><span class="line"><span class="built_in">export</span> SYNO_PORT=<span class="string">&quot;9530&quot;</span></span><br><span class="line"><span class="comment"># 最后就是部署证书了，使用写好的hook直接搞定</span></span><br><span class="line">./acme.sh --deploy --insecure --home . -d nas.igerm.ee --deploy-hook synology_dsm</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-自動更新"><a href="#2-1-自動更新" class="headerlink" title="2.1 自動更新"></a>2.1 自動更新</h4><p>実際、DDNS を自動的に更新するのと同じように、カスタム cronjob を使用することも可能です。ただし、Synologyでcronjobを使用すると、Synologyのセキュリティアドバイザーから重大な警告が表示されます。これは自分で追加したものですが、この警告を見るのは気分がよくないので、Synologyのスケジュールされたタスクに直接追加することができます。更新する。</p>
+<p>DSM コントロール パネルで、タスク スケジューラを開き、ユーザー定義スクリプトの新しいスケジュールされたタスクを作成します。</p>
+<p>ユーザー アカウントを root として選択し、タスク設定にカスタム ユーザー スクリプトを入力します。</p>
+<p>開始時間を毎月第 1 月曜日に設定していますが、自分で設定することもできます。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># renew certificates </span></span><br><span class="line">/usr/local/share/acme.sh/acme.sh --cron --home /usr/local/share/acme.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://images.igerm.ee/myimages/20250214170420095.png"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/N8N%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%80%81%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%A8%E6%B7%BB%E4%BB%98%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E5%90%AB%E3%82%80%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E4%BF%A1%E3%81%97%E3%81%BE%E3%81%99/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>N8Nを使用して、さまざまなコンテンツと添付ファイルを含むメールを送信します</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/iMac5K%E3%82%92%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4%E3%81%AB%E5%A4%89%E8%BA%AB/" target="_self">
+                <span>iMac5Kをスタジオディスプレイに変身</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DDNS%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B"><span class="toc-text">1. DDNSを実装する</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4%E3%81%A4%E3%81%AE%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%92%E5%8F%96%E3%82%8B"><span class="toc-text">1.1. 4つのパラメータを取る</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-1-API-TOKEN"><span class="toc-text">1.1.1. API_TOKEN</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-Cloudflare-Zone-ID"><span class="toc-text">1.1.2. Cloudflare Zone ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-3-DNS-%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%89-ID-%E6%9B%B4%E6%96%B0%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%89-ID"><span class="toc-text">1.1.3. DNS レコード ID (更新が必要なレコード ID)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-4-%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%89%E5%90%8D"><span class="toc-text">1.1.4. レコード名</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90"><span class="toc-text">1.2. スクリプトの作成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%82%BF%E3%82%B9%E3%82%AF"><span class="toc-text">1.3. スケジュールされたタスク</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-acme-sh%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6Synology%E3%81%AE%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92%E8%87%AA%E5%8B%95%E7%9A%84%E3%81%AB%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B"><span class="toc-text">2. acme.shを使用してSynologyの証明書を自動的に更新する</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%87%AA%E5%8B%95%E6%9B%B4%E6%96%B0"><span class="toc-text">2.1 自動更新</span></a></li></ol></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2025</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>

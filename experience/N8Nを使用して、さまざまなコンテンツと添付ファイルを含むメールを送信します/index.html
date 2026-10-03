@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="テクノロジー,小説,ツッコミ,Hexo" />
+  <meta name="author" content="井月轩" />
+  <meta name="subtitle" content="太っている人は体重を減らすことを拒否します" />  
+  <meta name="description" content="テクノロジー、小説、ツッコミ" />
+  <meta name="msvalidate.01" content="4504B006DB2A6062F644FCDD2FC0575B" />
+  <title>N8Nを使用して、さまざまなコンテンツと添付ファイルを含むメールを送信します | 井說</title>
+  <link rel="apple-touch-icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <link rel="icon" href="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg">
+  <!-- jquery3.6 -->
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/jquery.min-3.6.js"></script>
+  <!-- hexo site css -->
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.5/source/css/base-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/iconfont/iconfont-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/github-markdown-min.css" rel="stylesheet">
+  <link async href="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/css/highlight-min.css" rel="stylesheet">  
+  <!-- fancybox -->
+  <link async href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet">  
+  <script async src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/fancybox.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R4XRTRGM56');
+    </script>  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/jp/atom.xml" title="井說" type="application/atom+xml">
+</head>
+<body>
+  <div id="app">
+  <div class="header">
+  <div class="avatar">
+    <a href="https://www.igerm.ee/jp"><img src="https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg" alt=""></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li class="nav-item" data-path="/jp/"><a href="/jp/">経験</a></li>
+      <li class="nav-item" data-path="/jp/categories/essay/"><a href="/jp/categories/essay/">ツッコミ</a></li>
+      <li class="nav-item" data-path="/jp/categories/novel/"><a href="/jp/categories/novel/">小説</a></li>
+      <li class="nav-item" data-path="/jp/about/"><a href="/jp/about/">について</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  let navs = document.querySelectorAll('.nav-item');
+  let pagePath = window.location.pathname;
+  for (let nav of navs) {
+    let navPath = nav.getAttribute("data-path");
+    if (navPath && navPath === pagePath) {
+      nav.className = "nav-item active";
+    }
+  }
+</script>       
+  <div class="flex-container">          
+  <!-- 同时引入 post.ejs 和 index.ejs -->
+  
+<div class="container post-details" id="post-details">
+  <div class="post-content">
+    <div class="post-title">N8Nを使用して、さまざまなコンテンツと添付ファイルを含むメールを送信します</div>
+    <div class="post-attach">
+      <span class="post-pubtime">
+        <i class="iconfont icon-edit" title="Update time"></i> 2025-02-14 12:34
+      </span>
+      <span class="post-count">≈ 844字</span>
+      <span class="post-count">≈ 3分</span>
+    </div>
+    <div class="markdown-body"><p>最近、仕事の都合で、大量のメールを送信し、コンテンツの一部を変更して添付ファイルを含め、約 80,000 通のメールをさまざまな人に送信したいと考えています。原理は実はとてもシンプルです。<a target="_blank" rel="noopener" href="https://github.com/">github</a> には使用できる既存のプロジェクトがいくつかありますが、プロジェクトは非常に古く、コードを調整する必要があります。同時に、既存のグループメッセージングツールの中にはクラウドベースのものもあり、実際には添付ファイルをポイントツーポイントで送信したいのですが、クラウドにアップロードしたくありません。</p>
+<p>最近たまたま<a target="_blank" rel="noopener" href="https://n8n.io/">N8N</a>を勉強していました。これはオープンソースでセルフデプロイメントをサポートしており、ローカルサーバーや自宅のNASにインストールできます。したがって、これはデータセキュリティを確保するための良い試みであり、後で大規模なモデルを通じて電子メールの追跡と変更を行うことができます。</p>
+<h4 id="N8Nのインストール"><a href="#N8Nのインストール" class="headerlink" title="N8Nのインストール"></a>N8Nのインストール</h4><h4 id="1-docker-composeを使用してインストールする"><a href="#1-docker-composeを使用してインストールする" class="headerlink" title="1. docker composeを使用してインストールする"></a>1. docker composeを使用してインストールする</h4><p>N8N はクラウドにインストールすることも、セルフホストすることも、システムに組み込まれた形で展開することもできます。私は <a target="_blank" rel="noopener" href="https://docs.n8n.io/hosting/installation/docker/">NAS 上の docker</a> に直接インストールしました。</p>
+<p>バックアップデータベースとしてPostgresDBを選択したり、Redisを追加したりすることもできますが、単体で使用しているため、組み込みのSQLiteで十分だと思います。これにより、インストールが非常に簡単になります。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">n8n:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">n8nio/n8n:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">n8n</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">&#x27;unless-stopped&#x27;</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">&#x27;host&#x27;</span>    </span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">N8N_PORT=1204</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">GENERIC_TIMEZONE=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NODE_OPTIONS=--max-old-space-size=2048</span> </span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/volume1/docker/n8n/data:/home/node/.n8n:rw</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/volume1/docker/n8n/binaryData1:/binaryData1:rw</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ブリッジモードまたはホストモードを使用できます。ホストを使用する場合は、環境変数でポート番号を宣言する必要があります。</p>
+<p>さらに、2 つのパスがマッピングされています。1 つは構成情報とデータベースを含む n8n のローカル ファイルであり、もう 1 つはバイナリ ファイルが保存されるパスです。これは設定する必要はありませんが、後で Excel からメール リストを読み込む必要がある場合は、Google スプレッドシートなどに保存するしかありません。クラウドにデータをアップロードしたくないので、アドレスをマッピングして、n8n ノードが読み取れる Excel ファイルをここに配置します。</p>
+<h4 id="2-ポート転送"><a href="#2-ポート転送" class="headerlink" title="2. ポート転送"></a>2. ポート転送</h4><p>ルーターで、SSL 証明書をバインドするポートを 1204 ではなく 1201 に転送します。これら 2 つはユーザーが設定するもので、好きなように定義するだけです。</p>
+<h4 id="3-nginx-プロキシ"><a href="#3-nginx-プロキシ" class="headerlink" title="3. nginx プロキシ"></a>3. nginx プロキシ</h4><p>ポート転送が有効になると、Synologyの組み込みリバースプロキシサーバーを使用できるようになります。</p>
+<p>Upgrade と Connection を含むカスタム ヘッダーに WebSocket を必ず追加してください。追加しないと問題が発生するという記事があったと記憶していますが、私のリバース プロキシはすべて追加しています。</p>
+<p>Synology の組み込みリバース プロキシ サーバーを使用する利点の 1 つは、SSL 証明書を個別に管理する必要がなくなることです。これを使用しない場合は、独自の Nginx を起動することもできますが、必須ではありません。証明書をインポートする必要がありますが、これは現在 3 か月に 1 回行われています。 acmeを使って自動化することはできますが、全く必要ありません。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214115210251.png"></p>
+<h3 id="N8Nプロセスの設定を開始する"><a href="#N8Nプロセスの設定を開始する" class="headerlink" title="N8Nプロセスの設定を開始する"></a>N8Nプロセスの設定を開始する</h3><p>全体のプロセスは次のようになります。理解するのに少し時間がかかりました。比較的簡単です。</p>
+<p>ドキュメントを読まないことを強くお勧めします。ドキュメントを読まないでください!ドキュメントを読まないでください!</p>
+<p>だって、文書を読んだら諦めたくなるから…</p>
+<p>独自のロジックに従ってプロセスを設計するだけです。</p>
+<p>  1.まず起動ノードが必要です。[開始]をクリックします。</p>
+<ol start="2">
+<li>Excelファイルを読み込む</li>
+<li>Excelファイルを分割する</li>
+<li>次にループに入ります</li>
+<li>添付ファイルを読んでください</li>
+<li>メールを送信する</li>
+<li>次に遅延を追加します。私は 5 秒に設定しました。1 分あたり 12 件のメッセージ、24 時間で 17280 件のメッセージ。この速度は許容範囲です。速すぎると、アカウントがブロックされるのではないかと心配です。</li>
+</ol>
+<p><img src="https://images.igerm.ee/myimages/20250214115924263.png"></p>
+<h4 id="1-バイナリファイルノードの読み取り"><a href="#1-バイナリファイルノードの読み取り" class="headerlink" title="1. バイナリファイルノードの読み取り"></a>1. バイナリファイルノードの読み取り</h4><p>左側が入力、右側が出力です。ここで設定する必要があるのはファイルパスです。docker 内の環境変数内の場所を具体的に docker にマッピングしました。したがって、ホストの対応する場所にファイルを保存した後、ルートディレクトリのマッピングされた場所にあるファイルを直接読み取ることができます。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214120354799.png"></p>
+<h4 id="2-スプレッドシートファイルノード"><a href="#2-スプレッドシートファイルノード" class="headerlink" title="2. スプレッドシートファイルノード"></a>2. スプレッドシートファイルノード</h4><p>ここで設定する必要があるのは、バッチ読み取りを行うか、バッチ書き込みを行うかだけです。前のノードから送信された Excel ファイルをバッチ読み取りし、次のノードに送信することを選択しました。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214120614089.png"></p>
+<h4 id="3-アイテムのループノード"><a href="#3-アイテムのループノード" class="headerlink" title="3. アイテムのループノード"></a>3. アイテムのループノード</h4><p>ここで分割数を設定します。1 つずつ送信することも、5 つずつ送信することもできます。小さい数を設定する方が安全です。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214120755145.png"></p>
+<h4 id="4-電子メール送信ノード"><a href="#4-電子メール送信ノード" class="headerlink" title="4. 電子メール送信ノード"></a>4. 電子メール送信ノード</h4><p>このノードでは設定すべきことがたくさんあります。まず、STMP を有効にするためにメールを設定する必要があります。私は GMAIL を使用して 2 段階認証を有効にしてから、アプリケーション パスワードを申請します。他のメールを直接検索するか、ChatGPT に問い合わせることができます。</p>
+<p>送信メールは設定したメールアドレス、受信メールは以前のExcelから転送したメールアドレスになります。これは自分で書く必要はありません。左側のINPUTでメールの列を直接選択し、To EmailにドラッグアンドドロップすればOKです。</p>
+<p>添付部分には、ファイル名ではなく、読んだノードの名前を記入します。送信後も元のファイル名のままですのでご安心ください。ここでは、この変数を書き込むと考えてください。</p>
+<p>次に、安全のために HTML メールを選択します。中小企業の上司の中には、正式なメールを使用しておらず、HTML メールをサポートしていない人もいるため、両方を選択します。HTML メール テンプレートについては、インターネットで HTML テンプレート ジェネレーターを検索できます。私は ChatGPT に直接作成を依頼し、それをコピーしました。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214121007789.png"></p>
+<h4 id="5-効果をテストする"><a href="#5-効果をテストする" class="headerlink" title="5. 効果をテストする"></a>5. 効果をテストする</h4><p>まず、メールボックスに 10 通のメールを送信しました。成功しました。これで正式に使用できるようになります。いずれにしても、NAS は 24 時間オンになっているので、ゆっくりと送信します。</p>
+<p><img src="https://images.igerm.ee/myimages/20250214121802339.png"></p>
+</div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+              <a href="/jp/experience/%E5%80%8B%E4%BA%BA%E3%81%AE%E9%95%B7%E6%9C%9F%E6%8A%95%E8%B3%87%E3%81%A8%E6%B6%88%E8%B2%BB%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>  
+                <span>個人の長期投資と消費パターン</span> 
+              </a>
+          </div>
+          <div class="post-foot-next">
+              <a href="/jp/experience/Synology%20%E3%81%AF%20cloudflare%20%E3%81%AE%20API%20%E7%B5%8C%E7%94%B1%E3%81%A7%20DDNS%20%E3%82%92%E8%87%AA%E5%8B%95%E7%9A%84%E3%81%AB%E6%9B%B4%E6%96%B0%E3%81%97%E3%81%BE%E3%81%99/" target="_self">
+                <span>Synology は cloudflare の API 経由で DDNS を自動的に更新します</span>
+                <i class="iconfont icon-chevronright"></i>             
+              </a> 
+          </div>
+        </div>
+      
+    </div>
+    
+<div class="post-catalog" id="catalog">
+  <div class="title">Contents</div>
+  <div class="catalog-content">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#N8N%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><span class="toc-text">N8Nのインストール</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-docker-compose%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B"><span class="toc-text">1. docker composeを使用してインストールする</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E3%83%9D%E3%83%BC%E3%83%88%E8%BB%A2%E9%80%81"><span class="toc-text">2. ポート転送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-nginx-%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7"><span class="toc-text">3. nginx プロキシ</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#N8N%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%82%92%E9%96%8B%E5%A7%8B%E3%81%99%E3%82%8B"><span class="toc-text">N8Nプロセスの設定を開始する</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%8E%E3%83%BC%E3%83%89%E3%81%AE%E8%AA%AD%E3%81%BF%E5%8F%96%E3%82%8A"><span class="toc-text">1. バイナリファイルノードの読み取り</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%8E%E3%83%BC%E3%83%89"><span class="toc-text">2. スプレッドシートファイルノード</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%97%E3%83%8E%E3%83%BC%E3%83%89"><span class="toc-text">3. アイテムのループノード</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%9B%BB%E5%AD%90%E3%83%A1%E3%83%BC%E3%83%AB%E9%80%81%E4%BF%A1%E3%83%8E%E3%83%BC%E3%83%89"><span class="toc-text">4. 電子メール送信ノード</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%8A%B9%E6%9E%9C%E3%82%92%E3%83%86%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B"><span class="toc-text">5. 効果をテストする</span></a></li></ol>
+  </div>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/catalog.js"></script>
+
+
+    <div class="comments-container">
+  <script src="https://utteranc.es/client.js"
+        repo="wellmoonloft/repo_wellmoonloft"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+  </div>
+
+  <div class="footer">
+  <div class="social">
+    <ul>
+      <li><a title="rss" href="/jp/atom.xml"><i class="iconfont icon-rss"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-more">
+      <a href="https://www.igerm.ee/jp/">Copyright © wellmoonloft 2025</a>  
+  </div><div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges ｜ Powered by Hexo</a>  
+  </div>
+</div>
+  </div>
+  <div style="position: fixed;right: 2.2rem;top: 2.2rem;font-weight: bold;font-size: 1.6rem;">
+  <a href="https://www.igerm.ee"> CN</a>
+  <a href="https://www.igerm.ee/jp"> JP</a>
+  <a href="https://www.igerm.ee/en"> EN</a>
+  </div><div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+<script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.4/source/js/backtoTop.js"></script>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+  </div>
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)"><i class="iconfont icon-search"></i></a>
+        </span><input type="text" class="search-input" id="search-input" placeholder="Search...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)"><i class="iconfont icon-close"></i></a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+  <script async src="https://cdn.jsdelivr.net/gh/wellmoonloft/peach@v0.1.6/source/js/search.js"></script>
+  </div>
+</body>
+</html>
