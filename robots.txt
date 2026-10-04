@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.igerm.ee/sitemap.xml
-Sitemap: https://www.igerm.ee/en/sitemap.xml
