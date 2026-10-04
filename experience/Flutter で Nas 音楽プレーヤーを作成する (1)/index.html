@@ -1,112 +1,112 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content><meta name=author content="井月轩"><meta name=description content="テクノロジー、小説、ツッコミ"><meta name=subtitle content="太っている人は体重を減らすことを拒否します"><title>Flutter で Nas 音楽プレーヤーを作成する (1) | 井說</title><link rel=icon href=https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg><link rel=stylesheet href=/legacy/css/base-min.css><link rel=stylesheet href=/legacy/iconfont/iconfont-min.css><link rel=stylesheet href=/legacy/css/github-markdown-min.css><link rel=stylesheet href=/legacy/css/highlight-min.css><link rel=stylesheet href=/css/site-overrides.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css><script defer src=/legacy/js/jquery.min-3.6.js></script><script defer src=https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-R4XRTRGM56")</script></head><body><div id=app><header class=header><div class=avatar><a href=/jp/><img src=https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg alt=井說></a></div><nav class=navbar><ul><li class=nav-item><a href=/jp/>経験</a></li><li class=nav-item><a href=/jp/categories/essay/>随筆</a></li><li class=nav-item><a href=/jp/categories/novel/>小説</a></li><li class=nav-item><a href=/jp/about/>について</a></li></ul></nav></header><div class=flex-container><main><article class="container post-details" id=post-details><div class=post-content><h1 class=post-title>Flutter で Nas 音楽プレーヤーを作成する (1)</h1><div class=post-attach><span class=post-pubtime>2023-01-05 22:40</span><span class=post-count>≈ 364字</span><span class=post-count>≈ 2分</span></div><div class=markdown-body><p>ここ 2 か月間退屈していたので、家にある古い NAS をいじって [音楽サーバーをセットアップ](<a href=https://www.igerm.ee/>https://www.igerm.ee/</a> experience/%E7%AE%A1%) しています。 ですが、特に満足のいくプレイヤーが見つからないというのもあります。デスクトップの <a href=https://github.com/jeffvli/sonixd>Sonixd</a> は見た目も良く、派手な機能もありませんが、モバイル版は <a href=https://substreamerapp.com>substreamer</a> だけがあまり満足のいくものではありません、も使えますが、あまり美しくありません。</p><p>最も重要なことは、これら 2 つのプレーヤーは歌詞をサポートしておらず、あいまい検索や簡略化された従来の検索を実行できないことです。たとえば、ジェイ・チョウの<strong>退后</strong>を聴きたいのですが、検索で表示される名前は <strong>退後</strong> です。検索すると、繁体字中国語に切り替える必要があります。かなり迷惑です。</p><p>私の最初の反応は、既製のマルチターミナル ホイールがあるかどうかを確認するために Github に行くことでした。しかし、私が見ることができるものはすべてローカルで再生されているか、NetEase Cloud の API を通じて構築された模造 NetEase Cloud 音楽プレーヤーが存在していました。切断はもちろん、Navidrome や Subsonic API もサポートしていません。なかなか見つからないので、頑張って自分で手に入れてみます！</p><h3 id=subsonic-api>Subsonic API</h3><p>Navidrome 自体にはネイティブ API がありますが、多くはありません。幸いなことに、作者は Subsonic の API をほぼすべてサポートしているため、Navidrome 自体に API ドキュメントがない場合でも、<a href=https://www.subsonic.org/pages/api.jsp>Subsonic のドキュメント</a>は Postman でも試すことができます。</p><h4 id=検証サーバー>検証サーバー</h4><p><img src=https://images.igerm.ee/myimages/20250214171705528.jpg alt=1672924014867></p><p>一見するとわかりにくいように思えるかもしれませんが、実際には非常に単純な 2 種類の検証があります。<strong>パスワード</strong> を渡すか、<strong>暗号化された (パスワード + 6 Salt値) に 6 Salt値 を加えたものを渡します</strong></p><p>まず、テストするサーバーに<code>Ping</code>を実行します (<a href=https://pub.dev/packages/dio>dio: ^4.0.6</a> を使用すると、多くの操作を節約できます)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl>  <span class=k>try</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=kd>var</span> <span class=n>response</span> <span class=o>=</span> <span class=kd>await</span> <span class=n>Dio</span><span class=p>().</span><span class=kd>get</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>      <span class=n>_baseUrl</span> <span class=o>+</span>
-</span></span><span class=line><span class=cl>          <span class=s1>&#39;rest/ping?v=0.0.1&amp;c=xiumusic&amp;f=json&amp;u=&#39;</span> <span class=o>+</span>   
-</span></span><span class=line><span class=cl>          <span class=n>_username</span> <span class=o>+</span>  <span class=c1>//v はクライアントのバージョン番号、c はクライアントの名前、u はユーザー名、p はパスワードです
-</span></span></span><span class=line><span class=cl>          <span class=s1>&#39;&amp;p=&#39;</span> <span class=o>+</span>
-</span></span><span class=line><span class=cl>          <span class=n>_password</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=p>);</span>
-</span></span><span class=line><span class=cl>    <span class=n>print</span><span class=p>(</span><span class=n>response</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>response</span><span class=p>.</span><span class=n>statusCode</span> <span class=o>==</span> <span class=m>200</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>      <span class=c1>//ここでもう 1 つのステップを実行する必要があります。つまり、code200 が返されても満足せず、subsonicサーバーからのフィードバックを確認します。
-</span></span></span><span class=line><span class=cl>      <span class=n>Map</span> <span class=n>_value</span> <span class=o>=</span> <span class=n>response</span><span class=p>.</span><span class=n>data</span><span class=p>[</span><span class=s1>&#39;subsonic-response&#39;</span><span class=p>];</span>
-</span></span><span class=line><span class=cl>      <span class=kt>String</span> <span class=n>_status</span> <span class=o>=</span> <span class=n>_value</span><span class=p>[</span><span class=s1>&#39;status&#39;</span><span class=p>];</span>
-</span></span><span class=line><span class=cl>      <span class=c1>//通常は問題ありません、私は自給自足です、自己デバッグ中です、アップグレードするときはこの状況を認める必要があります、わかりません、わかりません。
-</span></span></span><span class=line><span class=cl>      <span class=k>if</span> <span class=p>(</span><span class=n>_status</span> <span class=o>==</span> <span class=s1>&#39;failed&#39;</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>false</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>      <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>true</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>      <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=kc>false</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=n>e</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>print</span><span class=p>(</span><span class=n>e</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=kc>false</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>2 段階認証サーバーと Subsonic の API が完了したら、後続のすべての API でその値を取得するために Salt を使用できます。これらはすべて無料です。</p><h4 id=暗号化されたログイン>暗号化されたログイン</h4><ol><li><code>Rondom</code> を使用して、ランダムに生成された 6 桁の文字を書き込みます</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kt>String</span> <span class=n>generateRandomString</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>_random</span> <span class=o>=</span> <span class=n>Random</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>  <span class=kd>const</span> <span class=n>_availableChars</span> <span class=o>=</span>
-</span></span><span class=line><span class=cl>      <span class=s1>&#39;AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890&#39;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>randomString</span> <span class=o>=</span> <span class=n>List</span><span class=p>.</span><span class=n>generate</span><span class=p>(</span><span class=m>6</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>          <span class=p>(</span><span class=n>index</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_availableChars</span><span class=p>[</span><span class=n>_random</span><span class=p>.</span><span class=n>nextInt</span><span class=p>(</span><span class=n>_availableChars</span><span class=p>.</span><span class=n>length</span><span class=p>)])</span>
-</span></span><span class=line><span class=cl>      <span class=p>.</span><span class=n>join</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>randomString</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><ol start=2><li>スプライシング後に MD5 暗号化を使用します。</li></ol><p>後で API で使用するためにこれらの 2 文字を保存します。</p><h4 id=ディレクトリの取得>ディレクトリの取得</h4><p>Subsonic のディレクトリは上から下にこのように分類されます</p><ul><li>音楽フォルダー</li><li>アーティストフォルダー</li><li>アルバム</li><li>曲</li></ul><p>ただし、Navidrome には音楽フォルダーが 1 つしかないようなので、第 2 レベルの <code>getIndexes</code> を直接使用してディレクトリ マスター リストを作成し、その後 <code>ミュージシャン ID</code> に基づいてアルバム リストに進みました。</p><p><img src=https://images.igerm.ee/myimages/20250214171715045.jpg alt=1672925500580></p><h4 id=音楽を再生>音楽を再生</h4><p>変更量を変更するには ValueNotifier を使用します。 <a href=https://pub.dev/packages/provider>provider: ^6.0.5 </a>を使用する必要はありませんが、どのような場合でも ValueNotifier を使用する方が便利です。これはあなたが に求めたものであり、その場合は新しいコピーを最初から作成する必要があるということです。</p><p>実際、<code>ValueNotifier</code> も非常に便利で、その後に <code>&lt;int></code> パラメータを指定して値の型を指定したり、この<a href=https://blog.csdn.net/Mr_Tony/article/details/112170758>記事</a>に基づいて監視データ型をカスタマイズしたりすることもできます。</p><ol><li>データモニターを定義する</li></ol><p><code>ValueNotifier&lt;String> activeSongValue = ValueNotifier&lt;String>("1");</code></p><p>理論的には、これを任意のファイルに配置できますが、管理を容易にするために、ここでは曲の <code>id</code> を渡し、デフォルト値でフィルタリングすることをお勧めします。が <code>"1"</code> の場合、曲情報を取得するためにインターフェイスを呼び出さなくなりました (flutter 2.12 以降の Null 安全性の必須要件。最初は慣れませんでしたが、今ではかなり良いと思います)</p><ol start=2><li>データの値を変更する</li></ol><p><code>activeSongValue.value = _tem["id"];</code></p><p>直接使用するだけです。「provider」よりも簡単だと思われます。</p><ol start=3><li>データの変化を監視する</li></ol><p><code>ValueListenableBuilder</code> コンストラクトを使用してリスニング部分を構築します</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>return</span> <span class=n>ValueListenableBuilder</span><span class=o>&lt;</span><span class=kt>String</span><span class=o>&gt;</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>        <span class=nl>valueListenable:</span> <span class=n>activeSongValue</span><span class=p>,</span> <span class=c1>//监控器
-</span></span></span><span class=line><span class=cl>        <span class=nl>builder:</span> <span class=p>((</span><span class=n>context</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>child</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>value</span> <span class=o>!=</span> <span class=s2>&#34;1&#34;</span><span class=p>)</span> <span class=p>{</span>         <span class=c1>//改变值
-</span></span></span><span class=line><span class=cl>            <span class=n>_setAudioSource</span><span class=p>(</span><span class=n>value</span><span class=p>);</span>  <span class=c1>//直接使用id进行查询等后续工作
-</span></span></span><span class=line><span class=cl>          <span class=p>}</span>
-</span></span><span class=line><span class=cl>          
-</span></span><span class=line><span class=cl>          <span class=k>return</span> <span class=n>Container</span><span class=p>()...</span>
-</span></span></code></pre></td></tr></table></div></div><ol start=4><li>曲情報を取得する</li></ol><p>曲の <code>id</code> を取得したら、<code>getSong</code> を使用して音楽情報を取得し、<code>getCoverArt</code> を使用してアルバム画像を取得し、<code>stream</code> を使用してストリーム ファイルを取得します。</p><ol start=5><li>音楽ストリームを再生する</li></ol><p><a href=https://pub.dev/packages/just_audio>just_audio: ^0.9.31</a> を使用すると、開発の進行を大幅にスピードアップできます。これは 2 番目にランク付けされた依存関係ですが、たまたま、ここ数日のバージョンでは、公式文書のアドレスが失われています、これは運命と呼ばれます。</p><p>使い方も非常にシンプルで、ボタンスライダーなどのコントロールの表示に関わらず、音楽をクリックしてから再生を開始するまでのコードはたったの3行です。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>//定义组件
-</span></span></span><span class=line><span class=cl><span class=kd>final</span> <span class=n>_player</span> <span class=o>=</span> <span class=n>AudioPlayer</span><span class=p>();</span>
-</span></span><span class=line><span class=cl><span class=c1>//拼接流的url
-</span></span></span><span class=line><span class=cl><span class=kt>String</span> <span class=n>_url</span> <span class=o>=</span> <span class=kd>await</span> <span class=n>getSongStreamUrl</span><span class=p>(</span><span class=n>_id</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=c1>//获取流并播放
-</span></span></span><span class=line><span class=cl>    <span class=k>try</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>      <span class=kd>await</span> <span class=n>_player</span><span class=p>.</span><span class=n>setAudioSource</span><span class=p>(</span><span class=n>AudioSource</span><span class=p>.</span><span class=n>uri</span><span class=p>(</span><span class=n>Uri</span><span class=p>.</span><span class=n>parse</span><span class=p>(</span><span class=n>_url</span><span class=p>)));</span>
-</span></span><span class=line><span class=cl>      <span class=n>_player</span><span class=p>.</span><span class=n>play</span><span class=p>();</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=n>e</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>      <span class=n>print</span><span class=p>(</span><span class=s2>&#34;Error loading audio source: </span><span class=si>$</span><span class=n>e</span><span class=s2>&#34;</span><span class=p>);</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content><meta name=author content="井月轩"><meta name=description content="テクノロジー、小説、ツッコミ"><meta name=subtitle content="太っている人は体重を減らすことを拒否します"><title>Flutter で Nas 音楽プレーヤーを作成する (1) | 井說</title><link rel=icon href=https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg><link rel=stylesheet href=/legacy/css/base-min.css><link rel=stylesheet href=/legacy/iconfont/iconfont-min.css><link rel=stylesheet href=/legacy/css/github-markdown-min.css><link rel=stylesheet href=/legacy/css/highlight-min.css><link rel=stylesheet href=/css/site-overrides.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css><script defer src=/legacy/js/jquery.min-3.6.js></script><script defer src=https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-R4XRTRGM56"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-R4XRTRGM56")</script></head><body><div id=app><header class=header><div class=avatar><a href=/jp/><img src=https://s2.loli.net/2022/12/30/lV2YzG9s86yK3OB.jpg alt=井說></a></div><nav class=navbar><ul><li class=nav-item><a href=/jp/>経験</a></li><li class=nav-item><a href=/jp/categories/essay/>随筆</a></li><li class=nav-item><a href=/jp/categories/novel/>小説</a></li><li class=nav-item><a href=/jp/about/>について</a></li></ul></nav></header><div class=flex-container><main><article class="container post-details" id=post-details><div class=post-content><h1 class=post-title>Flutter で Nas 音楽プレーヤーを作成する (1)</h1><div class=post-attach><span class=post-pubtime>2023-01-05 22:40</span><span class=post-count>≈ 364字</span><span class=post-count>≈ 2分</span></div><div class=markdown-body><p>ここ 2 か月間退屈していたので、家にある古い NAS をいじって [音楽サーバーをセットアップ](<a href=https://www.igerm.ee/>https://www.igerm.ee/</a> experience/%E7%AE%A1%) しています。 ですが、特に満足のいくプレイヤーが見つからないというのもあります。デスクトップの <a href=https://github.com/jeffvli/sonixd>Sonixd</a> は見た目も良く、派手な機能もありませんが、モバイル版は <a href=https://substreamerapp.com>substreamer</a> だけがあまり満足のいくものではありません、も使えますが、あまり美しくありません。</p><p>最も重要なことは、これら 2 つのプレーヤーは歌詞をサポートしておらず、あいまい検索や簡略化された従来の検索を実行できないことです。たとえば、ジェイ・チョウの<strong>退后</strong>を聴きたいのですが、検索で表示される名前は <strong>退後</strong> です。検索すると、繁体字中国語に切り替える必要があります。かなり迷惑です。</p><p>私の最初の反応は、既製のマルチターミナル ホイールがあるかどうかを確認するために Github に行くことでした。しかし、私が見ることができるものはすべてローカルで再生されているか、NetEase Cloud の API を通じて構築された模造 NetEase Cloud 音楽プレーヤーが存在していました。切断はもちろん、Navidrome や Subsonic API もサポートしていません。なかなか見つからないので、頑張って自分で手に入れてみます！</p><h3 id=subsonic-api>Subsonic API</h3><p>Navidrome 自体にはネイティブ API がありますが、多くはありません。幸いなことに、作者は Subsonic の API をほぼすべてサポートしているため、Navidrome 自体に API ドキュメントがない場合でも、<a href=https://www.subsonic.org/pages/api.jsp>Subsonic のドキュメント</a>は Postman でも試すことができます。</p><h4 id=検証サーバー>検証サーバー</h4><p><img src=https://images.igerm.ee/myimages/20250214171705528.jpg alt=1672924014867></p><p>一見するとわかりにくいように思えるかもしれませんが、実際には非常に単純な 2 種類の検証があります。<strong>パスワード</strong> を渡すか、<strong>暗号化された (パスワード + 6 Salt値) に 6 Salt値 を加えたものを渡します</strong></p><p>まず、テストするサーバーに<code>Ping</code>を実行します (<a href=https://pub.dev/packages/dio>dio: ^4.0.6</a> を使用すると、多くの操作を節約できます)</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-dart data-lang=dart><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> response <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> Dio().<span style=color:#66d9ef>get</span>(
+</span></span><span style=display:flex><span>      _baseUrl <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>&#39;rest/ping?v=0.0.1&amp;c=xiumusic&amp;f=json&amp;u=&#39;</span> <span style=color:#f92672>+</span>   
+</span></span><span style=display:flex><span>          _username <span style=color:#f92672>+</span>  <span style=color:#75715e>//v はクライアントのバージョン番号、c はクライアントの名前、u はユーザー名、p はパスワードです
+</span></span></span><span style=display:flex><span>          <span style=color:#e6db74>&#39;&amp;p=&#39;</span> <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>          _password,
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>    print(response);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (response.statusCode <span style=color:#f92672>==</span> <span style=color:#ae81ff>200</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>//ここでもう 1 つのステップを実行する必要があります。つまり、code200 が返されても満足せず、subsonicサーバーからのフィードバックを確認します。
+</span></span></span><span style=display:flex><span>      Map _value <span style=color:#f92672>=</span> response.data[<span style=color:#e6db74>&#39;subsonic-response&#39;</span>];
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>String</span> _status <span style=color:#f92672>=</span> _value[<span style=color:#e6db74>&#39;status&#39;</span>];
+</span></span><span style=display:flex><span>      <span style=color:#75715e>//通常は問題ありません、私は自給自足です、自己デバッグ中です、アップグレードするときはこの状況を認める必要があります、わかりません、わかりません。
+</span></span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (_status <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;failed&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>catch</span> (e) {
+</span></span><span style=display:flex><span>    print(e);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></td></tr></table></div></div><p>2 段階認証サーバーと Subsonic の API が完了したら、後続のすべての API でその値を取得するために Salt を使用できます。これらはすべて無料です。</p><h4 id=暗号化されたログイン>暗号化されたログイン</h4><ol><li><code>Rondom</code> を使用して、ランダムに生成された 6 桁の文字を書き込みます</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-dart data-lang=dart><span style=display:flex><span><span style=color:#66d9ef>String</span> generateRandomString() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>final</span> _random <span style=color:#f92672>=</span> Random();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> _availableChars <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#39;AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890&#39;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>final</span> randomString <span style=color:#f92672>=</span> List.generate(<span style=color:#ae81ff>6</span>,
+</span></span><span style=display:flex><span>          (index) <span style=color:#f92672>=&gt;</span> _availableChars[_random.nextInt(_availableChars.length)])
+</span></span><span style=display:flex><span>      .join();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> randomString;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>スプライシング後に MD5 暗号化を使用します。</li></ol><p>後で API で使用するためにこれらの 2 文字を保存します。</p><h4 id=ディレクトリの取得>ディレクトリの取得</h4><p>Subsonic のディレクトリは上から下にこのように分類されます</p><ul><li>音楽フォルダー</li><li>アーティストフォルダー</li><li>アルバム</li><li>曲</li></ul><p>ただし、Navidrome には音楽フォルダーが 1 つしかないようなので、第 2 レベルの <code>getIndexes</code> を直接使用してディレクトリ マスター リストを作成し、その後 <code>ミュージシャン ID</code> に基づいてアルバム リストに進みました。</p><p><img src=https://images.igerm.ee/myimages/20250214171715045.jpg alt=1672925500580></p><h4 id=音楽を再生>音楽を再生</h4><p>変更量を変更するには ValueNotifier を使用します。 <a href=https://pub.dev/packages/provider>provider: ^6.0.5 </a>を使用する必要はありませんが、どのような場合でも ValueNotifier を使用する方が便利です。これはあなたが に求めたものであり、その場合は新しいコピーを最初から作成する必要があるということです。</p><p>実際、<code>ValueNotifier</code> も非常に便利で、その後に <code>&lt;int></code> パラメータを指定して値の型を指定したり、この<a href=https://blog.csdn.net/Mr_Tony/article/details/112170758>記事</a>に基づいて監視データ型をカスタマイズしたりすることもできます。</p><ol><li>データモニターを定義する</li></ol><p><code>ValueNotifier&lt;String> activeSongValue = ValueNotifier&lt;String>("1");</code></p><p>理論的には、これを任意のファイルに配置できますが、管理を容易にするために、ここでは曲の <code>id</code> を渡し、デフォルト値でフィルタリングすることをお勧めします。が <code>"1"</code> の場合、曲情報を取得するためにインターフェイスを呼び出さなくなりました (flutter 2.12 以降の Null 安全性の必須要件。最初は慣れませんでしたが、今ではかなり良いと思います)</p><ol start=2><li>データの値を変更する</li></ol><p><code>activeSongValue.value = _tem["id"];</code></p><p>直接使用するだけです。「provider」よりも簡単だと思われます。</p><ol start=3><li>データの変化を監視する</li></ol><p><code>ValueListenableBuilder</code> コンストラクトを使用してリスニング部分を構築します</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-dart data-lang=dart><span style=display:flex><span><span style=color:#66d9ef>return</span> ValueListenableBuilder<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>String</span><span style=color:#f92672>&gt;</span>(
+</span></span><span style=display:flex><span>        valueListenable: activeSongValue, <span style=color:#75715e>//监控器
+</span></span></span><span style=display:flex><span>        builder: ((context, value, child) {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>if</span> (value <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#34;1&#34;</span>) {         <span style=color:#75715e>//改变值
+</span></span></span><span style=display:flex><span>            _setAudioSource(value);  <span style=color:#75715e>//直接使用id进行查询等后续工作
+</span></span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>          
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>return</span> Container()...
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>曲情報を取得する</li></ol><p>曲の <code>id</code> を取得したら、<code>getSong</code> を使用して音楽情報を取得し、<code>getCoverArt</code> を使用してアルバム画像を取得し、<code>stream</code> を使用してストリーム ファイルを取得します。</p><ol start=5><li>音楽ストリームを再生する</li></ol><p><a href=https://pub.dev/packages/just_audio>just_audio: ^0.9.31</a> を使用すると、開発の進行を大幅にスピードアップできます。これは 2 番目にランク付けされた依存関係ですが、たまたま、ここ数日のバージョンでは、公式文書のアドレスが失われています、これは運命と呼ばれます。</p><p>使い方も非常にシンプルで、ボタンスライダーなどのコントロールの表示に関わらず、音楽をクリックしてから再生を開始するまでのコードはたったの3行です。</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-dart data-lang=dart><span style=display:flex><span><span style=color:#75715e>//定义组件
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>final</span> _player <span style=color:#f92672>=</span> AudioPlayer();
+</span></span><span style=display:flex><span><span style=color:#75715e>//拼接流的url
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>String</span> _url <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> getSongStreamUrl(_id);
+</span></span><span style=display:flex><span><span style=color:#75715e>//获取流并播放
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>await</span> _player.setAudioSource(AudioSource.uri(Uri.parse(_url)));
+</span></span><span style=display:flex><span>      _player.play();
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>catch</span> (e) {
+</span></span><span style=display:flex><span>      print(<span style=color:#e6db74>&#34;Error loading audio source: </span><span style=color:#e6db74>$</span>e<span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>    }
 </span></span></code></pre></td></tr></table></div></div><p>上記は、デスクトップでのサーバーテスト、曲レベルのディレクトリへの入力、音楽の再生を含む現在の進行状況です。</p><p>まだまだ作業はたくさんありますが、バージョン 1 から注目しているのは Flutter です。モバイル端末への適応に注意するだけです。すべてを記述した後は、モバイルを調整するだけで十分だと思います。現在は単なる機能です）。</p><p>こちらは <a href=https://github.com/wellmoonloft/xiumusic>Github</a> に来て遊んでみるのは良いことですが、これは開発専用であり、通常の使用とは程遠いものです。</p></div><aside class=post-catalog id=catalog><div class=title>目次</div><div class=catalog-content><nav id=TableOfContents><ul><li><ul><li><a href=#subsonic-api>Subsonic API</a></li></ul></li></ul></nav></div></aside><div class=prev-or-next><div class=post-foot-prev><a href=/jp/experience/hexo%20%E3%81%8C%20v6.3.0%20%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F/>‹ hexo が v6.3.0 にアップグレードされました</a></div><div class=post-foot-next><a href=/jp/experience/Flutter%20%E3%81%A7%20Nas%20%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%20%282%29/>Flutter で Nas 音楽プレーヤーを作成する (2) ›</a></div></div><div class=comments-container><script src=https://utteranc.es/client.js repo=wellmoonloft/repo_wellmoonloft issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></article></main><footer class=footer><div class=social><ul><li><a title=RSS href=/jp/atom.xml><i class="iconfont icon-rss"></i></a></li><li><a title=GitHub href=https://github.com/wellmoonloft>GitHub</a></li></ul></div><div class=footer-more><a href=https://www.igerm.ee/jp/>Copyright © wellmoonloft 2025</a></div><div class=footer-more>Theme adapted from Oranges · Powered by Hugo</div></footer></div><div class=language-switch><a href=https://www.igerm.ee/>CN</a> <a href=https://www.igerm.ee/jp/>JP</a> <a href=https://www.igerm.ee/en/>EN</a></div><button class=back-to-top id=back-to-top aria-label="Back to top">↑</button>
 <button class=search-icon id=search-open aria-label=Search><i class="iconfont icon-search"></i></button><div class="search-overlay hidden" id=search-overlay data-index=/jp/search.json><div class=search-content><div class=search-title><input id=search-input placeholder=検索...><button id=search-close>×</button></div><div id=search-result class=search-result></div></div></div></div><script defer src=/js/hugo-search.js></script><script>document.getElementById("back-to-top").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"})),document.getElementById("search-open").addEventListener("click",()=>document.getElementById("search-overlay").classList.remove("hidden")),document.getElementById("search-close").addEventListener("click",()=>document.getElementById("search-overlay").classList.add("hidden"))</script></body></html>
